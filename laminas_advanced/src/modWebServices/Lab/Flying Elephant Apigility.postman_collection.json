@@ -1,0 +1,678 @@
+{
+	"id": "81d7cece-bedd-fe75-f54e-4963a2ebac9c",
+	"name": "Flying Elephant Apigility",
+	"description": null,
+	"auth": null,
+	"events": null,
+	"variables": null,
+	"order": [
+		"b8f1363a-f1c2-4d3e-1aad-83ccfbb70a5b",
+		"a1d1024f-98c1-c7c5-3558-3e61b13c10f7",
+		"447d336b-dd39-8063-68a1-bd9b61c507aa",
+		"5f53b1ed-b1bf-fd5d-f7ab-00649c49de48",
+		"d68cc2a5-0dd8-ef88-7bfc-15e4fb0953d3",
+		"1302c22f-5b35-d0c1-c04b-a103930e2c3d",
+		"9fde6b69-ffe8-aacf-bcc0-3df61cacdd4a",
+		"97393995-e7f4-5929-8b5c-ef17c06e5200",
+		"4be42b45-8478-59da-534b-2a9a11ce4e96",
+		"c6ba0bbf-55b0-1f4f-bba3-b0bd7fcdbc9d",
+		"643e712b-0c36-3595-dda3-ebfac296af21"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "1302c22f-5b35-d0c1-c04b-a103930e2c3d",
+			"name": "GET Apigility second request",
+			"url": "http://apigility/propulsion-systems/01d1c119-bf97-4a05-b5d6-d94d950d049f",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic dmFncmFudDp2YWdyYW50",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\"Type\":\"Traditional Rocket\", \"Propellant\":\"Chemical\"}",
+			"headers": "Accept: application/json\nAuthorization: Basic dmFncmFudDp2YWdyYW50\nContent-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "447d336b-dd39-8063-68a1-bd9b61c507aa",
+			"name": "POST Apigility third request",
+			"url": "http://apigility/propulsion-systems",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic dmFncmFudDp2YWdyYW50",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"basic": [
+					{
+						"key": "password",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				],
+				"type": "basic"
+			},
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\"type\":\"Fusion Rocket\", \"propellant\":\"Nuclear fusion reaction\"}",
+			"headers": "Accept: application/json\nAuthorization: Basic dmFncmFudDp2YWdyYW50\nContent-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "4be42b45-8478-59da-534b-2a9a11ce4e96",
+			"name": "GET Apigility collection request",
+			"url": "http://apigility/propulsion-systems",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic dmFncmFudDp2YWdyYW50",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\"Type\":\"Traditional Rocket\", \"Propellant\":\"Chemical\"}",
+			"headers": "Accept: application/json\nAuthorization: Basic dmFncmFudDp2YWdyYW50\nContent-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "5f53b1ed-b1bf-fd5d-f7ab-00649c49de48",
+			"name": "POST Apigility fourth request",
+			"url": "http://apigility/propulsion-systems",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic dmFncmFudDp2YWdyYW50",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"basic": [
+					{
+						"key": "password",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				],
+				"type": "basic"
+			},
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\"type\":\"Antimatter Rocket\", \"propellant\":\"High density matter/antimatter reaction\"}",
+			"headers": "Accept: application/json\nAuthorization: Basic dmFncmFudDp2YWdyYW50\nContent-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "643e712b-0c36-3595-dda3-ebfac296af21",
+			"name": "DELETE Apigility request",
+			"url": "http://apigility/propulsion-systems/e4d69bd7-10e9-4913-95ab-90fe18d53104",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic dmFncmFudDp2YWdyYW50",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\"Type\":\"Solar Sail\", \"Propellant\":\"High energy laser beam\"}",
+			"headers": "Accept: application/json\nAuthorization: Basic dmFncmFudDp2YWdyYW50\nContent-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "97393995-e7f4-5929-8b5c-ef17c06e5200",
+			"name": "GET Apigility fourth request",
+			"url": "http://apigility/propulsion-systems/5cd8d70c-89e2-43c7-86ac-4778cf4a2ac4",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic dmFncmFudDp2YWdyYW50",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\"Type\":\"Traditional Rocket\", \"Propellant\":\"Chemical\"}",
+			"headers": "Accept: application/json\nAuthorization: Basic dmFncmFudDp2YWdyYW50\nContent-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "9fde6b69-ffe8-aacf-bcc0-3df61cacdd4a",
+			"name": "GET Apigility third request",
+			"url": "http://apigility/propulsion-systems/a745187d-a5b2-4850-8cc2-e19880627533",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic dmFncmFudDp2YWdyYW50",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\"Type\":\"Traditional Rocket\", \"Propellant\":\"Chemical\"}",
+			"headers": "Accept: application/json\nContent-Type: application/json\nAuthorization: Basic dmFncmFudDp2YWdyYW50\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "a1d1024f-98c1-c7c5-3558-3e61b13c10f7",
+			"name": "POST Apigility second request",
+			"url": "http://apigility/propulsion-systems",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic ZGFyeWw6b2RpZXRoZWJlc3Q=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"basic": [
+					{
+						"key": "password",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				],
+				"type": "basic"
+			},
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\"type\":\"Solar Sail\", \"propellant\":\"High energy laser\"}",
+			"headers": "Accept: application/json\nContent-Type: application/json\nAuthorization: Basic ZGFyeWw6b2RpZXRoZWJlc3Q=\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b8f1363a-f1c2-4d3e-1aad-83ccfbb70a5b",
+			"name": "POST Apigility first request",
+			"url": "http://apigility/propulsion-systems",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic ZGFyeWw6b2RpZXRoZWJlc3Q=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"basic": [
+					{
+						"key": "password",
+						"value": "vagrant"
+					},
+					{
+						"key": "username",
+						"value": "vagrant"
+					}
+				],
+				"type": "basic"
+			},
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\"type\":\"Traditional Rocket\", \"propellant\":\"Chemical\"}",
+			"headers": "Accept: application/json\nContent-Type: application/json\nAuthorization: Basic ZGFyeWw6b2RpZXRoZWJlc3Q=\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c6ba0bbf-55b0-1f4f-bba3-b0bd7fcdbc9d",
+			"name": "PATCH Apigility request",
+			"url": "http://apigility/propulsion-systems/e4d69bd7-10e9-4913-95ab-90fe18d53104",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic dmFncmFudDp2YWdyYW50",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"method": "PATCH",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				]
+			},
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\"Type\":\"Solar Sail\", \"Propellant\":\"High energy laser beam\"}",
+			"headers": "Accept: application/json\nAuthorization: Basic dmFncmFudDp2YWdyYW50\nContent-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d68cc2a5-0dd8-ef88-7bfc-15e4fb0953d3",
+			"name": "GET Apigility first request",
+			"url": "http://apigility/propulsion-systems/e4d69bd7-10e9-4913-95ab-90fe18d53104",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic ZGFyeWw6b2RpZXRoZWJlc3Q=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"basic": [
+					{
+						"key": "password",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "vagrant",
+						"type": "string"
+					},
+					{
+						"key": "saveHelperData",
+						"value": true,
+						"type": "boolean"
+					},
+					{
+						"key": "showPassword",
+						"value": false,
+						"type": "boolean"
+					}
+				],
+				"type": "basic"
+			},
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\"Type\":\"Traditional Rocket\", \"Propellant\":\"Chemical\"}",
+			"headers": "Accept: application/json\nContent-Type: application/json\nAuthorization: Basic ZGFyeWw6b2RpZXRoZWJlc3Q=\n",
+			"pathVariables": {}
+		}
+	]
+}

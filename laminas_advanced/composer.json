@@ -1,0 +1,32 @@
+{
+    "require": {
+        "laminas/laminas-db": "*",
+        "laminas/laminas-hydrator": "*",
+        "laminas/laminas-filter": "*",
+        "laminas/laminas-servicemanager": "*",
+        "laminas/laminas-eventmanager": "*",
+        "laminas/laminas-debug": "*",
+        "laminas/laminas-form": "*",
+        "laminas/laminas-mvc": "*",
+        "laminas/laminas-cache": "*",
+        "laminas/laminas-math": "*",
+        "laminas/laminas-session": "*",
+        "laminas/laminas-i18n": "*",
+        "laminas/laminas-log": "*",
+        "laminas/laminas-mail": "*",
+        "laminas/laminas-permissions-acl": "*",
+        "laminas/laminas-permissions-rbac": "*",
+        "laminas/laminas-authentication": "*",
+        "laminas/laminas-ldap": "^2.10",
+        "laminas/laminas-crypt": "*",
+        "laminas/laminas-navigation": "*",
+        "laminas/laminas-xmlrpc": "^2.7",
+        "laminas/laminas-soap": "^2.7",
+        "laminas/laminas-developer-tools": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    }
+}

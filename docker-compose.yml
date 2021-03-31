@@ -1,0 +1,22 @@
+version: "3"
+services:
+  laminas-2:
+    container_name: laminas_2
+    hostname: laminas
+    image: laminas_2
+    volumes:
+     - ".:/home"
+    ports:
+     - "8888:80"
+    build: docker
+    restart: always
+    command: /tmp/init.sh
+    networks:
+      app_net:
+        ipv4_address: 10.20.20.20
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "10.20.20.0/24"

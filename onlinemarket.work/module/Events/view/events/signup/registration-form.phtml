@@ -1,0 +1,66 @@
+<?php use Events\Entity\RegistrationEntity; ?>
+<div class="col-lg-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Event Signup</h2>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" action="/events/signup/<?= $this->event->getId() ?>" method="POST">
+                <input type="hidden" name="registration[event_id]" value="<?= $this->event->getId() ?>" />
+                <input type="hidden" name="registration[registration_time]" value="<?= date(RegistrationEntity::DATE_FORMAT) ?>" />
+                <fieldset>
+
+                    <!-- //*** FORMS AND FIELDSETS LAB: refactor to use Zend\Form object -->
+                    <!-- Form Name -->
+                    <legend>Event Signup</legend>
+
+                    Please fill out all items as appropriate.
+
+                    <div class="control-group">
+                        <label class="control-label">Event</label>
+                        <div class="controls">
+                            <span class=""><?= $this->event->getName() ?></span>
+                        </div>
+                    </div>
+
+
+                    <!-- Text input-->
+                    <div class="control-group">
+<!--                        Todo: Fix this lacking label issue-->
+                        <label class="control-label"><?= $this->formLabel($this->registrationForm->get('first_name')); ?></label>
+                        <div class="controls">
+                            <?= $this->formText($this->registrationForm->get('first_name')); ?>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="control-group">
+                        <label class="control-label"><?= $this->formLabel($this->registrationForm->get('last_name')); ?></label>
+                        <div class="controls">
+                            <?= $this->formText($this->registrationForm->get('last_name')); ?>
+                        </div>
+                    </div>
+
+                    <div id="ticket-list" data-ticket-count="1">
+
+                        <div class="control-group">
+                            <label class="control-label"><?= $this->formLabel($this->registrationForm->get('attendee_0')->get('name_on_ticket[]')); ?></label>
+                            <div class="controls">
+                                <?php for ($x = 0; $x < \Events\Module::MAX_NAMES_PER_TICKET; $x++) : ?>
+                                    <?= $this->formMultiText($this->registrationForm->get('attendee_' . $x)->get('name_on_ticket[]')); ?>
+                                <?php endfor; ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="control-group">
+                        <label class="control-label"></label>
+                        <div class="controls">
+                            <button id="" name="" class="btn btn-success">Sign Up!</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+    </div>
+</div>

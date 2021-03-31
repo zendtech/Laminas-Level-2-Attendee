@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default" style="height:500px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Register</h3>
+            </div>
+            <div class="panel-body">
+                <?php $this->registrationForm->setAttributes(['action' => $this->url('registration')]); ?>
+                <?php $this->registrationForm->prepare(); ?>
+                <?= $this->form()->openTag($this->registrationForm); ?>
+                <dt><?= $this->formLabel($this->registrationForm->get('email')); ?></dt>
+                <dd><?= $this->formEmail($this->registrationForm->get('email')); ?><?= $this->formElementErrors($this->registrationForm->get('email')); ?></dd>
+                <dt><?= $this->formLabel($this->registrationForm->get('password')); ?></dt>
+                <dd><?= $this->formPassword($this->registrationForm->get('password')); ?><?= $this->formElementErrors($this->registrationForm->get('password')); ?></dd>
+                <dt><?= $this->formLabel($this->registrationForm->get('username')); ?></dt>
+                <dd><?= $this->formText($this->registrationForm->get('username')); ?><?= $this->formElementErrors($this->registrationForm->get('username')); ?></dd>
+                <dt><?= $this->formLabel($this->registrationForm->get('securityQuestion')); ?></dt>
+                <dd><?= $this->formText($this->registrationForm->get('securityQuestion')); ?><?= $this->formElementErrors($this->registrationForm->get('securityQuestion')); ?></dd>
+                <dt><?= $this->formLabel($this->registrationForm->get('securityAnswer')); ?></dt>
+                <dd><?= $this->formText($this->registrationForm->get('securityAnswer')); ?><?= $this->formElementErrors($this->registrationForm->get('securityAnswer')); ?></dd>
+                <dt><?= $this->formLabel($this->registrationForm->get('role')); ?></dt>
+                <dd><?= $this->formRadio($this->registrationForm->get('role')); ?><?= $this->formElementErrors($this->registrationForm->get('role')); ?></dd>
+                <p><span class="btn btn-success"><?= $this->formSubmit($this->registrationForm->get('submit')); ?></span></p>
+                <?= $this->formHidden($this->registrationForm->get('hash')); ?>
+                <?= $this->form()->closeTag(); ?>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center">
+        <?php echo $this->message; ?>
+    </div>
+</div>

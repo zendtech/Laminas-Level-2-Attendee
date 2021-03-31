@@ -1,0 +1,675 @@
+{
+	"info": {
+		"_postman_id": "f0f0c2da-e7fb-4b37-ac52-bcac55b75114",
+		"name": "Flying Elephant Apigility.Complete",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Apigility first request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vagrant",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ZGFyeWw6b2RpZXRoZWJlc3Q="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"type\":\"Traditional Rocket\", \"propellant\":\"Chemical\"}"
+				},
+				"url": {
+					"raw": "http://apigility.complete/propulsion-systems",
+					"protocol": "http",
+					"host": [
+						"apigility",
+						"complete"
+					],
+					"path": [
+						"propulsion-systems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Apigility second request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ZGFyeWw6b2RpZXRoZWJlc3Q="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"type\":\"Solar Sail\", \"propellant\":\"High energy laser\"}"
+				},
+				"url": {
+					"raw": "http://apigility.complete/propulsion-systems",
+					"protocol": "http",
+					"host": [
+						"apigility",
+						"complete"
+					],
+					"path": [
+						"propulsion-systems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Apigility third request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"type\":\"Fusion Rocket\", \"propellant\":\"Nuclear fusion reaction\"}"
+				},
+				"url": {
+					"raw": "http://apigility.complete/propulsion-systems",
+					"protocol": "http",
+					"host": [
+						"apigility",
+						"complete"
+					],
+					"path": [
+						"propulsion-systems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Apigility fourth request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"type\":\"Antimatter Rocket\", \"propellant\":\"High density matter/antimatter reaction\"}"
+				},
+				"url": {
+					"raw": "http://apigility.complete/propulsion-systems",
+					"protocol": "http",
+					"host": [
+						"apigility",
+						"complete"
+					],
+					"path": [
+						"propulsion-systems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Apigility first request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ZGFyeWw6b2RpZXRoZWJlc3Q="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://apigility.complete/propulsion-systems/e4d69bd7-10e9-4913-95ab-90fe18d53104",
+					"protocol": "http",
+					"host": [
+						"apigility",
+						"complete"
+					],
+					"path": [
+						"propulsion-systems",
+						"e4d69bd7-10e9-4913-95ab-90fe18d53104"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Apigility second request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://apigility.complete/propulsion-systems/01d1c119-bf97-4a05-b5d6-d94d950d049f",
+					"protocol": "http",
+					"host": [
+						"apigility",
+						"complete"
+					],
+					"path": [
+						"propulsion-systems",
+						"01d1c119-bf97-4a05-b5d6-d94d950d049f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Apigility third request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://apigility.complete/propulsion-systems/a745187d-a5b2-4850-8cc2-e19880627533",
+					"protocol": "http",
+					"host": [
+						"apigility",
+						"complete"
+					],
+					"path": [
+						"propulsion-systems",
+						"a745187d-a5b2-4850-8cc2-e19880627533"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Apigility fourth request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://apigility.complete/propulsion-systems/5cd8d70c-89e2-43c7-86ac-4778cf4a2ac4",
+					"protocol": "http",
+					"host": [
+						"apigility",
+						"complete"
+					],
+					"path": [
+						"propulsion-systems",
+						"5cd8d70c-89e2-43c7-86ac-4778cf4a2ac4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Apigility collection request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://apigility.complete/propulsion-systems",
+					"protocol": "http",
+					"host": [
+						"apigility",
+						"complete"
+					],
+					"path": [
+						"propulsion-systems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Apigility request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"type\":\"Solar Sail\", \"propellant\":\"High energy laser beam\"}"
+				},
+				"url": {
+					"raw": "http://apigility.complete/propulsion-systems/e4d69bd7-10e9-4913-95ab-90fe18d53104",
+					"protocol": "http",
+					"host": [
+						"apigility",
+						"complete"
+					],
+					"path": [
+						"propulsion-systems",
+						"e4d69bd7-10e9-4913-95ab-90fe18d53104"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Apigility request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vagrant",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dmFncmFudDp2YWdyYW50"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"type\":\"Solar Sail\", \"propellant\":\"High energy laser beam\"}"
+				},
+				"url": {
+					"raw": "http://apigility/propulsion-systems/e4d69bd7-10e9-4913-95ab-90fe18d53104",
+					"protocol": "http",
+					"host": [
+						"apigility"
+					],
+					"path": [
+						"propulsion-systems",
+						"e4d69bd7-10e9-4913-95ab-90fe18d53104"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

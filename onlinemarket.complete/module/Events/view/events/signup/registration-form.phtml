@@ -1,0 +1,55 @@
+<?php
+use Events\Entity\RegistrationEntity;
+$id = $this->event->getId();
+$url = $this->url() . $id;
+?>
+<div class="col-lg-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Event Signup</h2>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" action="<?= $url ?>" method="POST">
+                <input type="hidden" name="registration[event_id]" value="<?= $id ?>" />
+                <input type="hidden" name="registration[registration_time]" value="<?= date(RegistrationEntity::DATE_FORMAT) ?>" />
+                <fieldset>
+
+                    <!-- //*** FORMS AND FIELDSETS LAB: refactor to use Zend\Form object -->
+                    <!-- Form Name -->
+                    <span>All items required.</span>
+
+                    <div class="control-group">
+                        <label class="control-label">Event</label>
+                        <div class="controls">
+                            <span class=""><?= $this->event->getName() ?></span>
+                        </div>
+                    </div>
+
+
+                    <!-- Text input-->
+                    <div class="control-group">
+                        <label class="control-label"><?= $this->formLabel($this->registrationForm->get('first_name')); ?></label>
+                        <div class="controls">
+                            <?= $this->formText($this->registrationForm->get('first_name')); ?>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="control-group">
+                        <label class="control-label"><?= $this->formLabel($this->registrationForm->get('last_name')); ?></label>
+                        <div class="controls">
+                            <?= $this->formText($this->registrationForm->get('last_name')); ?>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="control-group">
+                        <label class="control-label"></label>
+                        <div class="controls">
+                            <button id="" name="" class="btn btn-success">Sign Up!</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+    </div>
+</div>

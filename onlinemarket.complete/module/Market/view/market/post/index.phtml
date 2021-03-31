@@ -1,0 +1,102 @@
+<style>
+    label {
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+</style><h1><?= 'Online Market Posting' ?></h1>
+<hr/>
+
+<?php if ($this->flashMessenger()->hasMessages()) : ?>
+    <h3 style="color:red;">Messages</h3>
+    <?= $this->htmlList($this->flashMessenger()->getMessages()); ?>
+    <h3 style="color:red;">Invalid Fields</h3>
+    <ul>
+        <?php foreach ($this->postForm->getInputFilter()->getInvalidInput() as $input) : ?>
+            <li>
+                <?= $input->getName() . ':' ?><?php foreach ($input->getValidatorChain()->getValidators() as $chain) : ?><?php foreach ($chain as $validator) : ?><?php if ($validator && is_object($validator)) : ?><?php $error = $validator->getMessages(); ?>
+                    <?= implode(',', $error); ?><?php endif; ?><?php endforeach; ?><?php endforeach; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <?= '<hr />' ?><?php endif; ?>
+
+<style>
+    dt {
+        text-align: left;
+    }
+</style>
+
+<?php $postForm = $this->postForm; ?>
+<?php $postForm->prepare(); ?>
+<?php echo $this->form()->openTag($postForm); ?>
+
+<table>
+    <tr>
+        <td style="vertical-align:top;">
+            <dt><?= $this->formLabel($postForm->get('category')); ?></dt>
+            <dd><?= $this->formSelect($postForm->get('category')); ?><?= $this->formElementErrors($postForm->get('category')); ?></dd>
+        </td>
+        <td style="vertical-align:top;">
+            <dt><?= $this->formLabel($postForm->get('title')); ?></dt>
+            <dd><?= $this->formText($postForm->get('title')); ?><?= $this->formElementErrors($postForm->get('title')); ?></dd>
+        </td>
+    </tr>
+    <tr>
+        <!-- //*** FILE UPLOAD LAB: convert to the view helper for file uploads -->
+        <td style="vertical-align:top;">
+            <dt><?= $this->formLabel($postForm->get('photo_filename')); ?></dt>
+            <dd><?= $this->formFile($postForm->get('photo_filename')); ?><?= $this->formElementErrors($postForm->get('photo_filename')); ?></dd>
+        </td>
+
+        <td style="vertical-align:top;">
+            <dt><?= $this->formLabel($postForm->get('price')); ?></dt>
+            <dd><?= $this->formText($postForm->get('price')); ?><?= $this->formElementErrors($postForm->get('price')); ?></dd>
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align:top;">
+            <dt><?= $this->formLabel($postForm->get('cityCode')); ?></dt>
+            <dd><?= $this->formText($postForm->get('cityCode')); ?><?= $this->formElementErrors($postForm->get('cityCode')); ?></dd>
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="vertical-align:top;">
+            <dt><?= $this->formLabel($postForm->get('contact_name')); ?></dt>
+            <dd><?= $this->formText($postForm->get('contact_name')); ?><?= $this->formElementErrors($postForm->get('contact_name')); ?></dd>
+        </td>
+        <td style="vertical-align:top;">
+            <dt><?= $this->formLabel($postForm->get('contact_phone')); ?></dt>
+            <dd><?= $this->formText($postForm->get('contact_phone')); ?><?= $this->formElementErrors($postForm->get('contact_phone')); ?></dd>
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align:top;">
+            <dt><?= $this->formLabel($postForm->get('contact_email')); ?></dt>
+            <dd><?= $this->formEmail($postForm->get('contact_email')); ?><?= $this->formElementErrors($postForm->get('contact_email')); ?></dd>
+        </td>
+        <td style="vertical-align:top;">
+            <dt><?= $this->formLabel($postForm->get('delete_code')); ?></dt>
+            <dd><?= $this->formText($postForm->get('delete_code')); ?><?= $this->formElementErrors($postForm->get('delete_code')); ?></dd>
+        </td>
+    </tr>
+    <tr>
+        <td colspan=2 style="vertical-align:top;">
+            <dt><?= $this->formLabel($postForm->get('expires')); ?></dt>
+            <dd><?= $this->formRadio($postForm->get('expires')); ?><?= $this->formElementErrors($postForm->get('expires')); ?></dd>
+        </td>
+    </tr>
+    <tr>
+        <td colspan=2 style="vertical-align:top;">
+            <dt><?= $this->formLabel($postForm->get('description')); ?></dt>
+            <dd><?= $this->formTextarea($postForm->get('description')); ?><?= $this->formElementErrors($postForm->get('description')); ?></dd>
+        </td>
+    </tr>
+</table>
+<dt><?= $this->formLabel($postForm->get('captcha')); ?></dt>
+<dd><?= $this->formCaptcha($postForm->get('captcha')); ?><?= $this->formElementErrors($postForm->get('captcha')); ?></dd>
+<p style="color:white;"><?= $this->formSubmit($postForm->get('submit')); ?></p>
+<?php echo $this->formHidden($postForm->get('hash')); ?>
+<?php echo $this->form()->closeTag(); ?>
+<?php Zend\Debug\Debug::dump($data); ?>
