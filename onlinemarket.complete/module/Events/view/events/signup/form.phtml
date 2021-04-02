@@ -11,7 +11,7 @@ use Events\Entity\RegistrationEntity;
         <input type="hidden" name="registration[event_id]" value="<?= $this->event->getId() ?>" />
         <input type="hidden" name="registration[registration_time]" value="<?= date(RegistrationEntity::DATE_FORMAT) ?>" />
             <fieldset>
-                <!-- //*** FORMS AND FIELDSETS LAB: refactor to use Zend\Form object -->
+                <!-- //*** FORMS AND FIELDSETS LAB: refactor to use Laminas\Form object -->
                 <!-- Form Name -->
                 <legend>Event Signup</legend>
                 Please fill out all items as appropriate.

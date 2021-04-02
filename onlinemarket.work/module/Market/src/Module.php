@@ -3,9 +3,9 @@ namespace Market;
 
 use Model\Table\ListingsTable;
 use Market\Event\LogEvent;
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 //*** NAVIGATION LAB: add "use" statement for the ConstructedNavigationFactory
-use Zend\Navigation\Service\ConstructedNavigationFactory;
+use Laminas\Navigation\Service\ConstructedNavigationFactory;
 
 class Module
 {

@@ -4,11 +4,11 @@ namespace Events\Model\Factory;
 
 use Events\Model\BaseEventsTableModel;
 use Interop\Container\ContainerInterface;
-use Zend\Db\ {
+use Laminas\Db\ {
     ResultSet\HydratingResultSet,
     TableGateway\TableGateway
 };
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class BaseTableModelFactory implements FactoryInterface
 {

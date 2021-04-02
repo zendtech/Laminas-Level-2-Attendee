@@ -4,11 +4,11 @@
  */
 
 namespace Login\Form;
-use Zend\InputFilter\InputFilter;
-use Zend\Filter\StringTrim;
-use Zend\Filter\StripTags;
-use Zend\InputFilter\InputFilterInterface;
-use Zend\Validator\EmailAddress;
+use Laminas\InputFilter\InputFilter;
+use Laminas\Filter\StringTrim;
+use Laminas\Filter\StripTags;
+use Laminas\InputFilter\InputFilterInterface;
+use Laminas\Validator\EmailAddress;
 
 class QuestionFormInputFilter extends InputFilter {
     public function __construct()

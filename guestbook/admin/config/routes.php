@@ -21,7 +21,7 @@
  * $app->route(
  *     '/contact',
  *     App\Action\ContactAction::class,
- *     Zend\Expressive\Router\Route::HTTP_METHOD_ANY,
+ *     Mezzio\Router\Route::HTTP_METHOD_ANY,
  *     'contact'
  * );
  */

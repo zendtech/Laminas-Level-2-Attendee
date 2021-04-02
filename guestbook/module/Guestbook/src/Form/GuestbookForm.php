@@ -1,6 +1,6 @@
 <?php
 namespace Guestbook\Form;
-use Zend\Form\{
+use Laminas\Form\{
     Form,
     Element\Text,
     Element\Email,
@@ -9,8 +9,8 @@ use Zend\Form\{
     Element\File,
     Element\Submit
 };
-use Zend\InputFilter\{InputFilterInterface};
-use Zend\Hydrator\HydratorInterface;
+use Laminas\InputFilter\{InputFilterInterface};
+use Laminas\Hydrator\HydratorInterface;
 class GuestbookForm extends Form
 {
     public function __construct(

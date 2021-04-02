@@ -2,9 +2,9 @@
 //*** CACHE LAB
 namespace Market\Listener;
 use Market\Controller\ViewController;
-use Zend\Cache\Storage\StorageInterface;
-use Zend\Mvc\MvcEvent;
-use Zend\EventManager\ {AbstractListenerAggregate, EventManagerInterface};
+use Laminas\Cache\Storage\StorageInterface;
+use Laminas\Mvc\MvcEvent;
+use Laminas\EventManager\ {AbstractListenerAggregate, EventManagerInterface};
 
 class CacheAggregate extends AbstractListenerAggregate
 {

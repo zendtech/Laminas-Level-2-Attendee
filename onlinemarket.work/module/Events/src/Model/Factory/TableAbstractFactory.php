@@ -2,7 +2,7 @@
 namespace Events\Model\Factory;
 use Events\Entity\EventEntity;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\AbstractFactoryInterface;
+use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
 
 class TableAbstractFactory implements AbstractFactoryInterface {
     public function canCreate(ContainerInterface $container, $requestedName){

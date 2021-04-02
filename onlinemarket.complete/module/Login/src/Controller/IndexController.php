@@ -5,10 +5,10 @@ use Application\Model\AbstractTableGateway;
 use Login\Event\LoginEvent;
 use Model\Entity\UserEntity;
 use Translation\Listener\Event;
-use Zend\Form\FormInterface;
-use Zend\Log\Logger;
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\Form\FormInterface;
+use Laminas\Log\Logger;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
 
 class IndexController extends AbstractActionController
 {
@@ -71,7 +71,7 @@ class IndexController extends AbstractActionController
                     $this->logMessage(Logger::WARN, $message);
                 }
             }
-            //*** to use this plugin, install it: "composer require zendframework/zend-mvc-plugin-flashmessenger"
+            //*** to use this plugin, install it: "composer require laminas/laminas-mvc-plugin-flashmessenger"
             $this->flashMessenger()->addMessage($message);
         }
         $message = $message ?: implode('<br>', $this->flashMessenger()->getMessages());

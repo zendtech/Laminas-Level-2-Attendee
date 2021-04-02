@@ -3,7 +3,7 @@ namespace SecurePost;
 
 use Registration\Form\RegForm;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 
 class Module
 {
@@ -15,7 +15,7 @@ class Module
     {
 		return [
 			'factories' => [
-				//** DELEGATORS LAB: Create a new service which returns a "Zend\Form\Element\Csrf" element
+				//** DELEGATORS LAB: Create a new service which returns a "Laminas\Form\Element\Csrf" element
 				//** DELEGATORS LAB: define a factory which calls the callback to generate the form, and adds a CSRF form element
 			],
 			'delegators' => [

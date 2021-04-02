@@ -1,7 +1,7 @@
 <?php
 namespace Notification;
 
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 use Interop\Container\ContainerInterface;
 //*** EMAIL LAB: add the appropriate "use" statements
 

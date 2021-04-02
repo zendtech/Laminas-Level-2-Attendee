@@ -1,40 +1,24 @@
 #!/usr/bin/env bash
 # Usage: phpmyadmin_install.sh VERSION
 
-echo "Installing Guestbook ..."
-cd /home/guestbook
-composer install
-
-echo "Installing Onlinemarket Complete ..."
-cd /home/onlinemarket.complete
-composer install
-
 echo "Installing Onlinemarket Work ..."
 cd /home/onlinemarket.work
-composer install
-
-echo "Installing Laminas Advanced Examples ..."
-cd /home/laminas_advanced
-composer install
-
-echo "Installing Laminas API Tools ... "
-cd /home
-if [[ -f "/home/laminas_api_tools" ]]; then
-    cd laminas_api_tools
-    composer update
-elif
-    composer create-project laminas-api-tools/api-tools-skeleton laminas_api_tools
-fi
+composer update
 
 echo "Setting up Apache ..."
 echo "ServerName laminas" >> /etc/httpd/httpd.conf
 ln -f -s /home/sandbox/public /srv/www/sandbox
-ln -f -s /home/guestbook/public /srv/www/guestbook
-ln -f -s /home/onlinemarket.complete/public /srv/www/onlinemarket.complete
+ln -f -s /home/onlinemarket.work/public /srv/www/onlinemarket.work
+ln -f -s /srv/repo/guestbook/public /srv/www/guestbook
+ln -f -s /srv/repo/onlinemarket.complete/public /srv/www/onlinemarket.complete
 
 echo "Setting permissions ..."
-chmod +x /tmp/*.sh
-/tmp/reset_perms.sh
+chown apache:apache /srv/www
+chgrp apache /srv/www/*
+chgrp -R apache /srv/repo
+chmod -R 775 /srv/repo
+chgrp -R apache /home/onlinemarket.work
+chmod -R 775 /home/onlinemarket.work
 
 echo "Initializing MySQL, PHP-FPM and Apache ... "
 /etc/init.d/mysql start

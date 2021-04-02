@@ -4,7 +4,7 @@ use DateTime;
 use InvalidArgumentException;
 use AccessControl\Assertion\DateTimeAssert;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 class DateTimeAssertFactory implements FactoryInterface
 {
     const ERROR_CONFIG = 'ERROR: missing Config key "access-control-Config => assertions => date-time-assert-Config"';

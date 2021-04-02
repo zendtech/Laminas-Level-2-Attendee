@@ -3,11 +3,11 @@ namespace Guestbook\Mapper\Factory;
 use Guestbook\Mapper\GuestbookMapper;
 use Guestbook\Model\GuestbookModel;
 use Interop\Container\ContainerInterface;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Db\TableGateway\{Feature\EventFeature, TableGateway};
-use Zend\EventManager\EventManager;
-use Zend\ServiceManager\Factory\FactoryInterface;
-use Zend\Hydrator\ObjectPropertyHydrator;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\Db\TableGateway\{Feature\EventFeature, TableGateway};
+use Laminas\EventManager\EventManager;
+use Laminas\ServiceManager\Factory\FactoryInterface;
+use Laminas\Hydrator\ObjectPropertyHydrator;
 class GuestbookMapperFactory implements FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, ?array $options = NULL)

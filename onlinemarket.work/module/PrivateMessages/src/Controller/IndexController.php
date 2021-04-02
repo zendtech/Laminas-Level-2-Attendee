@@ -4,9 +4,9 @@ namespace PrivateMessages\Controller;
 use PrivateMessages\Form\Send as SendForm;
 use PrivateMessages\Model\ {Message, MessagesTable};
 
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Authentication\AuthenticationService;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\Authentication\AuthenticationService;
 
 class IndexController extends AbstractActionController
 {

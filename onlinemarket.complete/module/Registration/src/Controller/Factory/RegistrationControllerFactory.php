@@ -4,7 +4,7 @@ use Model\Model\UsersModel;
 use Registration\Form\RegistrationForm;
 use Registration\Controller\RegistrationController;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class RegistrationControllerFactory implements FactoryInterface
 {

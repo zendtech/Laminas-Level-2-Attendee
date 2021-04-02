@@ -13,7 +13,7 @@ use Model\Adapter\{
 
 };
 use Model\Hydrator\ListingsHydrator;
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
     'service_manager' => [

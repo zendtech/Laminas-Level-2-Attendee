@@ -1,9 +1,9 @@
 <?php
 namespace AccessControl\Listener;
 
-use Zend\Mvc\MvcEvent;
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
+use Laminas\Mvc\MvcEvent;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
 use Guestbook\Controller\IndexController;
 class AclListenerAggregate implements ListenerAggregateInterface
 {

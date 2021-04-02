@@ -1,6 +1,6 @@
 <?php
-use Zend\ComponentInstaller\ConfigDiscovery\ConfigAggregator;
-//use Zend\ConfigAggregator\{ArrayProvider, PhpFileProvider};
+use Laminas\ComponentInstaller\ConfigDiscovery\ConfigAggregator;
+//use Laminas\ConfigAggregator\{ArrayProvider, PhpFileProvider};
 
 
 // To enable or disable caching, set the `ConfigAggregator::ENABLE_CACHE` boolean in
@@ -10,10 +10,10 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
-    \Zend\Db\ConfigProvider::class,
+    \Laminas\Db\ConfigProvider::class,
     \Manage\ConfigProvider::class,
-    \Zend\Router\ConfigProvider::class,
-    \Zend\Validator\ConfigProvider::class,
+    \Laminas\Router\ConfigProvider::class,
+    \Laminas\Validator\ConfigProvider::class,
     // Include cache configuration
     new ArrayProvider($cacheConfig),
 

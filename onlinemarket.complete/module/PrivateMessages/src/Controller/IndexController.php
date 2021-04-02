@@ -3,9 +3,9 @@ namespace PrivateMessages\Controller;
 use Model\Entity\UserEntity;
 use PrivateMessages\Form\SendForm;
 use PrivateMessages\Model\ {MessageEntity, MessagesModel};
-use Zend\Form\FormInterface;
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\Form\FormInterface;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
 
 class IndexController extends AbstractActionController
 {

@@ -1,8 +1,8 @@
 <?php
 namespace RestApi\Controller;
 use RestApi\Service\ApiService;
-use Zend\View\Model\JsonModel;
-use Zend\Mvc\Controller\AbstractRestfulController;
+use Laminas\View\Model\JsonModel;
+use Laminas\Mvc\Controller\AbstractRestfulController;
 
 class ApiController extends AbstractRestfulController
 {

@@ -21,21 +21,21 @@ use Events\Fieldset\{
     AttendeeFieldset,
     RegistrationFieldset
 };
-use Zend\Filter\{
+use Laminas\Filter\{
     FilterChain,
     StringTrim,
     StripTags
 };
-use Zend\Db\ {ResultSet\HydratingResultSet,
+use Laminas\Db\ {ResultSet\HydratingResultSet,
     TableGateway\TableGateway
 };
 use Interop\Container\ContainerInterface;
-use Zend\Hydrator\ClassMethodsHydrator;
-use Zend\Hydrator\ObjectPropertyHydrator;
-use Zend\Form\Annotation\AnnotationBuilder;
+use Laminas\Hydrator\ClassMethodsHydrator;
+use Laminas\Hydrator\ObjectPropertyHydrator;
+use Laminas\Form\Annotation\AnnotationBuilder;
 //*** DELEGATING HYDRATOR LAB: add the correct "use" statements
 //*** NAVIGATION LAB: add "use" statement for the ConstructedNavigationFactory
-use Zend\Navigation\Service\ConstructedNavigationFactory;
+use Laminas\Navigation\Service\ConstructedNavigationFactory;
 
 class Module
 {
@@ -180,7 +180,7 @@ class Module
                         $container->get('events-table-resultSet')
                     );
                 },
-                //*** DELEGATING HYDRATOR LAB: define a service which returns an instance of Zend\Hydrator\DelegatingHydrator
+                //*** DELEGATING HYDRATOR LAB: define a service which returns an instance of Laminas\Hydrator\DelegatingHydrator
                 'events-delegating-hydrator' => function (ContainerInterface $container) {
                     //*** DELEGATING HYDRATOR LAB: assign a "ObjectProperty" hydrator to the "RegistrationEntity" entity and "ClassMethods" to the others
                 },

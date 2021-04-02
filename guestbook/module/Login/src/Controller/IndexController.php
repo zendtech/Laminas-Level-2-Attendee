@@ -4,11 +4,11 @@ use Application\Traits\SessionTrait;
 use ArrayObject;
 use Guestbook\Listener\CacheListenerAggregate;
 use Login\Model\ {User};
-use Zend\Db\TableGateway\TableGatewayInterface;
-use Zend\Form\FormInterface;
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Authentication\{Adapter\ValidatableAdapterInterface,
+use Laminas\Db\TableGateway\TableGatewayInterface;
+use Laminas\Form\FormInterface;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\Authentication\{Adapter\ValidatableAdapterInterface,
     AuthenticationServiceInterface};
 
 class IndexController extends AbstractActionController

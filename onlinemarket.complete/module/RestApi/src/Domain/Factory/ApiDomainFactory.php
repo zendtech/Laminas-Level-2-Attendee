@@ -3,7 +3,7 @@ namespace RestApi\Domain\Factory;
 use Model\Model\UsersModel;
 use RestApi\Domain\ApiDomain;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ApiDomainFactory implements FactoryInterface
 {

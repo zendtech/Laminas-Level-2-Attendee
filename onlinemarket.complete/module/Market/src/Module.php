@@ -1,10 +1,10 @@
 <?php
 namespace Market;
 use Model\Model\ListingsModel;
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 use Market\Controller\ListingsTableAwareInterface;
 //*** NAVIGATION LAB: add "use" statement for the ConstructedNavigationFactory
-use Zend\Navigation\Service\ConstructedNavigationFactory;
+use Laminas\Navigation\Service\ConstructedNavigationFactory;
 class Module
 {
     public function getConfig()

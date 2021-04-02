@@ -1,17 +1,18 @@
 <?php
 return [
-    'Zend\Session',
-    'Zend\Cache',
-    'Zend\Form',
-    'Zend\InputFilter',
-    'Zend\Filter',
-    'Zend\Hydrator',
-    'Zend\I18n',
-    'Zend\Db',
-    'Zend\Log',
-    'Zend\Router',
-    'Zend\Validator',
-    'Zend\Mvc\Plugin\FlashMessenger',
+    'Laminas\ZendFrameworkBridge',
+    'Laminas\Session',
+    'Laminas\Cache',
+    'Laminas\Form',
+    'Laminas\InputFilter',
+    'Laminas\Filter',
+    'Laminas\Hydrator',
+    'Laminas\I18n',
+    'Laminas\Db',
+    'Laminas\Log',
+    'Laminas\Router',
+    'Laminas\Validator',
+    'Laminas\Mvc\Plugin\FlashMessenger',
     'Application',
     'Market',
     'Model',
@@ -27,7 +28,7 @@ return [
     //*** LOGGER LAB
     'Logging',
     //*** EMAIL LAB
-    'Zend\Mail',
+    'Laminas\Mail',
     'Notification',
     //*** AUTHENTICATION LAB
     'Login',
@@ -35,7 +36,7 @@ return [
     'AccessControl',
     'PrivateMessages',
     //*** NAVIGATION LAB
-    'Zend\Navigation',
+    'Laminas\Navigation',
     //*** REST LAB
     'RestApi',
 ];

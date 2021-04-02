@@ -3,7 +3,7 @@ namespace Events\TableModule\Controller\Factory;
 use Events\TableModule\Controller\SignupController;
 use Events\TableModule\Model\ {EventModel,RegistrationTable, AttendeeTable};
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class SignupControllerFactory implements FactoryInterface
 {

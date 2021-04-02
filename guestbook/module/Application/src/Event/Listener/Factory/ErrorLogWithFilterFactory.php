@@ -4,7 +4,7 @@ namespace Application\Event\Factory;
 use Application\Event\Filter\MaskCcnum;
 use Application\Event\Listener\ErrorLogWithFilter;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ErrorLogWithFilterFactory implements FactoryInterface
 {

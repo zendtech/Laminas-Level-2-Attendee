@@ -1,8 +1,8 @@
 <?php
 namespace PrivateMessages\Model;
-use Zend\Db\TableGateway\TableGateway;
+use Laminas\Db\TableGateway\TableGateway;
 use Zend\Debug\Debug;
-use Zend\Hydrator\HydratorInterface;
+use Laminas\Hydrator\HydratorInterface;
 
 class MessagesModel
 {

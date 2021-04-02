@@ -1,6 +1,6 @@
 <?php
 namespace Registration\Form\Factory;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 use Registration\Form\RegistrationFilter;
 

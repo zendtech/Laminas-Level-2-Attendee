@@ -1,12 +1,12 @@
 <?php
 namespace Login;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 use Login\Model\UsersModel;
 use Login\Auth\CustomStorageAuthentication;
 
 //*** AUTHENTICATION LAB: add required "use" statements
-use Zend\Authentication\AuthenticationService;
-use Zend\Authentication\Adapter\DbTable\CallbackCheckAdapter;
+use Laminas\Authentication\AuthenticationService;
+use Laminas\Authentication\Adapter\DbTable\CallbackCheckAdapter;
 
 //*** PASSWORD LAB: add required "use" statements
 use Login\Security\PasswordSecurity;

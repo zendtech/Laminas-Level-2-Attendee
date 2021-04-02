@@ -3,7 +3,7 @@ namespace Model\Hydrator\Factory;
 
 use Model\Hydrator\ListingsHydrator;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ListingsHydratorFactory implements FactoryInterface
 {

@@ -1,12 +1,12 @@
 <?php
 namespace Logging;
 
-use Zend\Mvc\ {MvcEvent};
+use Laminas\Mvc\ {MvcEvent};
 
 //*** LOGGER LAB: add the required "use" statements
-use Zend\Log\Logger;
-use Zend\Log\Writer\{Stream, FirePhp};
-use Zend\Log\Filter\Priority;
+use Laminas\Log\Logger;
+use Laminas\Log\Writer\{Stream, FirePhp};
+use Laminas\Log\Filter\Priority;
 
 class Module
 {

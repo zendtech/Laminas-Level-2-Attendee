@@ -1,9 +1,9 @@
 <?php
 namespace Events\Entity;
-use Zend\Form\Annotation as ABC;
+use Laminas\Form\Annotation as ABC;
 /**
  * @ABC\Name("registration")
- * @ABC\Hydrator("Zend\Hydrator\ClassMethodsHydrator")
+ * @ABC\Hydrator("Laminas\Hydrator\ClassMethodsHydrator")
  */
 class RegistrationEntity extends BaseEntity
 {

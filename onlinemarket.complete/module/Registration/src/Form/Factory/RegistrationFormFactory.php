@@ -2,7 +2,7 @@
 namespace Registration\Form\Factory;
 use Registration\Form\{RegistrationForm, RegistrationFilter};
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class RegistrationFormFactory implements FactoryInterface
 {

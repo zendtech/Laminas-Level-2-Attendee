@@ -4,7 +4,7 @@ use PrivateMessages\Controller\IndexController;
 use PrivateMessages\Form\SendForm as SendForm;
 use PrivateMessages\Model\MessagesTable;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class IndexControllerFactory implements FactoryInterface
 {

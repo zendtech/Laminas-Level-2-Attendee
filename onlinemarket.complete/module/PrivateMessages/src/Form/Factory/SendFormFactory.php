@@ -1,8 +1,8 @@
 <?php
 namespace PrivateMessages\Form\Factory;
 use PrivateMessages\Form\SendFormInputFilter;
-use Zend\Hydrator\ClassMethodsHydrator;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Hydrator\ClassMethodsHydrator;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 use PrivateMessages\Form\SendForm as SendForm;
 

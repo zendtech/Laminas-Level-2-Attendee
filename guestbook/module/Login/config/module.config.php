@@ -1,6 +1,6 @@
 <?php
 namespace Login;
-use Zend\Router\Http\Segment;
+use Laminas\Router\Http\Segment;
 use Login\Controller\{
     Factory\IndexControllerFactory,
     IndexController
@@ -19,7 +19,7 @@ use Login\Model\{
     Factory\UsersModelFactory,
     UsersModel,
 };
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
     'navigation' => [

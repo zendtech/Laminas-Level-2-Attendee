@@ -4,8 +4,8 @@ namespace Market\Form\Factory;
 use Model\Entity\ListingEntity;
 use Market\Form\ {PostForm, PostFilter};
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
-use Zend\Hydrator\ObjectPropertyHydrator;
+use Laminas\ServiceManager\Factory\FactoryInterface;
+use Laminas\Hydrator\ObjectPropertyHydrator;
 
 class PostFormFactory implements FactoryInterface
 {

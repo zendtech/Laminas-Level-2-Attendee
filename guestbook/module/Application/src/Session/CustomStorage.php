@@ -1,10 +1,10 @@
 <?php
 namespace Application\Session;
-use Zend\Db\Adapter\AdapterInterface;
-use Zend\Db\TableGateway\TableGatewayInterface;
+use Laminas\Db\Adapter\AdapterInterface;
+use Laminas\Db\TableGateway\TableGatewayInterface;
 use Zend\StdLib\ArrayObject;
-use Zend\Db\Adapter\Adapter;
-use Zend\Session\Storage\ArrayStorage;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Session\Storage\ArrayStorage;
 
 class CustomStorage extends ArrayStorage
 {

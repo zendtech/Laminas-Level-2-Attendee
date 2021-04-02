@@ -1,10 +1,10 @@
 <?php
 namespace Market\Form;
 
-use Zend\InputFilter\ {InputFilter,Input};
-use Zend\Filter\ {Digits, StripTags, StringTrim, StringToLower, StringToUpper, Callback};
-use Zend\Validator\ {InArray, StringLength, Regex, Callback as CallValid};
-use Zend\I18n\Validator\ {Alnum, ToFloat};
+use Laminas\InputFilter\ {InputFilter,Input};
+use Laminas\Filter\ {Digits, StripTags, StringTrim, StringToLower, StringToUpper, Callback};
+use Laminas\Validator\ {InArray, StringLength, Regex, Callback as CallValid};
+use Laminas\I18n\Validator\ {Alnum, ToFloat};
 
 //*** FILE UPLOAD LAB: add appropriate "use" statements
 

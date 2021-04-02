@@ -5,10 +5,10 @@ use Login\Model\UserEntity;
 use Application\Traits\SessionTrait;
 use PrivateMessages\Form\SendForm as SendForm;
 use PrivateMessages\Model\ {MessageModel, MessagesTable};
-use Zend\Form\FormInterface;
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Authentication\AuthenticationService;
+use Laminas\Form\FormInterface;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\Authentication\AuthenticationService;
 
 class IndexController extends AbstractActionController
 {

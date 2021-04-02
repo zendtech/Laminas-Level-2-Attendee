@@ -2,10 +2,10 @@
 namespace Guestbook\Mapper;
 
 use Guestbook\Model\GuestbookModel;
-use Zend\Db\Sql\{Sql, Expression};
-use Zend\Db\TableGateway\TableGatewayInterface;
-use Zend\Db\Adapter\AdapterInterface;
-use Zend\EventManager\EventManagerInterface;
+use Laminas\Db\Sql\{Sql, Expression};
+use Laminas\Db\TableGateway\TableGatewayInterface;
+use Laminas\Db\Adapter\AdapterInterface;
+use Laminas\EventManager\EventManagerInterface;
 
 class GuestbookMapper
 {

@@ -3,8 +3,8 @@ namespace Model\Model\Factory;
 use Model\Entity\UserEntity;
 use Model\Model\UsersModel;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
-use Zend\Hydrator\ClassMethodsHydrator;
+use Laminas\ServiceManager\Factory\FactoryInterface;
+use Laminas\Hydrator\ClassMethodsHydrator;
 
 class UsersModelFactory implements FactoryInterface
 {

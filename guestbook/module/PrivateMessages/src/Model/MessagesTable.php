@@ -2,7 +2,7 @@
 namespace PrivateMessages\Model;
 use PrivateMessages\Hydrator\PrivateHydrator;
 use Application\Model\ {AbstractModel, AbstractTable};
-use Zend\Db\TableGateway\TableGatewayInterface;
+use Laminas\Db\TableGateway\TableGatewayInterface;
 
 class MessagesTable extends AbstractTable
 {

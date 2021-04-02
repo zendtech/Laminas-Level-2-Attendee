@@ -6,10 +6,10 @@ use Application\Traits\ServiceContainerTrait;
 use Notification\Event\NotificationEvent;
 
 use Exception;
-use Zend\Mail\Message;
-use Zend\Mime\ {Mime, Message as MimeMessage, Part as MimePart};
-use Zend\Mail\Transport\ {Smtp,SmtpOptions,File,FileOptions,SendMail};
-use Zend\EventManager\ {EventInterface, EventManagerInterface,AbstractListenerAggregate};
+use Laminas\Mail\Message;
+use Laminas\Mime\ {Mime, Message as MimeMessage, Part as MimePart};
+use Laminas\Mail\Transport\ {Smtp,SmtpOptions,File,FileOptions,SendMail};
+use Laminas\EventManager\ {EventInterface, EventManagerInterface,AbstractListenerAggregate};
 
 class Aggregate extends AbstractListenerAggregate
 {

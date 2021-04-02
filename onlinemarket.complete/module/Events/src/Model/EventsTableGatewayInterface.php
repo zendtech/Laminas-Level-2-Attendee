@@ -2,7 +2,7 @@
 namespace Events\Model;
 use Events\Entity\EntityInterface;
 use Psr\Container\ContainerInterface;
-use Zend\Db\ {
+use Laminas\Db\ {
     Adapter\AdapterInterface,
     ResultSet\ResultSetInterface,
 };

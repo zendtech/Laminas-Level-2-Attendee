@@ -1,6 +1,6 @@
 <?php
 namespace Events\TableModule\Model;
-use Zend\Db\{
+use Laminas\Db\{
     Adapter\AdapterInterface,
     TableGateway\TableGateway,
 };

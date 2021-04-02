@@ -2,9 +2,9 @@
 namespace App\Action;
 
 use Interop\Container\ContainerInterface;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
-use Zend\Db\TableGateway\TableGateway;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateRendererInterface;
+use Laminas\Db\TableGateway\TableGateway;
 
 class AdminPageFactory
 {

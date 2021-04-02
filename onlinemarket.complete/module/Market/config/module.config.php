@@ -1,10 +1,10 @@
 <?php
 namespace Market;
-use Zend\Router\Http\{
+use Laminas\Router\Http\{
     Literal,
     Segment
 };
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 use Market\Controller\{
     Factory\ViewControllerFactory,
     Factory\PostControllerFactory,

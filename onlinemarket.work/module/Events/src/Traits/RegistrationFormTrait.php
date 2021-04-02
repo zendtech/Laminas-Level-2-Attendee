@@ -1,7 +1,7 @@
 <?php
 namespace Events\Traits;
 
-use Zend\Form\Form;
+use Laminas\Form\Form;
 
 trait RegistrationFormTrait
 {

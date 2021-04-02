@@ -2,7 +2,7 @@
 namespace Market\Form;
 
 use Model\Entity\ListingEntity;
-use Zend\Form\{
+use Laminas\Form\{
     Form,
     Element\Text,
     Element\Select,
@@ -14,9 +14,9 @@ use Zend\Form\{
     Element\Csrf,
     Element\File
 };
-use Zend\Captcha\Image as ImageCaptcha;
-use Zend\Hydrator\HydratorInterface;
-use Zend\InputFilter\InputFilterInterface;
+use Laminas\Captcha\Image as ImageCaptcha;
+use Laminas\Hydrator\HydratorInterface;
+use Laminas\InputFilter\InputFilterInterface;
 
 class PostForm extends Form
 {

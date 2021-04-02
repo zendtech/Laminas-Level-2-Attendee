@@ -5,7 +5,7 @@ use Login\Form\LoginForm as LoginForm;
 use Login\Model\UsersModel;
 use Interop\Container\ContainerInterface;
 use Model\Entity\UserEntity;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class IndexControllerFactory implements FactoryInterface
 {

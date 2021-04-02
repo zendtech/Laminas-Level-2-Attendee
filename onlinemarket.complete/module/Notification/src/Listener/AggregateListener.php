@@ -3,9 +3,9 @@ namespace Notification\Listener;
 use Application\Traits\ServiceContainerTrait;
 use Notification\Event\NotificationEvent;
 use Exception;
-use Zend\Mail\Message;
-use Zend\Mime\ {Mime, Message as MimeMessage, Part as MimePart};
-use Zend\EventManager\ {EventInterface, EventManagerInterface,AbstractListenerAggregate};
+use Laminas\Mail\Message;
+use Laminas\Mime\ {Mime, Message as MimeMessage, Part as MimePart};
+use Laminas\EventManager\ {EventInterface, EventManagerInterface,AbstractListenerAggregate};
 
 class AggregateListener extends AbstractListenerAggregate
 {

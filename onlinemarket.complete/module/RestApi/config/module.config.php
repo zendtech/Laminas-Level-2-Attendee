@@ -1,6 +1,6 @@
 <?php
 namespace RestApi;
-use Zend\Router\Http\Segment;
+use Laminas\Router\Http\Segment;
 use RestApi\Controller\{
     Factory\ApiControllerFactory,
     ApiController

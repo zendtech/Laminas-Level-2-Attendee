@@ -3,7 +3,7 @@
  * GuestbookFormFilter
  */
 namespace Guestbook\Form;
-use Zend\InputFilter\InputFilter;
+use Laminas\InputFilter\InputFilter;
 
 class GuestbookFormFilter extends InputFilter {
 

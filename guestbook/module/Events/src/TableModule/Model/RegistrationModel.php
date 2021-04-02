@@ -1,6 +1,6 @@
 <?php
 namespace Events\TableModule\Model;
-use Zend\Db\Sql\Sql;
+use Laminas\Db\Sql\Sql;
 class RegistrationModel extends BaseModel
 {
     public static $tableName = 'registration';

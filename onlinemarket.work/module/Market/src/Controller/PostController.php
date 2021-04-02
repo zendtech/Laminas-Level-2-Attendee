@@ -4,8 +4,8 @@ namespace Market\Controller;
 use Model\Entity\Listing;
 use Market\Form\UploadTrait;
 use Market\Event\LogEvent;
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
 //*** CACHE LAB: add a use statement for the listener aggregate
 //*** EMAIL LAB: add "use" statement to trigger email notification event
 

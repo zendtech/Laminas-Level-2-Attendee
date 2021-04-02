@@ -1,10 +1,10 @@
 <?php
 namespace Guestbook\Listener;
 use Guestbook\Controller\IndexController;
-use Zend\Cache\Storage\StorageInterface;
-use Zend\Mvc\MvcEvent;
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
+use Laminas\Cache\Storage\StorageInterface;
+use Laminas\Mvc\MvcEvent;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
 
 class CacheListenerAggregate implements ListenerAggregateInterface
 {

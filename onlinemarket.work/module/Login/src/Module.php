@@ -1,14 +1,14 @@
 <?php
 namespace Login;
 
-use Zend\Mvc\MvcEvent;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Db\Adapter\Adapter;
 use Login\Model\UsersModel;
 use Login\Auth\CustomStorage;
 use Login\Security\Password;
-use Zend\Authentication\AuthenticationService;
-use Zend\Authentication\Adapter\DbTable\CallbackCheckAdapter;
-use Zend\Crypt\Password\Bcrypt;
+use Laminas\Authentication\AuthenticationService;
+use Laminas\Authentication\Adapter\DbTable\CallbackCheckAdapter;
+use Laminas\Crypt\Password\Bcrypt;
 
 //*** AUTHENTICATION LAB: add required "use" statements
 

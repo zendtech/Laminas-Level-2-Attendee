@@ -4,11 +4,11 @@ namespace Manage\Action;
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use Interop\Http\ServerMiddleware\MiddlewareInterface as ServerMiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\Uri;
-use Zend\Diactoros\Response\ {HtmlResponse, JsonResponse};
-use Zend\Expressive\ {Router, Template};
-use Zend\Expressive\Twig\TwigRenderer;
-use Zend\Expressive\ZendView\ZendViewRenderer;
+use Laminas\Diactoros\Uri;
+use Laminas\Diactoros\Response\ {HtmlResponse, JsonResponse};
+use Mezzio\ {Router, Template};
+use Mezzio\Twig\TwigRenderer;
+use Mezzio\LaminasView\LaminasViewRenderer;
 
 class AdminPageAction implements ServerMiddlewareInterface
 {

@@ -2,7 +2,7 @@
 namespace Guestbook\Controller\Factory;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Guestbook\Form\GuestbookForm as GuestbookForm;
 use Guestbook\Mapper\GuestbookMapper;
 use Guestbook\Controller\IndexController;

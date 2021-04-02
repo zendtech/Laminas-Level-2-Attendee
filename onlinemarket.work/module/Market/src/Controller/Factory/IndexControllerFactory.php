@@ -5,7 +5,7 @@ namespace Market\Controller\Factory;
 use Market\Controller\IndexController;
 use Interop\Container\ContainerInterface;
 use Model\Table\ListingsTable;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class IndexControllerFactory implements FactoryInterface
 {

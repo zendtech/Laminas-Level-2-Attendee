@@ -2,9 +2,9 @@
 namespace Login\Model;
 use Application\Model\AbstractTableGateway;
 use Model\Entity\UserEntity;
-use Zend\Db\Adapter\AdapterInterface;
-use Zend\Db\TableGateway\TableGatewayInterface;
-use Zend\Hydrator\HydratorInterface;
+use Laminas\Db\Adapter\AdapterInterface;
+use Laminas\Db\TableGateway\TableGatewayInterface;
+use Laminas\Hydrator\HydratorInterface;
 use Login\Security\PasswordSecurity;
 
 class UsersModel extends AbstractTableGateway

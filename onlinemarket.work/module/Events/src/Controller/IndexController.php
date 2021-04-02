@@ -1,9 +1,9 @@
 <?php
 namespace Events\Controller;
-use Zend\Authentication\AuthenticationService;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Permissions\Acl\AclInterface;
-use Zend\View\Model\ViewModel;
+use Laminas\Authentication\AuthenticationService;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\Permissions\Acl\AclInterface;
+use Laminas\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {

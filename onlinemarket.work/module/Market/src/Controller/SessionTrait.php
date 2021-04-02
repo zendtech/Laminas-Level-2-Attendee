@@ -1,7 +1,7 @@
 <?php
 namespace Market\Controller;
 
-use Zend\Session\Container;
+use Laminas\Session\Container;
 
 trait SessionTrait
 {

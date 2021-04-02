@@ -2,7 +2,7 @@
 namespace Market\Form\Delegator\Factory;
 use Market\Form\Delegator\FormDelegator;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\DelegatorFactoryInterface;
+use Laminas\ServiceManager\Factory\DelegatorFactoryInterface;
 
 class FormDelegatorFactory implements DelegatorFactoryInterface
 {

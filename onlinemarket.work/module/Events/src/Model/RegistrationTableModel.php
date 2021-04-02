@@ -1,7 +1,7 @@
 <?php
 namespace Events\Model;
 use Events\Entity\RegistrationEntity;
-use Zend\Db\Sql\{Sql,Where};
+use Laminas\Db\Sql\{Sql,Where};
 
 // Model Structure:
 /*
@@ -38,7 +38,7 @@ class RegistrationTableModel extends BaseEventsTableModel
             // the iteration $registrations is "forward-only" which means we need to store it into an array
             $final[$reg->id] = $reg;
         }
-        // use Zend\Db\Sql\Sql to pull attendees for list of registrations in registration_id order 
+        // use Laminas\Db\Sql\Sql to pull attendees for list of registrations in registration_id order 
         $attendeeTable = $this->container->get(AttendeeTableModel::class);
         $adapter = $this->tableGateway->getAdapter();
         $sql = new Sql($adapter);

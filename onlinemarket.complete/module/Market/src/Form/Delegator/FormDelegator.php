@@ -3,9 +3,9 @@
  * FormDelegator
  */
 namespace Market\Form\Delegator;
-use Zend\Form\Element\Csrf;
-use Zend\Form\Form;
-use Zend\Form\FormInterface;
+use Laminas\Form\Element\Csrf;
+use Laminas\Form\Form;
+use Laminas\Form\FormInterface;
 
 class FormDelegator extends Form {
     protected $form;
@@ -13,7 +13,7 @@ class FormDelegator extends Form {
         $this->form = $form->add(new Csrf('hash'));
     }
 
-    public function getForm(): \Zend\Form\FieldsetInterface {
+    public function getForm(): \Laminas\Form\FieldsetInterface {
         return $this->form;
     }
 }

@@ -6,10 +6,10 @@
 namespace Guestbook\Form\Factory;
 use Guestbook\Form\GuestbookFormFilter;
 use Interop\Container\ContainerInterface;
-use Zend\Filter\File\RenameUpload;
-use Zend\InputFilter\FileInput;
-use Zend\ServiceManager\Factory\FactoryInterface;
-use Zend\Validator\File\{FilesSize, ImageSize, IsImage};
+use Laminas\Filter\File\RenameUpload;
+use Laminas\InputFilter\FileInput;
+use Laminas\ServiceManager\Factory\FactoryInterface;
+use Laminas\Validator\File\{FilesSize, ImageSize, IsImage};
 
 class GuestbookFormFilterFactory implements FactoryInterface {
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null) {

@@ -1,10 +1,10 @@
 <?php
 
 namespace Events;
-use Zend\Router\Http\ {Literal, Segment};
-use Zend\ServiceManager\Factory\InvokableFactory;
-use Zend\Mvc\Controller\LazyControllerAbstractFactory;
-use Zend\ServiceManager\AbstractFactory\{ConfigAbstractFactory, ReflectionBasedAbstractFactory};
+use Laminas\Router\Http\ {Literal, Segment};
+use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\Mvc\Controller\LazyControllerAbstractFactory;
+use Laminas\ServiceManager\AbstractFactory\{ConfigAbstractFactory, ReflectionBasedAbstractFactory};
 use Events\Controller\{
     IndexController,
 };

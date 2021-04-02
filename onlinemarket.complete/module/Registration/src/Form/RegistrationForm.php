@@ -1,8 +1,8 @@
 <?php
 namespace Registration\Form;
-use Zend\Hydrator\ClassMethodsHydrator;
-use Zend\InputFilter\InputFilter;
-use Zend\Form\ {
+use Laminas\Hydrator\ClassMethodsHydrator;
+use Laminas\InputFilter\InputFilter;
+use Laminas\Form\ {
     Form,
     Element\Email,
     Element\Password,

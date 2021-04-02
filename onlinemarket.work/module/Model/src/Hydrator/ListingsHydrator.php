@@ -5,7 +5,7 @@ use DateTime;
 use DateInterval;
 use Model\Entity\Listing;
 use Throwable;
-use Zend\Hydrator\HydratorInterface;
+use Laminas\Hydrator\HydratorInterface;
 
 class ListingsHydrator implements HydratorInterface
 {

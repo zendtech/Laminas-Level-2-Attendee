@@ -1,13 +1,13 @@
 <?php
 namespace Login\Form;
-use Zend\Hydrator\HydratorInterface;
-use Zend\Form\{
+use Laminas\Hydrator\HydratorInterface;
+use Laminas\Form\{
     Form,
     Element\Password,
     Element\Email,
     Element\Submit
 };
-use Zend\InputFilter\InputFilterInterface;
+use Laminas\InputFilter\InputFilterInterface;
 
 class LoginForm extends Form
 {

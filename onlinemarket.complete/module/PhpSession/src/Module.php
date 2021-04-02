@@ -1,7 +1,7 @@
 <?php
 namespace PhpSession;
-use Zend\Mvc\MvcEvent;
-use Zend\Session\{
+use Laminas\Mvc\MvcEvent;
+use Laminas\Session\{
     Config\SessionConfig,
     SessionManager,
     Container,
@@ -12,9 +12,9 @@ class Module
     public function getConfig()
     {
 		return [
-            //*** SESSIONS LAB: the "session_config" key is used by Zend\Session\Domain\SessionConfigFactory
+            //*** SESSIONS LAB: the "session_config" key is used by Laminas\Session\Domain\SessionConfigFactory
 			'session_config' => [ 'config_class' => SessionConfig::class ],
-            //*** SESSIONS LAB: the "type" key is used by Zend\Session\Domain\SessionStorageFactory
+            //*** SESSIONS LAB: the "type" key is used by Laminas\Session\Domain\SessionStorageFactory
 			'session_storage' => ['type' => SessionArrayStorage::class ],
 		];
     }
@@ -36,8 +36,8 @@ class Module
             'factories' => [
                 // NOTE: Do not need to define a specific SessionManager factory.  
                 //       As long as the Config keys "session_config" and "session_storage" are present,
-                //       Zend\Session\Domain\SessionManagerFactory is used
-                //       when the service container is asked to return a Zend\Session\SessionManager instance
+                //       Laminas\Session\Domain\SessionManagerFactory is used
+                //       when the service container is asked to return a Laminas\Session\SessionManager instance
                 Container::class => function($container) {
 					return new Container(__NAMESPACE__);
 				},

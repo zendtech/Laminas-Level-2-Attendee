@@ -4,7 +4,7 @@ namespace Market\Controller\Factory;
 use Market\Controller\TestController;
 use Interop\Container\ContainerInterface;
 use Market\Form\PostForm;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 //*** SESSIONS LAB: add a "use" statement for session container
 
 class PostControllerFactory implements FactoryInterface

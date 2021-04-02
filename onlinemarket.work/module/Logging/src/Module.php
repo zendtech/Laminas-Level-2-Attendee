@@ -1,7 +1,7 @@
 <?php
 namespace Logging;
 
-use Zend\Mvc\ {MvcEvent};
+use Laminas\Mvc\ {MvcEvent};
 
 //*** LOGGER LAB: add the required "use" statements
 

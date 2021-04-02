@@ -3,7 +3,7 @@ namespace Events\Listener\Factory;
 
 use Events\Listener\AggregateListener;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class AggregateListenerFactory implements FactoryInterface
 {

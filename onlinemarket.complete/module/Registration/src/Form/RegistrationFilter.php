@@ -2,8 +2,8 @@
 namespace Registration\Form;
 
 use Zend\{Filter, Validator};
-use Zend\I18n\Validator\{Alnum,Alpha};
-use Zend\InputFilter\{InputFilter, Input};
+use Laminas\I18n\Validator\{Alnum,Alpha};
+use Laminas\InputFilter\{InputFilter, Input};
 
 class RegistrationFilter extends InputFilter
 {

@@ -1,7 +1,7 @@
 <?php
 namespace RestApi\Domain;
 
-use Zend\Db\TableGateway\TableGatewayInterface;
+use Laminas\Db\TableGateway\TableGatewayInterface;
 
 class ApiDomain
 {

@@ -1,7 +1,7 @@
 <?php
 namespace Market\Form;
-use Zend\InputFilter\Input;
-use Zend\InputFilter\InputFilter;
+use Laminas\InputFilter\Input;
+use Laminas\InputFilter\InputFilter;
 
 class DeleteFormFilter extends InputFilter
 {

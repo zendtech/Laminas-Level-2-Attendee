@@ -1,6 +1,6 @@
 <?php
 namespace AccessControl\Acl;
-use Zend\Permissions\Acl\Acl;
+use Laminas\Permissions\Acl\Acl;
 use Interop\Container\ContainerInterface;
 class MarketAcl extends Acl
 {

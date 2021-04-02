@@ -1,9 +1,9 @@
 <?php
 namespace Market\Controller;
-use Zend\Db\TableGateway\TableGatewayInterface;
-use Zend\Form\FormInterface;
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\Db\TableGateway\TableGatewayInterface;
+use Laminas\Form\FormInterface;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
 //*** CACHE LAB: add a use statement for the listener aggregate
 use Market\Listener\CacheAggregate;
 //*** EMAIL LAB: add "use" statement to trigger email notification event

@@ -5,7 +5,7 @@ use RestApi\Controller\{
     Factory\ApiControllerFactory
 };
 use RestApi\Service\{ApiService, Factory\ApiServiceFactory};
-use Zend\Router\Http\Segment;
+use Laminas\Router\Http\Segment;
 return [
     'router' => [
         'routes' => [

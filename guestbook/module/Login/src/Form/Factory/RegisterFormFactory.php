@@ -1,8 +1,8 @@
 <?php
 namespace Login\Form\Factory;
 use Login\Form\RegisterFormInputFilter;
-use Zend\Hydrator\ClassMethodsHydrator;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Hydrator\ClassMethodsHydrator;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 
 use Login\Form\RegisterForm as RegisterForm;

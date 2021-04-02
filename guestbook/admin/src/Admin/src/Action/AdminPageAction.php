@@ -4,14 +4,14 @@ namespace App\Action;
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use Interop\Http\ServerMiddleware\MiddlewareInterface as ServerMiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Diactoros\Response\JsonResponse;
-use Zend\Expressive\Router;
-use Zend\Expressive\Template;
-use Zend\Expressive\Plates\PlatesRenderer;
-use Zend\Expressive\Twig\TwigRenderer;
-use Zend\Expressive\ZendView\ZendViewRenderer;
-use Zend\Db\TableGateway\TableGateway;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Laminas\Diactoros\Response\JsonResponse;
+use Mezzio\Router;
+use Mezzio\Template;
+use Mezzio\Plates\PlatesRenderer;
+use Mezzio\Twig\TwigRenderer;
+use Mezzio\LaminasView\LaminasViewRenderer;
+use Laminas\Db\TableGateway\TableGateway;
 
 class AdminPageAction implements ServerMiddlewareInterface
 {

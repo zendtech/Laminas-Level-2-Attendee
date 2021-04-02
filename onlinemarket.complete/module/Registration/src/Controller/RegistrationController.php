@@ -3,10 +3,10 @@ namespace Registration\Controller;
 use Application\Model\AbstractTableGateway;
 use Model\Entity\UserEntity;
 use Model\Traits\UsersModelTrait;
-use Zend\Form\FormInterface;
-use Zend\Log\Logger;
-use Zend\View\Model\ViewModel;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\Form\FormInterface;
+use Laminas\Log\Logger;
+use Laminas\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
 
 class RegistrationController extends AbstractActionController
 {

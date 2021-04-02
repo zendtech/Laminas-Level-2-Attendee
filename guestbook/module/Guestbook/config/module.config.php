@@ -1,6 +1,6 @@
 <?php
 namespace Guestbook;
-use Zend\Router\Http\Segment;
+use Laminas\Router\Http\Segment;
 use Guestbook\Form\{
     Factory\GuestbookFormFactory,
     Factory\GuestbookFormFilterFactory,

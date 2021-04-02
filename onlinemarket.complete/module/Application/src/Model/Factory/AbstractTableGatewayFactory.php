@@ -4,11 +4,11 @@
  */
 namespace Application\Model\Factory;
 use Interop\Container\ContainerInterface;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Hydrator\ClassMethodsHydrator;
-use Zend\ServiceManager\Factory\FactoryInterface;
-use Zend\Stdlib\ArrayObject;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\Db\TableGateway\TableGateway;
+use Laminas\Hydrator\ClassMethodsHydrator;
+use Laminas\ServiceManager\Factory\FactoryInterface;
+use Laminas\Stdlib\ArrayObject;
 
 class AbstractTableGatewayFactory  implements FactoryInterface
 {

@@ -4,10 +4,10 @@ use Events\Model\EventsTableGatewayInterface;
 use Events\Module;
 use Events\Entity\ {RegistrationEntity, AttendeeEntity};
 use Events\Traits\ {EventModelTrait, RegistrationModelTrait, AttendeeModelTrait, RegistrationFormTrait};
-use Zend\Filter\FilterInterface;
-use Zend\Form\FormInterface;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Laminas\Filter\FilterInterface;
+use Laminas\Form\FormInterface;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
 
 class SignUpController extends AbstractActionController
 {

@@ -3,7 +3,7 @@ namespace Events\TableModule\Controller\Factory;
 use Events\TableModule\Controller\AdminController;
 use Events\TableModule\Model\{EventModel, RegistrationTable};
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class AdminControllerFactory implements FactoryInterface
 {

@@ -5,13 +5,13 @@ namespace App\Action;
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use Interop\Http\ServerMiddleware\MiddlewareInterface as ServerMiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Diactoros\Response\JsonResponse;
-use Zend\Expressive\Router;
-use Zend\Expressive\Template;
-use Zend\Expressive\Plates\PlatesRenderer;
-use Zend\Expressive\Twig\TwigRenderer;
-use Zend\Expressive\ZendView\ZendViewRenderer;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Laminas\Diactoros\Response\JsonResponse;
+use Mezzio\Router;
+use Mezzio\Template;
+use Mezzio\Plates\PlatesRenderer;
+use Mezzio\Twig\TwigRenderer;
+use Mezzio\LaminasView\LaminasViewRenderer;
 
 class HomePageAction implements ServerMiddlewareInterface
 {
@@ -53,7 +53,7 @@ class HomePageAction implements ServerMiddlewareInterface
         } elseif ($this->template instanceof TwigRenderer) {
             $data['templateName'] = 'Twig';
             $data['templateDocs'] = 'http://twig.sensiolabs.org/documentation';
-        } elseif ($this->template instanceof ZendViewRenderer) {
+        } elseif ($this->template instanceof LaminasViewRenderer) {
             $data['templateName'] = 'Zend View';
             $data['templateDocs'] = 'https://docs.zendframework.com/zend-view/';
         }

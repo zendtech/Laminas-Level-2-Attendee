@@ -1,8 +1,8 @@
 <?php
 namespace Model\Model;
 use Model\Entity\ListingEntity;
-use Zend\Db\Sql\Sql;
-use Zend\Db\TableGateway\TableGateway;
+use Laminas\Db\Sql\Sql;
+use Laminas\Db\TableGateway\TableGateway;
 
 class ListingsModel extends TableGateway
 {

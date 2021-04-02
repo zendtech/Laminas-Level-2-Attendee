@@ -1,8 +1,8 @@
 <?php
 namespace Model\Model;
-use Zend\Db\Sql\Sql;
-use Zend\Db\Sql\Predicate\Like;
-use Zend\Db\TableGateway\TableGateway;
+use Laminas\Db\Sql\Sql;
+use Laminas\Db\Sql\Predicate\Like;
+use Laminas\Db\TableGateway\TableGateway;
 
 class CityCodesModel extends TableGateway
 {

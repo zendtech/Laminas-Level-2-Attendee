@@ -3,9 +3,9 @@ namespace Guestbook\Controller;
 use Guestbook\Listener\CacheListenerAggregate;
 use Guestbook\Model\GuestbookModel;
 use Guestbook\Mapper\GuestbookMapper;
-use Zend\View\Model\ {ViewModel, JsonModel};
-use Zend\Form\FormInterface;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ {ViewModel, JsonModel};
+use Laminas\Form\FormInterface;
+use Laminas\Mvc\Controller\AbstractActionController;
 
 class IndexController extends AbstractActionController
 {

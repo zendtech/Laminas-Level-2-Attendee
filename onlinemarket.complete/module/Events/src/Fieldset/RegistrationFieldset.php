@@ -3,8 +3,8 @@
  * RegistrationFieldset
  */
 namespace Events\Fieldset;
-use Zend\Form\Fieldset;
-use Zend\Hydrator\HydratorInterface;
+use Laminas\Form\Fieldset;
+use Laminas\Hydrator\HydratorInterface;
 class RegistrationFieldset extends Fieldset {
     public function __construct(string $name, HydratorInterface $hydrator, $entity)
     {

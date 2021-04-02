@@ -3,7 +3,7 @@ namespace Login\Model\Factory;
 use Login\Model\UsersModel;
 use Login\Entity\UserEntity;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class UsersModelFactory implements FactoryInterface
 {

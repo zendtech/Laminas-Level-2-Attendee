@@ -1,6 +1,6 @@
 <?php
 namespace Events\Model;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 use Events\Entity\EntityInterface;
 use Psr\Container\ContainerInterface;
 

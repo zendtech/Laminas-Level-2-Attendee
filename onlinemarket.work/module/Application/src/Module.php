@@ -8,7 +8,7 @@
 namespace Application;
 
 
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 
 class Module
 {

@@ -1,7 +1,7 @@
 <?php
 namespace Login;
-use Zend\Router\Http\Segment;
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\Router\Http\Segment;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 use Login\Controller\{
     Factory\IndexControllerFactory,
     IndexController

@@ -15,8 +15,8 @@ use Market\Form\{
     PostFilter
 };
 use Market\Helper\LeftLinks;
-use Zend\Router\Http\{Literal, Segment};
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\Router\Http\{Literal, Segment};
+use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
     'router' => [

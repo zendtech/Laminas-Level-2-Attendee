@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Usage: admin.sh up|down|shell
 echo "Usage: admin.sh up|down|build|shell"
-export CONTAINER="laminas_1"
+export CONTAINER="laminas_2"
 if [[ "$1" = "up" ]]; then
     docker-compose up -d
 elif [[ "$1" = "down" ]]; then

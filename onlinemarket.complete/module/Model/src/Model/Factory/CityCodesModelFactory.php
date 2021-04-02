@@ -3,7 +3,7 @@ namespace Model\Model\Factory;
 
 use Model\Model\CityCodesModel;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class CityCodesModelFactory implements FactoryInterface
 {

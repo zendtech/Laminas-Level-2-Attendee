@@ -1,7 +1,7 @@
 <?php
 namespace Application\Event;
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
 
 class AppEventAggregate implements ListenerAggregateInterface
 {

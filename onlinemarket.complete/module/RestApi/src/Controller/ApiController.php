@@ -2,9 +2,9 @@
 namespace RestApi\Controller;
 
 use RestApi\Domain\ApiDomain;
-use Zend\Http\Response;
-use Zend\View\Model\JsonModel;
-use Zend\Mvc\Controller\AbstractRestfulController;
+use Laminas\Http\Response;
+use Laminas\View\Model\JsonModel;
+use Laminas\Mvc\Controller\AbstractRestfulController;
 
 class ApiController extends AbstractRestfulController
 {

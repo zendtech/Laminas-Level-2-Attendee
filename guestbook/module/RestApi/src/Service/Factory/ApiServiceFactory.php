@@ -3,8 +3,8 @@ namespace RestApi\Service\Factory;
 use RestApi\Service\ApiService;
 use Events\TableModule\Model\ {EventModel, RegistrationModel, AttendeeModel};
 use Interop\Container\ContainerInterface;
-use Zend\Db\Sql\ {Sql, Where};
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Db\Sql\ {Sql, Where};
+use Laminas\ServiceManager\Factory\FactoryInterface;
 class ApiServiceFactory implements FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, ?array $options = NULL)

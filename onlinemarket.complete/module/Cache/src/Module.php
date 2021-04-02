@@ -1,6 +1,6 @@
 <?php
 namespace Cache;
-use Zend\Cache\StorageFactory;
+use Laminas\Cache\StorageFactory;
 
 class Module
 {

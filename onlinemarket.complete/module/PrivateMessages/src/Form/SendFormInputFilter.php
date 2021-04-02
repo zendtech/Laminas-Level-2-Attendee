@@ -4,13 +4,13 @@
  */
 
 namespace PrivateMessages\Form;
-use Zend\InputFilter\Input;
-use Zend\InputFilter\InputFilter;
-use Zend\Filter\ {
+use Laminas\InputFilter\Input;
+use Laminas\InputFilter\InputFilter;
+use Laminas\Filter\ {
     StringTrim,
     StripTags
 };
-use Zend\Validator\ {
+use Laminas\Validator\ {
     EmailAddress,
     StringLength,
     NotEmpty

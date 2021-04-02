@@ -1,6 +1,6 @@
 <?php
 namespace Registration;
-use Zend\Router\Http\Segment;
+use Laminas\Router\Http\Segment;
 use Registration\Controller\{
     Factory\RegistrationControllerFactory,
     RegistrationController

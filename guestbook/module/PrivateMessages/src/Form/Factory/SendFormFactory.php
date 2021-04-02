@@ -1,7 +1,7 @@
 <?php
 namespace PrivateMessages\Form\Factory;
 
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 
 use PrivateMessages\Form\SendForm as SendForm;

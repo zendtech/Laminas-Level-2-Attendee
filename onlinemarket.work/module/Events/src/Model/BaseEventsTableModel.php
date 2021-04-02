@@ -1,12 +1,12 @@
 <?php
 namespace Events\Model;
-use Zend\Db\{
+use Laminas\Db\{
     Adapter\Adapter,
     TableGateway\TableGateway,
     ResultSet\HydratingResultSet
 };
 use Psr\Container\ContainerInterface;
-use Zend\Hydrator\ObjectPropertyHydrator;
+use Laminas\Hydrator\ObjectPropertyHydrator;
 
 //*** DELEGATING HYDRATOR LAB: add the correct "use" statements
 class BaseEventsTableModel implements EventsTableGatewayInterface

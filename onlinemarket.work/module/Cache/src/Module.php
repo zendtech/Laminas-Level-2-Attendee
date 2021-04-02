@@ -1,7 +1,7 @@
 <?php
 namespace Cache;
 
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 //*** CACHE LAB: add the appropriate "use" statements
 
 class Module

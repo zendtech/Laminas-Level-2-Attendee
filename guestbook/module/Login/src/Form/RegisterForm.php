@@ -1,10 +1,10 @@
 <?php
 namespace Login\Form;
-use Zend\Form\{
+use Laminas\Form\{
     Element\Text,
 };
-use Zend\Hydrator\HydratorInterface;
-use Zend\InputFilter\InputFilterInterface;
+use Laminas\Hydrator\HydratorInterface;
+use Laminas\InputFilter\InputFilterInterface;
 
 class RegisterForm extends LoginForm
 {

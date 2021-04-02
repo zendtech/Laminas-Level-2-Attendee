@@ -1,5 +1,5 @@
 {
-    "name": "zendframework/skeleton-application",
+    "name": "laminas/skeleton-application",
     "description": "Skeleton Application for Zend Framework zend-mvc applications",
     "type": "project",
     "license": "BSD-3-Clause",
@@ -12,30 +12,31 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-      "php": "^7.3",
-      "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
-      "zendframework/zend-mvc": "^3.0.1",
-      "zfcampus/zf-development-mode": "^3.0",
-      "zendframework/zend-developer-tools": "*",
-      "zendframework/zend-debug": "*",
-      "zendframework/zend-db": "*",
-      "zendframework/zend-form": "*",
-      "zendframework/zend-i18n": "*",
-      "zendframework/zend-session": "*",
-      "zendframework/zend-view": "*",
-      "zendframework/zend-mvc-plugin-fileprg": "*",
-      "zendframework/zend-validator": "*",
-      "zendframework/zend-inputfilter": "*",
-      "zendframework/zend-filter": "*",
-      "zendframework/zend-hydrator": "*",
-      "zendframework/zend-navigation": "*",
-      "zendframework/zend-json": "*",
-      "zendframework/zend-mvc-plugin-flashmessenger": "*",
-      "zendframework/zend-cache": "*",
-      "zendframework/zend-permissions-acl": "*",
-      "zendframework/zend-serializer": "*",
-      "zendframework/zend-authentication": "*",
-      "zendframework/zend-crypt": "*"
+        "php": "^7.3",
+        "laminas/laminas-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
+        "laminas/laminas-mvc": "^3.0.1",
+        "laminas/laminas-development-mode": "^3.0",
+        "laminas/laminas-developer-tools": "*",
+        "zendframework/zend-debug": "*",
+        "laminas/laminas-db": "*",
+        "laminas/laminas-form": "*",
+        "laminas/laminas-i18n": "*",
+        "laminas/laminas-session": "*",
+        "laminas/laminas-view": "*",
+        "laminas/laminas-mvc-plugin-fileprg": "*",
+        "laminas/laminas-validator": "*",
+        "laminas/laminas-inputfilter": "*",
+        "laminas/laminas-filter": "*",
+        "laminas/laminas-hydrator": "*",
+        "laminas/laminas-navigation": "*",
+        "laminas/laminas-json": "*",
+        "laminas/laminas-mvc-plugin-flashmessenger": "*",
+        "laminas/laminas-cache": "*",
+        "laminas/laminas-permissions-acl": "*",
+        "laminas/laminas-serializer": "*",
+        "laminas/laminas-authentication": "*",
+        "laminas/laminas-crypt": "*",
+        "laminas/laminas-dependency-plugin": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -45,8 +46,8 @@
             "Login\\": "module/Login/src/",
             "Events\\": "module/Events/src/",
             "PrivateMessages\\": "module/PrivateMessages/src/",
-            "RestApi\\" : "module/RestApi/src/",
-            "AccessControl\\" : "module/AccessControl/src/"
+            "RestApi\\": "module/RestApi/src/",
+            "AccessControl\\": "module/AccessControl/src/"
         }
     },
     "autoload-dev": {
@@ -58,9 +59,9 @@
     "scripts": {
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
-        "development-disable": "zf-development-mode disable",
-        "development-enable": "zf-development-mode enable",
-        "development-status": "zf-development-mode status",
+        "development-disable": "laminas-development-mode disable",
+        "development-enable": "laminas-development-mode enable",
+        "development-status": "laminas-development-mode status",
         "post-create-project-cmd": [
             "@development-enable"
         ],

@@ -1,9 +1,9 @@
 <?php
 namespace Events\Controller;
 use Events\Traits\ {EventModelTrait, RegistrationModelTrait};
-use Zend\Db\TableGateway\TableGatewayInterface;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Laminas\Db\TableGateway\TableGatewayInterface;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
 
 class AdminController extends AbstractActionController
 {

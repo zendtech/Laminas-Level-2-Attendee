@@ -1,7 +1,7 @@
 <?php
 namespace PrivateMessages;
-use Zend\Router\Http\Segment;
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\Router\Http\Segment;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 use PrivateMessages\Controller\{
     Factory\IndexControllerFactory,
     IndexController,

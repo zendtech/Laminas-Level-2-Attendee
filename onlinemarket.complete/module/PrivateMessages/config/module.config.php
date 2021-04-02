@@ -1,13 +1,13 @@
 <?php
 namespace PrivateMessages;
-use Zend\Router\Http\Segment;
+use Laminas\Router\Http\Segment;
 use PrivateMessages\Controller\{
     Factory\IndexControllerFactory,
     IndexController
 };
 use PrivateMessages\Form\{Factory\SendFormFactory, SendForm, SendFormInputFilter};
 use PrivateMessages\Model\{Factory\MessagesModelFactory, MessageEntity, MessagesModel};
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
     'navigation' => [

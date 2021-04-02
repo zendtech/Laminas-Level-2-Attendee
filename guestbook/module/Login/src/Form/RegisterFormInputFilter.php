@@ -4,15 +4,15 @@
  */
 
 namespace Login\Form;
-use Zend\I18n\Validator\{
+use Laminas\I18n\Validator\{
     Alnum,
     NotEmpty,
 };
-use Zend\Filter\{
+use Laminas\Filter\{
     StringTrim,
     StripTags,
 };
-use Zend\InputFilter\Input;
+use Laminas\InputFilter\Input;
 
 class RegisterFormInputFilter extends LoginFormInputFilter {
     public function __construct(array $localList){

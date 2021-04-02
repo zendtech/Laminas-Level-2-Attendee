@@ -8,9 +8,9 @@ use Model\Model\ {
     CityCodesModel,
     ListingsModel
 };
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 //*** SESSIONS LAB: add a "use" statement for session container
-use Zend\Session\Container AS SessionContainer;
+use Laminas\Session\Container AS SessionContainer;
 
 class PostControllerFactory implements FactoryInterface
 {

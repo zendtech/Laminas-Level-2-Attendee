@@ -1,10 +1,10 @@
 <?php
 namespace PrivateMessages\Model;
 
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Hydrator\ClassMethods;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\TableGateway;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\Hydrator\ClassMethods;
 
 class MessagesTable
 {

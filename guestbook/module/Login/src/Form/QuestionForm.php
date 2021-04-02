@@ -1,8 +1,8 @@
 <?php
 namespace Login\Form;
 
-use Zend\Form\Form;
-use Zend\InputFilter\InputFilterInterface;
+use Laminas\Form\Form;
+use Laminas\InputFilter\InputFilterInterface;
 
 class QuestionForm extends Form
 {

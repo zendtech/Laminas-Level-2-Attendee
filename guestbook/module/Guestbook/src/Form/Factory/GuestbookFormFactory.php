@@ -1,8 +1,8 @@
 <?php
 namespace Guestbook\Form\Factory;
 use Interop\Container\ContainerInterface;
-use Zend\Hydrator\ObjectPropertyHydrator;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Hydrator\ObjectPropertyHydrator;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Guestbook\Form\{GuestbookForm, GuestbookFormFilter};
 
 class GuestbookFormFactory implements FactoryInterface

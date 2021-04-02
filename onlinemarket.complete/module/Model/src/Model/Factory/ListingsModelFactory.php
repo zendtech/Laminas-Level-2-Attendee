@@ -4,8 +4,8 @@ use Model\Entity\ListingEntity;
 use Model\Hydrator\ListingsHydrator;
 use Model\Model\ListingsModel;
 use Interop\Container\ContainerInterface;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ListingsModelFactory implements FactoryInterface
 {

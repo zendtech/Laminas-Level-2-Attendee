@@ -3,7 +3,7 @@ namespace Events\Entity;
 
 /**
  * @ABC\Name("attendee")
- * @ABC\Hydrator("Zend\Hydrator\ArraySerializableHydrator")
+ * @ABC\Hydrator("Laminas\Hydrator\ArraySerializableHydrator")
  */
 class AttendeeEntity extends BaseEntity
 {

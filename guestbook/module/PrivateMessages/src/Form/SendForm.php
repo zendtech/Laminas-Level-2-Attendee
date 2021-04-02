@@ -1,11 +1,11 @@
 <?php
 namespace PrivateMessages\Form;
 
-use Zend\Filter;
-use Zend\Validator;
-use Zend\Form\{Form, Element};
-use Zend\InputFilter\{InputFilter, Input};
-use Zend\Hydrator\ClassMethodsHydrator;
+use Laminas\Filter;
+use Laminas\Validator;
+use Laminas\Form\{Form, Element};
+use Laminas\InputFilter\{InputFilter, Input};
+use Laminas\Hydrator\ClassMethodsHydrator;
 use PrivateMessages\Traits\BlockCipherTrait;
 
 class SendForm extends Form

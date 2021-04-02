@@ -1,8 +1,8 @@
 <?php
 namespace Admin;
 
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Db\Adapter\AdapterServiceFactory;
+use Laminas\Db\TableGateway\TableGateway;
+use Laminas\Db\Adapter\AdapterServiceFactory;
 
 class ConfigProvider
 {

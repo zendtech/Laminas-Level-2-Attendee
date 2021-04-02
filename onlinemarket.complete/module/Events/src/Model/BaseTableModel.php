@@ -1,6 +1,6 @@
 <?php
 namespace Events\Model;
-use Zend\Db\{
+use Laminas\Db\{
     Adapter\AdapterInterface,
     ResultSet\ResultSetInterface
 };

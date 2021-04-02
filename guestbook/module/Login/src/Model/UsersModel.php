@@ -2,7 +2,7 @@
 namespace Login\Model;
 use Application\Model\ {AbstractTable, AbstractModel};
 use Login\Security\PasswordSecurity;
-use Zend\Db\Adapter\AdapterInterface;
+use Laminas\Db\Adapter\AdapterInterface;
 
 class UsersModel extends AbstractTable
 {

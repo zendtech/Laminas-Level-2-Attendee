@@ -1,6 +1,6 @@
 <?php
 namespace AuthOauth;
-use Zend\Session\Container;
+use Laminas\Session\Container;
 use AuthOauth\Generic\ {User, Hydrator};
 
 class Module

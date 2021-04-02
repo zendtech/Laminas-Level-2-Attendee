@@ -1,13 +1,13 @@
 <?php
 namespace PrivateMessages\Form;
-use Zend\Hydrator\HydratorInterface;
-use Zend\Form\{
+use Laminas\Hydrator\HydratorInterface;
+use Laminas\Form\{
     Form,
     Element\Email,
     Element\Textarea,
     Element\Submit
 };
-use Zend\InputFilter\InputFilterInterface;
+use Laminas\InputFilter\InputFilterInterface;
 
 class SendForm extends Form
 {

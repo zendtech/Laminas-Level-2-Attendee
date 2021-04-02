@@ -4,7 +4,7 @@ use Login\Controller\IndexController;
 use Login\Form\{LoginForm, RegisterForm};
 use Login\Model\UsersModel;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class IndexControllerFactory implements FactoryInterface
 {

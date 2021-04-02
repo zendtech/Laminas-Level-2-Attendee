@@ -2,8 +2,8 @@
 namespace Login\Form\Factory;
 
 use Login\Form\LoginFormFilter;
-use Zend\Hydrator\ClassMethodsHydrator;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Hydrator\ClassMethodsHydrator;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 use Login\Form\LoginForm;
 

@@ -1,10 +1,10 @@
 <?php
 namespace Notification;
 
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 //*** EMAIL LAB: add the appropriate "use" statements
-use Zend\Mail\Transport\ {SendMail, Smtp, File};
-use Zend\Mail\Transport\ {SmtpOptions, FileOptions};
+use Laminas\Mail\Transport\ {SendMail, Smtp, File};
+use Laminas\Mail\Transport\ {SmtpOptions, FileOptions};
 use Interop\Container\ContainerInterface;
 use Notification\Listener\AggregateListener;
 

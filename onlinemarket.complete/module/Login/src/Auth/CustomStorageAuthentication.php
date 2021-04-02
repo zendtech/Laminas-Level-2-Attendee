@@ -1,8 +1,8 @@
 <?php
 namespace Login\Auth;
 
-use Zend\Authentication\Exception\ExceptionInterface;
-use Zend\Authentication\Storage\StorageInterface;
+use Laminas\Authentication\Exception\ExceptionInterface;
+use Laminas\Authentication\Storage\StorageInterface;
 
 class CustomStorageAuthentication implements StorageInterface
 {

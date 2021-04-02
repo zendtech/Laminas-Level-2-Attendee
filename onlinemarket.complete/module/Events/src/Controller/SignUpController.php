@@ -13,11 +13,11 @@ use Events\Traits\ {
     AttendeeModelTrait,
     RegistrationFormTrait
 };
-use Zend\Filter\FilterInterface;
-use Zend\Form\FormInterface;
-use Zend\Hydrator\HydratorInterface;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Laminas\Filter\FilterInterface;
+use Laminas\Form\FormInterface;
+use Laminas\Hydrator\HydratorInterface;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
 
 class SignUpController extends AbstractActionController
 {
