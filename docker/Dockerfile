@@ -9,21 +9,24 @@ RUN \
     chmod +x /srv/repo/docker/*.sh && \
     cp /srv/repo/docker/index.html /srv/www
 RUN \
-    echo "Installing Composer ..." && \
-    cd /tmp && \
-    wget https://getcomposer.org/composer.phar && \
-    mv /tmp/composer.phar /usr/local/bin/composer && \
-    chmod +x /usr/local/bin/composer
-RUN \
-    echo "Installing apps ..." && \
+    echo "Installing Composer 1.10 ..." && \
+    rm -f composer.phar && \
+    wget https://getcomposer.org/download/1.10.21/composer.phar && \
+    echo "Installing guestbook ..." && \
     cd /srv/repo/guestbook && \
-    composer install && \
+    cp ../composer.phar . && \
+    php composer.phar update && \
+    echo "Installing onlinemarket.complete ..." && \
     cd /srv/repo/onlinemarket.complete && \
-    composer install && \
+    cp ../composer.phar . && \
+    php composer.phar update && \
+    echo "Installing laminas_advanced ..." && \
     cd /srv/repo/laminas_advanced && \
-    composer install && \
+    cp ../composer.phar . && \
+    php composer.phar update && \
+    echo "Installing Laminas API Tools ..." && \
     cd /srv/repo && \
-    composer create-project laminas-api-tools/api-tools-skeleton laminas_api_tools
+    php composer.phar create-project laminas-api-tools/api-tools-skeleton laminas_api_tools
 RUN \
     echo "Creating sample database and assigning permissions ..." && \
     /etc/init.d/mysql start && \
