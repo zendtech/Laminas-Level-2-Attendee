@@ -3,7 +3,7 @@
  * CustomRbac
  */
 namespace src\modSecurity\Rbac;
-use Laminas\Permissions\Rbac\{Rbac, Role};
+use Zend\Permissions\Rbac\{Rbac, Role};
 class CustomRbac extends Rbac
 {
     public function setRole(Role $role){

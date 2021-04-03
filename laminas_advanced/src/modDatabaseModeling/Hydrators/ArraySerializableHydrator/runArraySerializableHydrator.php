@@ -3,7 +3,7 @@
  * Runtime
  */
 use src\modDatabaseModeling\Hydrators\ArraySerializableHydrator\UserEntity;
-use Laminas\Hydrator\ArraySerializableHydrator;
+use Zend\Hydrator\ArraySerializableHydrator;
 require __DIR__ . '/../../../../vendor/autoload.php';
 $hydrator = new ArraySerializableHydrator();
 $userEntity = $hydrator->hydrate([

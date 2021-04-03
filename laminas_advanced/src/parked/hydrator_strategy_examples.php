@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../vendor/autoload.php';
-use Laminas\Hydrator\ObjectProperty;
-use Laminas\Hydrator\Strategy\ {ExplodeStrategy, DateTimeFormatterStrategy};
+use Zend\Hydrator\ObjectProperty;
+use Zend\Hydrator\Strategy\ {ExplodeStrategy, DateTimeFormatterStrategy};
 
 class Test
 {

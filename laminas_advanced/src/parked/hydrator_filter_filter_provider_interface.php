@@ -1,9 +1,9 @@
 <?php
 include __DIR__ . '/../vendor/autoload.php';
 
-use Laminas\Hydrator\ClassMethods;
-use Laminas\EventManager\EventManager;
-use Laminas\Hydrator\Filter\ {GetFilter, MethodMatchFilter, FilterComposite, FilterProviderInterface};
+use Zend\Hydrator\ClassMethods;
+use Zend\EventManager\EventManager;
+use Zend\Hydrator\Filter\ {GetFilter, MethodMatchFilter, FilterComposite, FilterProviderInterface};
 
 class Test implements FilterProviderInterface
 {

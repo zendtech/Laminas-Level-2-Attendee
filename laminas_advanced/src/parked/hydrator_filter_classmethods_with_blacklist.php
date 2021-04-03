@@ -1,9 +1,9 @@
 <?php
 include __DIR__ . '/../vendor/autoload.php';
 
-use Laminas\Hydrator\ClassMethods;
-use Laminas\EventManager\EventManager;
-use Laminas\Hydrator\Filter\ {MethodMatchFilter, FilterComposite};
+use Zend\Hydrator\ClassMethods;
+use Zend\EventManager\EventManager;
+use Zend\Hydrator\Filter\ {MethodMatchFilter, FilterComposite};
 
 class Test
 {
@@ -33,7 +33,7 @@ array(1) {
   ["two"]=>int(222)
   ["three"]=>int(333)
    ["event_manager"]=>
-  object(Laminas\EventManager\EventManager)#2 (4) { etc. }
+  object(Zend\EventManager\EventManager)#2 (4) { etc. }
 }
 */
 

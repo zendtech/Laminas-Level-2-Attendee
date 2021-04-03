@@ -3,8 +3,8 @@
  * Module
  */
 namespace src\modOtherComponents\Session;
-use Laminas\Mvc\MvcEvent;
-use Laminas\Session\{Config\SessionConfig, Container, SessionManager, Storage\SessionArrayStorage};
+use Zend\Mvc\MvcEvent;
+use Zend\Session\{Config\SessionConfig, Container, SessionManager, Storage\SessionArrayStorage};
 class Module
 {
     public function getConfig() {

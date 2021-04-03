@@ -3,7 +3,7 @@
  * DbAdapterAwareTrait
  */
 namespace src\modServices\Initializers;
-use Laminas\Db\Adapter\Adapter;
+use Zend\Db\Adapter\Adapter;
 trait DbAdapterAwareTrait
 {
     protected $adapter;

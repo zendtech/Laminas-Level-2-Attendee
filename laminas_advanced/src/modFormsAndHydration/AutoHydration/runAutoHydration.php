@@ -3,9 +3,9 @@
  * runAutoHydration runtime
  */
 use src\modDatabaseModeling\Hydrators\ClassMethodsHydrator\UserEntity;
-use Laminas\Form\{Form, Element, FormInterface};
-use Laminas\Hydrator\ClassMethodsHydrator;
-use Laminas\InputFilter\{InputFilter, Input};
+use Zend\Form\{Form, Element, FormInterface};
+use Zend\Hydrator\ClassMethodsHydrator;
+use Zend\InputFilter\{InputFilter, Input};
 require __DIR__ . '/../../../vendor/autoload.php';
 $_POST['id'] = 3;
 $_POST['firstName'] = 'Mark';

@@ -3,7 +3,7 @@
  * Runtime
  */
 use src\modDatabaseModeling\Hydrators\ClassMethodsHydrator\UserEntity;
-use Laminas\Hydrator\ClassMethodsHydrator;
+use Zend\Hydrator\ClassMethodsHydrator;
 require __DIR__ . '/../../../../vendor/autoload.php';
 $hydrator = new ClassMethodsHydrator();
 $userEntity = $hydrator->hydrate([

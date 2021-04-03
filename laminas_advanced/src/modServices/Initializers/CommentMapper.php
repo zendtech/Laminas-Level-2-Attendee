@@ -3,7 +3,7 @@
  * CommentMapper
  */
 namespace src\modServices\Initializers;
-use Laminas\Db\Adapter\Adapter;
+use Zend\Db\Adapter\Adapter;
 class CommentMapper extends AbstractDbMapper
 {
     protected $adapter;

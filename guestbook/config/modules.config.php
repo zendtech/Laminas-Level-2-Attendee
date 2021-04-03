@@ -26,6 +26,7 @@ return [
     'Laminas\Form',
     'Laminas\Navigation',
     'Laminas\Mvc\Plugin\FlashMessenger',
+    'Laminas\DeveloperTools',
     'Cache',
     'Application',
     'Guestbook',

@@ -7,23 +7,21 @@ RUN \
     unzip master.zip && \
     mv /srv/Laminas-Level-2-Attendee-master /srv/repo && \
     chmod +x /srv/repo/docker/*.sh && \
-    cp /srv/repo/docker/index.html /srv/www
+    cp /srv/repo/docker/index.html /srv/www && \
+    cp /srv/repo/docker/init.sh /tmp
 RUN \
-    echo "Installing Composer 1.10 ..." && \
-    rm -f composer.phar && \
-    wget https://getcomposer.org/download/1.10.21/composer.phar && \
-    echo "Installing guestbook ..." && \
+    echo "Updating guestbook ..." && \
     cd /srv/repo/guestbook && \
-    cp ../composer.phar . && \
-    php composer.phar update && \
-    echo "Installing onlinemarket.complete ..." && \
+    php composer.phar self-update && \
+    php composer.phar install && \
+    echo "Updating onlinemarket.complete ..." && \
     cd /srv/repo/onlinemarket.complete && \
-    cp ../composer.phar . && \
-    php composer.phar update && \
-    echo "Installing laminas_advanced ..." && \
-    cd /srv/repo/laminas_advanced && \
-    cp ../composer.phar . && \
-    php composer.phar update && \
+    php composer.phar self-update && \
+    php composer.phar install && \
+    echo "Updating laminas_advanced ..." && \
+    echo 'cd /srv/repo/laminas_advanced; && \
+    echo 'php composer.phar self-update' && \
+    echo 'php composer.phar install' && \
     echo "Installing Laminas API Tools ..." && \
     cd /srv/repo && \
     php composer.phar create-project laminas-api-tools/api-tools-skeleton laminas_api_tools

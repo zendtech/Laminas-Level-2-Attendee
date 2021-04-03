@@ -4,7 +4,7 @@
  */
 namespace src\modOtherComponents\Mail\UseCase;
 use Events\Listener\Aggregate;
-use Laminas\Mail\Transport\{File, FileOptions, Sendmail};
+use Zend\Mail\Transport\{File, FileOptions, Sendmail};
 class Module
 {
     // ...

@@ -3,12 +3,12 @@
  * HistoricalWrapperReflectionBasedAbstractFactory
  */
 namespace src\modServices\ReflectionBasedAbstractFactory;
-use Laminas\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
+use Zend\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
 class HistoricalWrapperReflectionBasedAbstractFactory extends ReflectionBasedAbstractFactory
 {
     protected $aliases = [
-        \Laminas\Console\Adapter\AdapterInterface::class     => 'ConsoleAdapter',
-        \Laminas\Filter\FilterPluginManager::class           => 'FilterManager',
-        \Laminas\Validator\ValidatorPluginManager::class     => 'ValidatorManager',
+        \Zend\Console\Adapter\AdapterInterface::class     => 'ConsoleAdapter',
+        \Zend\Filter\FilterPluginManager::class           => 'FilterManager',
+        \Zend\Validator\ValidatorPluginManager::class     => 'ValidatorManager',
     ];
 }

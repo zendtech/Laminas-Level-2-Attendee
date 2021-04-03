@@ -3,7 +3,7 @@
  * Code Runner
  */
 use src\modWebServices\Soap\SoapServerClass;
-use Laminas\Soap\Server;
+use Zend\Soap\Server;
 require __DIR__ . '/../../../vendor/autoload.php';
 $soap = new Server('http://url.of.wsdl');
 // Set the service class

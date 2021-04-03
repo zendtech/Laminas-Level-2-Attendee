@@ -1,14 +1,14 @@
 <?php
 /**
  * AbstractActionController
- * Note: This abstract provides the necessary components to run module demos
- * without the full Laminas stack
+ * Note: This abstract provide the necessary components to run module demos
+ * without the full ZF stack
  */
 namespace src\core;
-use Laminas\Mvc\Controller\AbstractActionController;
-use Laminas\View\Resolver\{AggregateResolver, TemplatePathStack};
-use Laminas\View\Renderer\PhpRenderer;
-use Laminas\Form\ConfigProvider;
+use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Resolver\{AggregateResolver, TemplatePathStack};
+use Zend\View\Renderer\PhpRenderer;
+use Zend\Form\ConfigProvider;
 class AbstractController extends AbstractActionController
 {
     protected $renderer;

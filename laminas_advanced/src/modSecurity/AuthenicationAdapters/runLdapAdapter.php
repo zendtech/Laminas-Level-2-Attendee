@@ -2,7 +2,7 @@
 /**
  * Code Runner
  */
-use Laminas\Authentication\Adapter\Ldap;
+use Zend\Authentication\Adapter\Ldap;
 require __DIR__ . '/../../../vendor/autoload.php';
 $config = require '../../config/config.php';
 try{

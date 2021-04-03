@@ -2,7 +2,7 @@
 /**
  * Code Runner
  */
-use Laminas\Permissions\Acl\{Acl, Role\GenericRole};
+use Zend\Permissions\Acl\{Acl, Role\GenericRole};
 require __DIR__ . '/../../../vendor/autoload.php';
 $acl = new Acl();
 

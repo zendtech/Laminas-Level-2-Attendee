@@ -3,7 +3,7 @@
  * Code Runner
  */
 require __DIR__ . '/../../../vendor/autoload.php';
-use Laminas\Mail\{Message, Transport\Smtp, Transport\SmtpOptions};
+use Zend\Mail\{Message, Transport\Smtp, Transport\SmtpOptions};
 $message = new Message();
 $message->addTo('daryl@datashuttle.net')
     ->addFrom('doug@unlikelysource.com')

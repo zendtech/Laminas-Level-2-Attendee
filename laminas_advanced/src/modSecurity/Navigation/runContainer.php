@@ -2,7 +2,7 @@
 /**
  * Code Runner
  */
-use Laminas\Navigation\Navigation;
+use Zend\Navigation\Navigation;
 require __DIR__ . '/../../../vendor/autoload.php';
 $config = require '../../config/config.php';
 $container = new Navigation($config['navigation']);

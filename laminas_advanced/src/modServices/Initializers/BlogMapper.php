@@ -3,7 +3,7 @@
  * BlogMapper
  */
 namespace src\modServices\Initializers;
-use Laminas\Db\Adapter\Adapter;
+use Zend\Db\Adapter\Adapter;
 class BlogMapper extends AbstractDbMapper
 {
     protected $adapter;

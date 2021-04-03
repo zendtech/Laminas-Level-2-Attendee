@@ -5,7 +5,7 @@
 
 namespace src\modFormsAndHydration\FieldsetsAndForms\Factory;
 use Interop\Container\ContainerInterface;
-use Laminas\ServiceManager\Factory\FactoryInterface;
+use Zend\ServiceManager\Factory\FactoryInterface;
 
 class UserFormFactory implements FactoryInterface
 {

@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/../vendor/autoload.php';
-use Laminas\Hydrator\ {ClassMethods, Reflection};
+use Zend\Hydrator\ {ClassMethods, Reflection};
 
 class Test
 {

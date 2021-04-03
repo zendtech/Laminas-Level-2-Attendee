@@ -6,8 +6,8 @@
 namespace src\modFormsAndHydration\FieldsetsAndForms\Factory;
 use Interop\Container\ContainerInterface;
 use src\modFormsAndHydration\FieldsetsAndForms\ProfileFieldset;
-use Laminas\ServiceManager\Factory\FactoryInterface;
-use Laminas\Hydrator\ObjectPropertyHydrator;
+use Zend\ServiceManager\Factory\FactoryInterface;
+use Zend\Hydrator\ObjectPropertyHydrator;
 use modFormsAndHydration\FieldsetsAndForms\ProfileEntity;
 
 class ProfileFieldsetFactory implements FactoryInterface

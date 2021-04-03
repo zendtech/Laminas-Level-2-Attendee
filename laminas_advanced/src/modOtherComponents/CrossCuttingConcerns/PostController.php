@@ -3,8 +3,8 @@
  * IndexController
  */
 namespace src\modOtherComponents\CrossCuttingConcerns;
-use Laminas\Mvc\Controller\AbstractActionController;
-use Laminas\View\Model\ViewModel;
+use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
 
 class PostController extends AbstractActionController
 {

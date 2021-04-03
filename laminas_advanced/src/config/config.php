@@ -2,7 +2,7 @@
 use src\modCrossCuttingConcerns\ListenerAggragates\AppEventAggregate;
 use src\modSecurity\Acl\UseCase\Module;
 use src\modServices\Delegators\{Foo, FooDelegatorFactory};
-use Laminas\ServiceManager\Factory\InvokableFactory;
+use Zend\ServiceManager\Factory\InvokableFactory;
 return [
     'db' => [
         'driver' => 'PDO',

@@ -2,7 +2,7 @@
 /**
  * Code Runner
  */
-use Laminas\Log\{Formatter\Xml, Logger, Writer\Stream};
+use Zend\Log\{Formatter\Xml, Logger, Writer\Stream};
 require __DIR__ . '/../../../vendor/autoload.php';
 $formatter = new Xml();
 

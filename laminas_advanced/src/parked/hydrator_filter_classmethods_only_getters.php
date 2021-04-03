@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/../vendor/autoload.php';
-use Laminas\Hydrator\ClassMethods;
+use Zend\Hydrator\ClassMethods;
 
 class GetHydrator extends ClassMethods
 {

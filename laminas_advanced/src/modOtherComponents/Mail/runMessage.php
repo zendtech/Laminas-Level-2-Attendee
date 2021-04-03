@@ -3,13 +3,13 @@
  * Code Runner
  */
 require __DIR__ . '/../../../vendor/autoload.php';
-use Laminas\Mail\Message;
+use Zend\Mail\Message;
 $message = new Message();
 
 // NOTE: supports optional "human readable" names
 $message->addFrom('sender@abc.com', 'I. M. Sender')
     ->addTo('foobar@example.com', 'I. M. Human')
-    ->setSubject('Sending an email from Laminas\Mail!')
+    ->setSubject('Sending an email from Zend\Mail!')
     ->setBody('This is the message body.');
 
 // Add additional recipients as a "Cc" or "Bcc":

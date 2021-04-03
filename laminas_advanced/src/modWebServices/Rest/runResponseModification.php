@@ -2,7 +2,7 @@
 /**
  * Code Runner
  */
-use Laminas\Http\PhpEnvironment\Response;
+use Zend\Http\PhpEnvironment\Response;
 require __DIR__ . '/../../../vendor/autoload.php';
 
 $response = new Response();

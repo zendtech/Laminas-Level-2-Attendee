@@ -3,7 +3,7 @@
  * Code Runner
  */
 use src\modWebServices\Soap\SoapServerClass;
-use Laminas\Soap\AutoDiscover;
+use Zend\Soap\AutoDiscover;
 require __DIR__ . '/../../../vendor/autoload.php';
 
 $autodiscover = new AutoDiscover();

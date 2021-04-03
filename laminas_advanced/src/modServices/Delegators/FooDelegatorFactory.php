@@ -5,7 +5,7 @@
 namespace src\modServices\Delegators;
 use Interop\Container\ContainerInterface;
 use modServices\Delegators\Foo;
-use Laminas\ServiceManager\Factory\FactoryInterface;
+use Zend\ServiceManager\Factory\FactoryInterface;
 
 class FooDelegatorFactory implements FactoryInterface
 {

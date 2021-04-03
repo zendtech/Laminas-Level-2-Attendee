@@ -5,8 +5,8 @@
 
 namespace src\modFormsAndHydration\FieldsetsAndForms\Factory;
 use Interop\Container\ContainerInterface;
-use Laminas\Hydrator\ClassMethodsHydrator;
-use Laminas\ServiceManager\Factory\FactoryInterface;
+use Zend\Hydrator\ClassMethodsHydrator;
+use Zend\ServiceManager\Factory\FactoryInterface;
 
 class UserFieldsetFactory implements FactoryInterface
 {

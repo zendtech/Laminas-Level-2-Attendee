@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../vendor/autoload.php';
-use Laminas\Hydrator\Reflection;
-use Laminas\Hydrator\NamingStrategy\UnderscoreNamingStrategy;
+use Zend\Hydrator\Reflection;
+use Zend\Hydrator\NamingStrategy\UnderscoreNamingStrategy;
 
 class Test
 {

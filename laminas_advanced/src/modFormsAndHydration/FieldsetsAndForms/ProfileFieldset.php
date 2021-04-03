@@ -3,8 +3,8 @@
  * ProfileFieldset
  */
 namespace src\modFormsAndHydration\FieldsetsAndForms;
-use Laminas\Form\Fieldset;
-use Laminas\Hydrator\HydratorInterface;
+use Zend\Form\Fieldset;
+use Zend\Hydrator\HydratorInterface;
 
 class ProfileFieldset extends Fieldset
 {

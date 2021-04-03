@@ -26,7 +26,7 @@ class RegistrationTable extends BaseTable
             // the iteration $registrations is "forward-only" which means we need to store it into an array
             $final[$reg->id] = $reg;
         }
-        // use Laminas\Db\Sql\Sql to pull attendees for list of registrations in registration_id order
+        // use Zend\Db\Sql\Sql to pull attendees for list of registrations in registration_id order
         $attendeeTable = $this->container->get(AttendeeTable::class);
         $adapter = $this->tableGateway->getAdapter();
         $sql = new Sql($adapter);

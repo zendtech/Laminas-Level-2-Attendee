@@ -2,7 +2,7 @@
 /**
  * Code Runner
  */
-use Laminas\Permissions\Rbac\{Rbac, Role};
+use Zend\Permissions\Rbac\{Rbac, Role};
 require __DIR__ . '/../../../vendor/autoload.php';
 $guestRole = new Role('guest');
 $guestRole->addPermission('login');

@@ -3,7 +3,7 @@
  * Code Runner
  */
 require __DIR__ . '/../../../vendor/autoload.php';
-use Laminas\Log\{Filter\Priority, Logger, Processor\ReferenceId, Writer\Stream};
+use Zend\Log\{Filter\Priority, Logger, Processor\ReferenceId, Writer\Stream};
 
 $logFile = 'example.log';
 $logger = new Logger;

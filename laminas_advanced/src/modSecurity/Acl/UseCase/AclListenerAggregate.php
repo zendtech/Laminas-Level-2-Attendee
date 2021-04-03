@@ -3,8 +3,8 @@
  * AclListenerAggregate
  */
 namespace src\modSecurity\Acl\UseCase;
-use Laminas\EventManager\{EventManagerInterface, ListenerAggregateInterface};
-use Laminas\Mvc\MvcEvent;
+use Zend\EventManager\{EventManagerInterface, ListenerAggregateInterface};
+use Zend\Mvc\MvcEvent;
 class AclListenerAggregate implements ListenerAggregateInterface
 {
     protected $listeners = [];

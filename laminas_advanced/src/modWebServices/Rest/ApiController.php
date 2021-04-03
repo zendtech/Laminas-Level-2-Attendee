@@ -3,8 +3,8 @@
  * IndexController
  */
 namespace src\modWebServices\Rest;
-use Laminas\Mvc\Controller\AbstractActionController;
-use Laminas\View\Model\{FeedModel, JsonModel, ViewModel};
+use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\{FeedModel, JsonModel, ViewModel};
 class ApiController extends AbstractActionController
 {
     protected $criteria = [
