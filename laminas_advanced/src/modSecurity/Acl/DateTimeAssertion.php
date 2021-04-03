@@ -6,7 +6,7 @@ namespace src\modSecurity\Acl;
 use DateTime;
 use DateTimeInterface;
 use Throwable;
-use Zend\Permissions\Acl\ {
+use Laminas\Permissions\Acl\ {
     AclInterface,
     Assertion\AssertionInterface,
     Resource\ResourceInterface,

@@ -4,7 +4,7 @@
  */
 namespace src\modServices\Delegators;
 use Interop\Container\ContainerInterface;
-use Zend\Hydrator\ReflectionHydrator;
+use Laminas\Hydrator\ReflectionHydrator;
 class SwitchZfcUserHydratorFactory
 {
     public function __invoke(ContainerInterface $container, $name, callable $callback, array $options = null)

@@ -2,9 +2,9 @@
 /**
  * Code Runner
  */
-use Zend\Authentication\Adapter\Http;
-use Zend\Authentication\Adapter\Http\FileResolver;
-use Zend\Http\{Request, Response};
+use Laminas\Authentication\Adapter\Http;
+use Laminas\Authentication\Adapter\Http\FileResolver;
+use Laminas\Http\{Request, Response};
 require __DIR__ . '/../../../vendor/autoload.php';
 $config = require '../../config/config.php';
 

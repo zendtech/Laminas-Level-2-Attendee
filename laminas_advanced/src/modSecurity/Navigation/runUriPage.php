@@ -3,7 +3,7 @@
  * Code Runner
  */
 use src\modSecurity\Navigation\UriPage;
-use Zend\Navigation\Page\AbstractPage;
+use Laminas\Navigation\Page\AbstractPage;
 require __DIR__ . '/../../../vendor/autoload.php';
 $page = new UriPage([
     'label' => 'Some page',

@@ -3,7 +3,7 @@
  * Module
  */
 namespace src\modSecurity\Acl;
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 class Module
 {
     public function onBootstrap($e) {

@@ -2,7 +2,7 @@
 /**
  * Code Runner
  */
-use Zend\Soap\Client;
+use Laminas\Soap\Client;
 require __DIR__ . '/../../../vendor/autoload.php';
 try {
     // Get a soap client instance passing WSDL URL

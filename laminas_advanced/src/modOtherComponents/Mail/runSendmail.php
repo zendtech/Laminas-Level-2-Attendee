@@ -3,7 +3,7 @@
  * Code Runner
  */
 require __DIR__ . '/../../../vendor/autoload.php';
-use Zend\Mail\{Message, Transport\Sendmail};
+use Laminas\Mail\{Message, Transport\Sendmail};
 
 $message = new Message();
 $message->addTo('daryl@datashuttle.net')

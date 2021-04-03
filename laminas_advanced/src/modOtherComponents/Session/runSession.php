@@ -3,7 +3,7 @@
  * Code Runner
  */
 require __DIR__ . '/../../../vendor/autoload.php';
-use Zend\Session\{Container, Config\SessionConfig, SessionManager, Storage\ArrayStorage};
+use Laminas\Session\{Container, Config\SessionConfig, SessionManager, Storage\ArrayStorage};
 
 // first request:
 $container = new Container('my_app');

@@ -3,8 +3,8 @@
  * Code Runner
  */
 require __DIR__ . '/../../../vendor/autoload.php';
-use Zend\XmlRpc\Client\Exception\FaultException;
-use Zend\XmlRpc\Client;
+use Laminas\XmlRpc\Client\Exception\FaultException;
+use Laminas\XmlRpc\Client;
 try {
     $client = new Client('http://localhost:8080');
     echo $client->call('greeter.sayHello');

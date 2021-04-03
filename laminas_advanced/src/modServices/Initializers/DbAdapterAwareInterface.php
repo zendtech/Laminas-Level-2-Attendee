@@ -3,7 +3,7 @@
  * DbAdapterAwareInterface
  */
 namespace src\modServices\Initializers;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 
 interface DbAdapterAwareInterface
 {

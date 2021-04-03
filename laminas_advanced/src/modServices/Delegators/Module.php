@@ -3,8 +3,8 @@
  * Module
  */
 namespace src\modServices\Delegators;
-use Zend\Db\Adapter\Adapter;
-use Zend\Hydrator\ClassMethodsHydrator;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Hydrator\ClassMethodsHydrator;
 use ZfcUser\Controller\Factory\RedirectCallbackFactory;
 class Module
 {

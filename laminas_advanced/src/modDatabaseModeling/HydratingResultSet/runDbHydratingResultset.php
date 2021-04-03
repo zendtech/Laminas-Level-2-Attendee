@@ -5,10 +5,10 @@
 require __DIR__ . '/../../../vendor/autoload.php';
 define('TABLE_NAME', 'users');
 use src\modDatabaseModeling\HydratingResultSet\UserEntity;
-use Zend\Hydrator\ClassMethodsHydrator;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Hydrator\ClassMethodsHydrator;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\Db\TableGateway\TableGateway;
+use Laminas\Db\Adapter\Adapter;
 
 $config    = require __DIR__ . '/../../config/config.php';
 $tableGateway     = new TableGateway(
@@ -21,4 +21,4 @@ $tableGateway     = new TableGateway(
     )
 );
 $result    = $tableGateway->select();
-foreach ($result as $user) Zend\Debug\Debug::dump($user);
+foreach ($result as $user) Laminas\Debug\Debug::dump($user);

@@ -3,8 +3,8 @@
  * AppEventAggregate
  */
 namespace src\modOtherComponents\ListenerAggragates;
-use Zend\EventManager\{EventManagerInterface, ListenerAggregateInterface};
-use Zend\Mvc\MvcEvent;
+use Laminas\EventManager\{EventManagerInterface, ListenerAggregateInterface};
+use Laminas\Mvc\MvcEvent;
 class AppEventAggregate implements ListenerAggregateInterface
 {
     protected $listeners = [];

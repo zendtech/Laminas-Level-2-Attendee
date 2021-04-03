@@ -3,7 +3,7 @@
  * Page
  */
 namespace src\modSecurity\Navigation;
-use Zend\Navigation\Page\AbstractPage;
+use Laminas\Navigation\Page\AbstractPage;
 class UriPage extends AbstractPage
 {
     public function getHref()

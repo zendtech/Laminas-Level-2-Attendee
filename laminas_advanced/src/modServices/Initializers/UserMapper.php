@@ -3,7 +3,7 @@
  * UserMapper
  */
 namespace src\modServices\Initializers;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 class UserMapper extends AbstractDbMapper
 {
     protected $adapter;

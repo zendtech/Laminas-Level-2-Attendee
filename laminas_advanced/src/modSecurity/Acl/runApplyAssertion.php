@@ -3,7 +3,7 @@
  * Code Runner
  */
 use src\modSecurity\Acl\DateTimeAssertion;
-use Zend\Permissions\Acl\Acl;
+use Laminas\Permissions\Acl\Acl;
 require __DIR__ . '/../../../vendor/autoload.php';
 try {
     $start = new DateTime($config['start_time']);

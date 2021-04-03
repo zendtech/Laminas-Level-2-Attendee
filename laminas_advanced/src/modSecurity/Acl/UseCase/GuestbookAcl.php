@@ -3,7 +3,7 @@
  * GuestbookAcl
  */
 namespace src\modSecurity\Acl\UseCase;
-use Zend\Permissions\Acl\Acl;
+use Laminas\Permissions\Acl\Acl;
 class GuestbookAcl extends Acl
 {
     public function __construct($config, $container) {

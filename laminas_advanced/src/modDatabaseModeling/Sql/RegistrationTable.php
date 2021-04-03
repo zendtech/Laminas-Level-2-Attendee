@@ -3,7 +3,7 @@
  * RegistrationTable
  */
 namespace src\modDatabaseModeling\Sql;
-use Zend\Db\{Sql\Sql, Adapter\Adapter};
+use Laminas\Db\{Sql\Sql, Adapter\Adapter};
 
 class RegistrationTable {
     public const REGISTRATION_TABLE = 'registration';

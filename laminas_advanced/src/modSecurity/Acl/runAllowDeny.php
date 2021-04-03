@@ -2,7 +2,7 @@
 /**
  * Code Runner
  */
-use Zend\Permissions\Acl\Acl;
+use Laminas\Permissions\Acl\Acl;
 require __DIR__ . '/../../../vendor/autoload.php';
 $acl = new Acl();
 $acl->addRole('guest')

@@ -3,10 +3,10 @@
  * Base
  */
 namespace src\modDatabaseModeling\Relationships;
-use Zend\Db\ResultSet\HydratingResultSet;
-use Zend\Hydrator\ObjectProperty;
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\TableGateway\TableGateway;
+use Laminas\Db\ResultSet\HydratingResultSet;
+use Laminas\Hydrator\ObjectProperty;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\TableGateway\TableGateway;
 class BaseTable {
     public static $tableName;
     protected $tableGateway;

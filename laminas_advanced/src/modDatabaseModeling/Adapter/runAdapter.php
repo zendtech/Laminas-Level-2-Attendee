@@ -2,12 +2,12 @@
 /**
  * ${NAME}
  */
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 require __DIR__ . '/../../../vendor/autoload.php';
 $config = require '../../config/config.php';
 
 try {
-    // Assumes $adapter instanceof Zend\Db\Adapter\Adapter
+    // Assumes $adapter instanceof Laminas\Db\Adapter\Adapter
     $adapter = new Adapter($config['db']);
     $connection = $adapter->getDriver()->getConnection();
     // force the database connection

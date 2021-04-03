@@ -2,9 +2,9 @@
 /**
  * Code Runner
  */
-use Zend\Db\Adapter\Adapter;
-use Zend\Log\Logger;
-use Zend\Log\Writer\Db;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Log\Logger;
+use Laminas\Log\Writer\Db;
 
 require __DIR__ . '/../../../vendor/autoload.php';
 $config = require '../../config/config.php';

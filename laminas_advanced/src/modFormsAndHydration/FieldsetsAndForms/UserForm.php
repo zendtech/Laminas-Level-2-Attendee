@@ -3,7 +3,7 @@
  * UserForm
  */
 namespace src\modFormsAndHydration\FieldsetsAndForms;
-use Zend\Form\{Form, Element\Csrf, Element\Submit};
+use Laminas\Form\{Form, Element\Csrf, Element\Submit};
 class UserForm extends Form
 {
     public function __construct(string $name, array $options) {

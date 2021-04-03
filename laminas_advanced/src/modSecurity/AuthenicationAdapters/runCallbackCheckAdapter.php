@@ -2,8 +2,8 @@
 /**
  * Code Runner
  */
-use Zend\Authentication\Adapter\DbTable\CallbackCheckAdapter;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Authentication\Adapter\DbTable\CallbackCheckAdapter;
+use Laminas\Db\Adapter\Adapter;
 require __DIR__ . '/../../../vendor/autoload.php';
 $config = require '../../config/config.php';
 try{

@@ -3,7 +3,7 @@
  * Code Runner
  */
 
-use Zend\Authentication\Adapter\Digest;
+use Laminas\Authentication\Adapter\Digest;
 
 require __DIR__ . '/../../../vendor/autoload.php';
 $config = require '../../config/config.php';

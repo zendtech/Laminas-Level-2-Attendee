@@ -5,10 +5,10 @@
  * without the full ZF stack
  */
 namespace src\core;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Resolver\{AggregateResolver, TemplatePathStack};
-use Zend\View\Renderer\PhpRenderer;
-use Zend\Form\ConfigProvider;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Resolver\{AggregateResolver, TemplatePathStack};
+use Laminas\View\Renderer\PhpRenderer;
+use Laminas\Form\ConfigProvider;
 class AbstractController extends AbstractActionController
 {
     protected $renderer;

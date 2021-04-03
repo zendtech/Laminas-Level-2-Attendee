@@ -3,7 +3,7 @@
  * AppEvent
  */
 namespace src\modOtherComponents\ListenerAggragates;
-use Zend\EventManager\Event;
+use Laminas\EventManager\Event;
 class AppEvent extends Event
 {
     const EVENT_TEST = 'application-event-test';

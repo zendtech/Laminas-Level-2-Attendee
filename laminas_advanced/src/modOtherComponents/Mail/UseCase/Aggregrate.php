@@ -3,11 +3,11 @@
  * Aggregrate
  */
 namespace src\modOtherComponents\Mail\UseCase;
-use Zend\EventManager\ {EventManagerInterface, ListenerAggregateInterface};
+use Laminas\EventManager\ {EventManagerInterface, ListenerAggregateInterface};
 use Psr\Container\ContainerInterface;
-use Zend\Mail\Message;
-use Zend\Mime\{Mime, Part, Message as MimeMessage};
-use Zend\View\{Model\ViewModel, Renderer\PhpRenderer, Resolver\AggregateResolver, Resolver\TemplateMapResolver};
+use Laminas\Mail\Message;
+use Laminas\Mime\{Mime, Part, Message as MimeMessage};
+use Laminas\View\{Model\ViewModel, Renderer\PhpRenderer, Resolver\AggregateResolver, Resolver\TemplateMapResolver};
 class Aggregrate implements ListenerAggregateInterface
 {
     protected $listeners;

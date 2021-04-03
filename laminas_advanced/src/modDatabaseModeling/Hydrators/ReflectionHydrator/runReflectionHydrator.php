@@ -3,7 +3,7 @@
  * Runtime
  */
 use src\modDatabaseModeling\Hydrators\ReflectionHydrator\UserEntity;
-use Zend\Hydrator\ReflectionHydrator;
+use Laminas\Hydrator\ReflectionHydrator;
 require __DIR__ . '/../../../../vendor/autoload.php';
 $hydrator = new ReflectionHydrator();
 $userEntity = $hydrator->hydrate([

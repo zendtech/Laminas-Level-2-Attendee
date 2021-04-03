@@ -8,7 +8,8 @@ RUN \
     mv /srv/Laminas-Level-2-Attendee-master /srv/repo && \
     chmod +x /srv/repo/docker/*.sh && \
     cp /srv/repo/docker/index.html /srv/www && \
-    cp /srv/repo/docker/init.sh /tmp
+    cp /srv/repo/docker/init.sh /tmp && \
+    echo "ServerName laminas" >> /etc/httpd/httpd.conf
 RUN \
     echo "Updating guestbook ..." && \
     cd /srv/repo/guestbook && \
@@ -19,12 +20,12 @@ RUN \
     php composer.phar self-update && \
     php composer.phar install && \
     echo "Updating laminas_advanced ..." && \
-    echo 'cd /srv/repo/laminas_advanced; && \
-    echo 'php composer.phar self-update' && \
-    echo 'php composer.phar install' && \
+    cd /srv/repo/laminas_advanced; && \
+    php composer.phar self-update && \
+    php composer.phar install && \
     echo "Installing Laminas API Tools ..." && \
     cd /srv/repo && \
-    php composer.phar create-project laminas-api-tools/api-tools-skeleton laminas_api_tools
+    php composer2.phar create-project laminas-api-tools/api-tools-skeleton laminas_api_tools
 RUN \
     echo "Creating sample database and assigning permissions ..." && \
     /etc/init.d/mysql start && \
