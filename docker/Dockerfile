@@ -15,12 +15,14 @@ RUN \
     cd /srv/repo/guestbook && \
     php composer.phar self-update && \
     php composer.phar install && \
+    cd admin && \
+    php ../composer.phar install && \
     echo "Updating onlinemarket.complete ..." && \
     cd /srv/repo/onlinemarket.complete && \
     php composer.phar self-update && \
     php composer.phar install && \
     echo "Updating laminas_advanced ..." && \
-    cd /srv/repo/laminas_advanced; && \
+    cd /srv/repo/laminas_advanced && \
     php composer.phar self-update && \
     php composer.phar install && \
     echo "Installing Laminas API Tools ..." && \

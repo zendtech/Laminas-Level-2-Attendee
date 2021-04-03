@@ -9,8 +9,8 @@ return [
             'model-primary-adapter-Config' => [
                 'driver' => 'PDO',
                 'dsn' => 'mysql:hostname=localhost;dbname=zfcourse',
-                'username' => 'vagrant',
-                'password' => 'vagrant',
+                'username' => 'laminas',
+                'password' => 'password',
             ],
         ],
         'factories' => [

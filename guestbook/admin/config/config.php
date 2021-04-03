@@ -10,6 +10,8 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
+    \Mezzio\ConfigProvider::class,
+    \Mezzio\Router\ConfigProvider::class,
     \Laminas\Db\ConfigProvider::class,
     \Manage\ConfigProvider::class,
     \Laminas\Router\ConfigProvider::class,
@@ -30,6 +32,6 @@ $aggregator = new ConfigAggregator([
 
     // Load development config if it exists
     new PhpFileProvider('config/development.config.php'),
-], $cacheConfig['config_cache_path']);
+], $cacheConfig['config_cache_path'], [\Laminas\ZendFrameworkBridge\ConfigPostProcessor::class]);
 
 return $aggregator->getMergedConfig();

@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-# Usage: phpmyadmin_install.sh VERSION
 
 echo "Installing Onlinemarket Work ..."
 cd /home/onlinemarket.work
-composer update
+php composer.phar update
 
 echo "Setting up web links ..."
 ln -f -s /home/sandbox/public /srv/www/sandbox

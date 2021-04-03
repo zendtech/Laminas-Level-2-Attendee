@@ -7,8 +7,8 @@ return [
     'db' => [
         'driver' => 'PDO',
         'dsn'    => 'mysql:host=localhost;dbname=zfcourse',
-        'username' => 'vagrant',
-        'password' => 'vagrant',
+        'username' => 'laminas',
+        'password' => 'password',
     ],
     'auth_adapters' => [
         'http' => [
