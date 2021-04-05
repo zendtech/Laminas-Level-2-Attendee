@@ -24,7 +24,7 @@ use Events\TableModule\{
 return [
     'navigation' => [
         'default' => [
-            'events' => ['label' => 'Events', 'route' => 'events', 'resource' => 'menu-events']
+            'events' => ['label' => '- Events -', 'route' => 'events', 'resource' => 'menu-events']
         ]
     ],
     'router' => [

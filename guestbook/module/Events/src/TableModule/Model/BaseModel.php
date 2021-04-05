@@ -6,7 +6,7 @@ use Laminas\Db\{
 };
 abstract class BaseModel
 {
-    public $tablename;
+    public static $tablename = '';
     protected $tableGateway;
     public function __construct(AdapterInterface $adapter)
     {

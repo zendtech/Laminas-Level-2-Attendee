@@ -114,22 +114,22 @@ return [
     'service_manager' => [
         'services' => [
             'market-categories' => [
-				'barter',
-				'beauty',
-				'clothing',
-				'computer',
-				'entertainment',
-				'free',
-				'garden',
-				'general',
-				'health',
-				'household',
-				'phones',
-				'property',
-				'sporting',
-				'tools',
-				'transportation',
-				'wanted',
+                'barter',
+                'beauty',
+                'clothing',
+                'computer',
+                'entertainment',
+                'free',
+                'garden',
+                'general',
+                'health',
+                'household',
+                'phones',
+                'property',
+                'sporting',
+                'tools',
+                'transportation',
+                'wanted',
             ],
 
             //*** FILE UPLOAD LAB: define Config for file upload validators and filter
@@ -146,7 +146,7 @@ return [
             //*** CACHE LAB: add missing factory for Market\Listener\CacheAggregate
         ],
     ],
-	//*** CACHE LAB: add entries to represent listeners defined as aggregates
+    //*** CACHE LAB: add entries to represent listeners defined as aggregates
     //'listeners' => [ Listener\CacheAggregate::class ],
     'controllers' => [
         'factories' => [
@@ -169,8 +169,8 @@ return [
     //*** NAVIGATION LAB: define default navigation
     'navigation' => [
         'default' => [
-            'market-home' => ['label' => 'Home', 'order' => -100, 'route' => 'market', 'resource' => 'menu-market-index'],
-            'market-post' => ['label' => 'Post', 'route' => 'market/post', 'resource' => 'menu-market-post'],
+            'market-home' => ['label' => '- Home -', 'order' => -100, 'route' => 'market', 'resource' => 'menu-market-index'],
+            'market-post' => ['label' => '- Post -', 'route' => 'market/post', 'resource' => 'menu-market-post'],
         ],
     ],
     //*** ACL LAB

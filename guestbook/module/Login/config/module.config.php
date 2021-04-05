@@ -1,6 +1,6 @@
 <?php
 namespace Login;
-use Laminas\Router\Http\Segment;
+use Laminas\Router\Http\Literal;
 use Login\Controller\{
     Factory\IndexControllerFactory,
     IndexController
@@ -24,19 +24,29 @@ use Laminas\ServiceManager\Factory\InvokableFactory;
 return [
     'navigation' => [
         'default' => [
-            'login' => ['label' => 'LoginForm', 'uri' => '/login/login', 'tag' => __NAMESPACE__, 'resource' => 'menu-login-login'],
-            'logout' => ['label' => 'Logout', 'uri' => '/login/logout', 'tag' => __NAMESPACE__, 'resource' => 'menu-login-logout']
+            'login' => ['label' => '- Login -', 'uri' => '/guestbook/login', 'tag' => __NAMESPACE__, 'resource' => 'menu-login-login'],
+            'logout' => ['label' => '- Logout -', 'uri' => '/guestbook/logout', 'tag' => __NAMESPACE__, 'resource' => 'menu-login-logout']
         ]
     ],
     'router' => [
         'routes' => [
             'login' => [
-                'type'    => Segment::class,
+                'type'    => Literal::class,
                 'options' => [
-                    'route'    => '/login[/:action]',
+                    'route'    => '/login',
                     'defaults' => [
                         'controller' => IndexController::class,
                         'action'     => 'index',
+                    ],
+                ],
+            ],
+            'logout' => [
+                'type'    => Literal::class,
+                'options' => [
+                    'route'    => '/logout',
+                    'defaults' => [
+                        'controller' => IndexController::class,
+                        'action'     => 'logout',
                     ],
                 ],
             ],
@@ -79,7 +89,7 @@ return [
         ],
         'rights' => [
             'guest' => [
-                'login'            => ['allow' => ['login','register']],
+                'login'            => ['allow' => ['index','login','register']],
                 'menu-login-login' => ['allow' => NULL],
                 'menu-login-logout' => ['deny' => NULL],
             ],

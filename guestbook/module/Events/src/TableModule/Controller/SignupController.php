@@ -1,5 +1,7 @@
 <?php
 namespace Events\TableModule\Controller;
+use Laminas\Filter\FilterInterface;
+use Events\TableModule\Model\BaseModel;
 use Laminas\Db\TableGateway\TableGatewayInterface;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
@@ -8,14 +10,14 @@ class SignupController extends AbstractActionController
 {
     use TableTrait;
     protected $regDataFilter;
-    public function __construct(
-        TableGatewayInterface $eventTable,
-        TableGatewayInterface $registrationTable,
-        TableGatewayInterface $attendeeTable,
-        $filter){
-        $this->setEventTable($eventTable);
-        $this->setRegistrationTable($registrationTable);
-        $this->setAttendeeTable($attendeeTable);
+    public function __construct(BaseModel $eventModel,
+                                BaseModel $registrationModel,
+                                BaseModel $attendeeModel,
+                                FilterInterface $filter)
+    {
+        $this->setEventModel($eventModel);
+        $this->setRegistrationModel($registrationModel);
+        $this->setAttendeeModel($attendeeModel);
         $this->setRegDataFilter($filter);
     }
     public function indexAction()
@@ -24,7 +26,7 @@ class SignupController extends AbstractActionController
         if ($eventId) {
             return $this->eventSignup($eventId);
         }
-        $events = $this->eventTable->findAll();
+        $events = $this->eventModel->findAll();
         return new ViewModel(array('events' => $events));
     }
 
@@ -35,7 +37,7 @@ class SignupController extends AbstractActionController
 
     protected function eventSignup($eventId)
     {
-        $event = $this->eventTable->findById($eventId);
+        $event = $this->eventModel->findById($eventId);
         if (!$event) {
             return $this->notFoundAction();
         }
@@ -52,10 +54,10 @@ class SignupController extends AbstractActionController
     protected function processForm(array $formData, $eventId)
     {
         $formData = $this->sanitizeData($formData);
-        $regId = $this->registrationTable->persist($eventId, $formData['first_name'], $formData['last_name']);
+        $regId = $this->registrationModel->persist($eventId, $formData['first_name'], $formData['last_name']);
         $ticketData = $formData['ticket'];
         foreach ($ticketData as $nameOnTicket) {
-            $this->attendeeTable->persist($regId, $nameOnTicket);
+            $this->attendeeModel->persist($regId, $nameOnTicket);
         }
         return true;
     }
@@ -75,7 +77,7 @@ class SignupController extends AbstractActionController
         return $clean;
     }
 
-    public function setRegDataFilter($filter)
+    public function setRegDataFilter(FilterInterface $filter)
     {
         $this->regDataFilter = $filter;
     }

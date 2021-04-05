@@ -137,14 +137,14 @@ return [
         'template_path_stack' => [__DIR__ . '/../view'],
     ],
     'service_manager' => [
-		'services' => [
-			'events-nav-Config' => [
-				['label' => 'Signup Form', 'class' => 'events-label', 'route' => 'events/signup', 'resource' => 'menu-events-signup-label' ], 
-				['label' => 'Signup', 'class' => 'btn btn-block btn-success btn-large', 'route' => 'events/signup', 'resource' => 'menu-events-signup' ],
-				['label' => 'Admin Area', 'class' => 'events-label', 'route' => 'events/admin', 'resource' => 'menu-events-admin-label' ], 
-				['label' => 'Admin Area', 'class' => 'btn btn-block btn-success btn-large', 'route' => 'events/admin', 'resource' => 'menu-events-admin' ],
-			],
-		],
+        'services' => [
+            'events-nav-Config' => [
+                ['label' => 'Signup Form', 'class' => 'events-label', 'route' => 'events/signup', 'resource' => 'menu-events-signup-label' ],
+                ['label' => 'Signup', 'class' => 'btn btn-block btn-success btn-large', 'route' => 'events/signup', 'resource' => 'menu-events-signup' ],
+                ['label' => 'Admin Area', 'class' => 'events-label', 'route' => 'events/admin', 'resource' => 'menu-events-admin-label' ],
+                ['label' => 'Admin Area', 'class' => 'btn btn-block btn-success btn-large', 'route' => 'events/admin', 'resource' => 'menu-events-admin' ],
+            ],
+        ],
         'factories' => [
             // Listener\AggregateListener::class => Listener\Factory\AggregateListenerFactory::class,
             //*** DATABASE ENTITIES LAB: define entity classes as invokables
@@ -153,26 +153,26 @@ return [
             RegistrationEntity::class => InvokableFactory::class,
             BaseEventsTableModel::class => BaseTableModelFactory::class
         ],
-		//*** ABSTRACT FACTORIES LAB: define an abstract factory which sets the tableGateway property for all usersModelTableGateway module classes
-		'abstract_factories' => [
-			ConfigAbstractFactory::class
-		],
-		//*** NAVIGATION LAB: define navigation for events as a service container service
+        //*** ABSTRACT FACTORIES LAB: define an abstract factory which sets the tableGateway property for all usersModelTableGateway module classes
+        'abstract_factories' => [
+            ConfigAbstractFactory::class
+        ],
+        //*** NAVIGATION LAB: define navigation for events as a service container service
     ],
     'view_helpers' => [
-		'factories' => [
-			FormMultiTextHelper::class => InvokableFactory::class
-		],
-		'aliases' => [
-			'formMultiText' => FormMultiTextHelper::class,
-		],
+        'factories' => [
+            FormMultiTextHelper::class => InvokableFactory::class
+        ],
+        'aliases' => [
+            'formMultiText' => FormMultiTextHelper::class,
+        ],
     ],
     //*** NAVIGATION LAB: define default navigation
     'navigation' => [
-		'default' => [
-			['label' => 'Events', 'route' => 'events', 'resource' => 'menu-events'],
-		],
-	],
+        'default' => [
+            ['label' => '- Events -', 'route' => 'events', 'resource' => 'menu-events'],
+        ],
+    ],
     //*** ACL LAB
     'access-control-Config' => [
         'resources' => [
@@ -196,16 +196,16 @@ return [
                 //*** ACL LAB: for the 'events-sign' resource, guests should be allowed any action
                 'events-sign' => ['allow' => NULL],
                 //*** NAVIGATION LAB: guest can see the 'menu-events' and 'menu-events-signup' menu items
-				'menu-events'        => ['allow' => NULL],
-				'menu-events-signup' => ['allow' => NULL],
-				'menu-events-signup-label' => ['allow' => NULL],
+                'menu-events'        => ['allow' => NULL],
+                'menu-events-signup' => ['allow' => NULL],
+                'menu-events-signup-label' => ['allow' => NULL],
             ],
             'admin' => [
                 //*** ACL LAB: for the 'events-admin' resource, admin should be allowed any action
                 'events-admin' => ['allow' => NULL],
                 //*** NAVIGATION LAB: admin can see the 'menu-admin' item
-				'menu-events-admin' => ['allow' => NULL],
-				'menu-events-admin-label' => ['allow' => NULL],
+                'menu-events-admin' => ['allow' => NULL],
+                'menu-events-admin-label' => ['allow' => NULL],
             ],
         ],
     ],

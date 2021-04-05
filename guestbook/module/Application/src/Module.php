@@ -8,9 +8,10 @@ use Application\Session\ {CustomStorage, CustomManager};
 use Laminas\Db\TableGateway\TableGateway;
 use Laminas\Mvc\MvcEvent;
 use Laminas\EventManager\LazyListener;
-use Laminas\Session\Container;
 use Laminas\Db\Adapter\Adapter;
 use Laminas\Stdlib\ArrayObject;
+use Laminas\Session\Container as SessionContainer;
+use Laminas\Session\SessionManager;
 
 class Module
 {
@@ -40,7 +41,7 @@ class Module
     public function setDefaultSessionManager(MvcEvent $e)
     {
         $manager = $e->getApplication()->getServiceManager()->get('application-session-manager');
-        Container::setDefaultManager($manager);
+        SessionContainer::setDefaultManager($manager);
         $manager->start();
     }
 
@@ -52,7 +53,7 @@ class Module
                     return new Adapter($container->get('local-db-Config'));
                 },
                 'application-session-container' => function ($container) {
-                    return new Container(__NAMESPACE__);
+                    return new SessionContainer(__NAMESPACE__);
                 },
                 'application-session-storage' => function ($container) {
                     $adapter = $container->get('application-db-adapter');
@@ -68,7 +69,7 @@ class Module
                     );
                 },
                 'application-session-manager' => function ($container) {
-                    $manager = new CustomManager();
+                    $manager = new SessionManager();
                     $manager->setStorage($container->get('application-session-storage'));
                     return $manager;
                 },

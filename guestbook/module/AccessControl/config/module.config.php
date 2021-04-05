@@ -30,7 +30,7 @@ return [
         */
         'assertions' => [
             'date-time-assert-config' => [
-                'start' => ['hour' => 9, 'minute' => 0, 'second' => 0],
+                'start' => ['hour' => 4, 'minute' => 0, 'second' => 0],
                 'stop'  => ['hour' => 22, 'minute' => 0, 'second' => 0],
             ],
         ],

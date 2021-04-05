@@ -122,22 +122,22 @@ return [
     'service_manager' => [
         'services' => [
             'market-categories' => [
-				'barter',
-				'beauty',
-				'clothing',
-				'computer',
-				'entertainment',
-				'free',
-				'garden',
-				'general',
-				'health',
-				'household',
-				'phones',
-				'property',
-				'sporting',
-				'tools',
-				'transportation',
-				'wanted',
+                'barter',
+                'beauty',
+                'clothing',
+                'computer',
+                'entertainment',
+                'free',
+                'garden',
+                'general',
+                'health',
+                'household',
+                'phones',
+                'property',
+                'sporting',
+                'tools',
+                'transportation',
+                'wanted',
             ],
 
             //*** FILE UPLOAD LAB: define Config for file upload validators and filter
@@ -181,8 +181,8 @@ return [
     //*** NAVIGATION LAB: define default navigation
     'navigation' => [
         'default' => [
-            'market-home' => ['label' => 'Home', 'order' => -100, 'route' => 'market', 'resource' => 'menu-market-index'],
-            'market-post' => ['label' => 'Post', 'route' => 'market/post', 'resource' => 'menu-market-post'],
+            'market-home' => ['label' => '- Home -', 'order' => -100, 'route' => 'market', 'resource' => 'menu-market-index'],
+            'market-post' => ['label' => '- Post -', 'route' => 'market/post', 'resource' => 'menu-market-post'],
         ],
     ],
     //*** ACL LAB
@@ -208,9 +208,9 @@ return [
             ],
             'user' => [
                 //*** ACL LAB: for the "market-post" resource users are allowed all actions
-				'market-post' => ['allow' => NULL],
+                'market-post' => ['allow' => NULL],
                 //*** NAVIGATION LAB: users are allowed to see the market post menu item
-				'menu-market-post'  => ['allow' => NULL],
+                'menu-market-post'  => ['allow' => NULL],
             ],
         ],
     ],

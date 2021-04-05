@@ -1,15 +1,16 @@
 <?php
 namespace Login\Controller;
+use Login\Entity\UserEntity;
+use Application\Model\AbstractTable;
 use Application\Traits\SessionTrait;
-use ArrayObject;
 use Guestbook\Listener\CacheListenerAggregate;
-use Login\Model\ {User};
-use Laminas\Db\TableGateway\TableGatewayInterface;
 use Laminas\Form\FormInterface;
 use Laminas\View\Model\ViewModel;
 use Laminas\Mvc\Controller\AbstractActionController;
-use Laminas\Authentication\{Adapter\ValidatableAdapterInterface,
-    AuthenticationServiceInterface};
+use Laminas\Authentication\AuthenticationServiceInterface;
+use Laminas\Authentication\Adapter\ValidatableAdapterInterface;
+use Laminas\Session\ManagerInterface;
+use Laminas\Session\Container as SessionContainer;
 
 class IndexController extends AbstractActionController
 {
@@ -20,47 +21,47 @@ class IndexController extends AbstractActionController
     const FORM_INVALID  = '<b style="color:orange;">There were invalid form entries: please review error messages</b>';
     const REG_SUCCESS   = '<b style="color:green;">Registration was successful</b>';
     const REG_FAIL      = '<b style="color:red;">Registration failed</b>';
-    protected $userTable, $loginForm, $registerForm, $authenticationService, $loginAuthAdapter, $sessionContainer;
+    protected $userTable, $loginForm, $regForm, $authService, $loginAuthAdapter, $sessionContainer;
 
     public function __construct(
-        TableGatewayInterface $userTable,
-        FormInterface $registerForm,
+        AbstractTable $userTable,
+        FormInterface $regForm,
         FormInterface $loginForm,
         ValidatableAdapterInterface $loginAuthAdapter,
-        AuthenticationServiceInterface $authenticationService,
-        ArrayObject $sessionContainer,
-        Manager $sessionManager
+        AuthenticationServiceInterface $authService,
+        SessionContainer $sessionContainer,
+        ManagerInterface $sessionManager
 
     ){
         $this->userTable = $userTable;
-        $this->registerForm = $registerForm;
+        $this->regForm   = $regForm;
         $this->loginForm = $loginForm;
         $this->loginAuthAdapter = $loginAuthAdapter;
-        $this->authenticationService = $authenticationService;
+        $this->authService = $authService;
         $this->setSessionContainer($sessionContainer);
         $this->setSessionManager($sessionManager);
     }
 
     public function indexAction()
     {
-        return new ViewModel(['loginForm' => $this->loginForm, 
+        return new ViewModel(['loginForm' => $this->loginForm,
                               'regForm' => $this->regForm,
                               'message' => '']);
-    }    
+    }
     /**
      * Performs basic login / authentication
-     * 
+     *
      * Additional security suggestions:
      * #1: create a log file of successful and failed login attempts
      * #2: maintain a counter and redirect at random if XXX number of failed login attempts
-     * 
+     *
      */
     public function loginAction()
     {
         $message = NULL;
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $this->loginForm->bind(new User());
+            $this->loginForm->bind(new UserEntity());
             $this->loginForm->setData($request->getPost());
             if (!$this->loginForm->isValid()) {
                 $message = self::FORM_INVALID;
@@ -74,7 +75,7 @@ class IndexController extends AbstractActionController
                 $result = $this->loginAuthAdapter->authenticate();
                 if ($result->isValid()) {
                     $storage = $this->authService->getStorage();
-                    $user = new User(get_object_vars($this->loginAuthAdapter->getResultRowObject()));
+                    $user = new UserEntity(get_object_vars($this->loginAuthAdapter->getResultRowObject()));
                     // override locale
                     $user->setLocale($locale);
                     $storage->write($user);
@@ -88,7 +89,7 @@ class IndexController extends AbstractActionController
             $this->sessionContainer->message = $message;
         }
         $message = $message ?? $this->sessionContainer->message ?? '';
-        $viewModel = new ViewModel(['loginForm' => $this->loginForm, 
+        $viewModel = new ViewModel(['loginForm' => $this->loginForm,
                                     'regForm' => $this->regForm,
                                     'message' => $message]);
         $viewModel->setTemplate('login/index/index');
@@ -98,15 +99,15 @@ class IndexController extends AbstractActionController
     {
         $this->authService->clearIdentity();
         $this->sessionManager->destroy();
-		$this->getEventManager()->trigger(CacheListenerAggregate::EVENT_CLEAR_CACHE, $this);
+        $this->getEventManager()->trigger(CacheListenerAggregate::EVENT_CLEAR_CACHE, $this);
         return $this->redirect()->toRoute('login');
-    }    
+    }
     public function registerAction()
     {
         $message = '';
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $this->regForm->bind(new User());
+            $this->regForm->bind(new UserEntity());
             $this->regForm->setData($request->getPost());
             if (!$this->regForm->isValid()) {
                 $message = self::FORM_INVALID;
@@ -119,7 +120,7 @@ class IndexController extends AbstractActionController
                 }
             }
         }
-        $viewModel = new ViewModel(['loginForm' => $this->loginForm, 
+        $viewModel = new ViewModel(['loginForm' => $this->loginForm,
                                     'regForm' => $this->regForm,
                                     'message' => $message]);
         $viewModel->setTemplate('login/index/index');

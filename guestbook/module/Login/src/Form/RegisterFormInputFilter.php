@@ -4,10 +4,8 @@
  */
 
 namespace Login\Form;
-use Laminas\I18n\Validator\{
-    Alnum,
-    NotEmpty,
-};
+use Laminas\Validator\NotEmpty;
+use Laminas\I18n\Validator\Alnum;
 use Laminas\Filter\{
     StringTrim,
     StripTags,

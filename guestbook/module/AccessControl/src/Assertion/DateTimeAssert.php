@@ -1,7 +1,7 @@
 <?php
 namespace AccessControl\Assertion;
 
-use DateTime;
+use DateTime, DateTimeZone;
 use Laminas\Permissions\Acl\{
     Acl,
     Role\RoleInterface,
@@ -11,12 +11,13 @@ use Laminas\Permissions\Acl\{
 
 class DateTimeAssert implements AssertionInterface
 {
+    public const DT_FORMAT = 'Y-m-d H:i:s';
     protected $startTime;
     protected $stopTime;
     public function __construct(DateTime $start, DateTime $stop)
     {
-        $this->startTime = $start;
-        $this->stopTime = $stop;
+        $this->startTime = $start->format(self::DT_FORMAT);
+        $this->stopTime = $stop->format(self::DT_FORMAT);
     }
 
     public function assert(Acl $acl,
@@ -24,7 +25,7 @@ class DateTimeAssert implements AssertionInterface
                            ResourceInterface $resource = null,
                            $privilege = null)
     {
-        $now   = new DateTime('now');
+        $now = (new DateTime('now', new DateTimeZone('UTC')))->format(self::DT_FORMAT);
         return (($this->startTime <= $now) && ($now <= $this->stopTime));
     }
 }

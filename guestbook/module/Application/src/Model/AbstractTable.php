@@ -8,11 +8,12 @@ use Laminas\Db\TableGateway\TableGateway;
 
 abstract class AbstractTable
 {
+    public const TABLE_NAME = '';
     protected $tableGateway;
     public function setTableGateway(Adapter $adapter, AbstractModel $model)
     {
         $prototype = new HydratingResultSet(new ClassMethods(), $model);
-        $this->tableGateway = new TableGateway(static::$tableName, $adapter, NULL, $prototype);
+        $this->tableGateway = new TableGateway(static::TABLE_NAME, $adapter, NULL, $prototype);
     }
     public function findAll()
     {

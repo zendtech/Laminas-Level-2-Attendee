@@ -1,7 +1,7 @@
 <?php
 namespace Events\TableModule\Controller\Factory;
 use Events\TableModule\Controller\SignupController;
-use Events\TableModule\Model\ {EventModel,RegistrationTable, AttendeeTable};
+use Events\TableModule\Model\ {EventModel,RegistrationModel, AttendeeModel};
 use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
 
@@ -11,8 +11,8 @@ class SignupControllerFactory implements FactoryInterface
     {
         return new SignupController(
             $container->get(EventModel::class),
-            $container->get(RegistrationTable::class),
-            $container->get(AttendeeTable::class),
+            $container->get(RegistrationModel::class),
+            $container->get(AttendeeModel::class),
             $container->get('events-reg-data-filter')
         );
     }

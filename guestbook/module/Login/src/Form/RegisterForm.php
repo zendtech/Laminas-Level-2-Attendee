@@ -19,20 +19,20 @@ class RegisterForm extends LoginForm
             ->setLabel('User Name')
             ->setAttributes(['size' => 40]);
         $this->add($name);
-        
+
         $question = (new Text('securityQuestion'))
             ->setLabel('Security Question')
             ->setAttributes(['size' => 40]);
         $this->add($question);
-        
+
         $answer = (new Text('securityAnswer'))
             ->setLabel('Security Answer')
             ->setAttributes(['size' => 40]);
         $this->add($answer);
-        
+
         $submit = $this->get('submit');
         $submit->setAttributes([
-            'value' => 'RegisterForm',
+            'value' => 'Register',
             'style' => 'color:white; background-color:green;'
         ]);
     }

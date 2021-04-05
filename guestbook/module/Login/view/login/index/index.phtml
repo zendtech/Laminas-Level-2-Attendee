@@ -5,8 +5,8 @@
                 <h3 class="panel-title">Login</h3>
             </div>
             <div class="panel-body">
-                <?php $this->loginForm->setAttributes(['action' => $this->url('login', ['action' => 'login'])]); ?>
                 <?php $this->loginForm->prepare(); ?>
+                <?php $this->loginForm->setAttributes(['action' => $this->url('login', ['action' => 'login'])]); ?>
                 <?= $this->form()->openTag($this->loginForm); ?>
                 <dt><?= $this->formLabel($this->loginForm->get('email')); ?></dt>
                 <dd><?= $this->formEmail($this->loginForm->get('email')); ?><?= $this->formElementErrors($this->loginForm->get('email')); ?></dd>
@@ -55,7 +55,7 @@
             </div>
         </div>
     </div>
-    
+
     <div style="text-align: center">
         <?php echo $this->message; ?>
     </div>

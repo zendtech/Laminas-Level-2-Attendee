@@ -20,7 +20,7 @@ class LoginForm extends Form
         parent::__construct(__CLASS__, null);
         $this->setAttributes(['method' => 'post']);
         $this->setHydrator($hydrator);
-        $this->addInputFilter($inputFilter);
+        $this->setInputFilter($inputFilter);
 
         $email = (new Email('email'))
             ->setLabel('Email Address')
@@ -39,7 +39,7 @@ class LoginForm extends Form
 
         $submit = (new Submit('submit'))
             ->setAttributes([
-                'value' => 'LoginForm',
+                'value' => 'Login',
                 'style' => 'color:white;background-color:green;']
             );
         $this->add($submit);

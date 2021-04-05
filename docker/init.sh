@@ -1,24 +1,16 @@
 #!/usr/bin/env bash
 
-echo "Installing Onlinemarket Work ..."
-cd /home/onlinemarket.work
-php composer.phar update
-
-echo "Setting up web links ..."
-ln -f -s /home/sandbox/public /srv/www/sandbox
-ln -f -s /home/onlinemarket.work/public /srv/www/onlinemarket.work
-ln -f -s /srv/repo/guestbook/public /srv/www/guestbook
-ln -f -s /srv/repo/onlinemarket.complete/public /srv/www/onlinemarket.complete
-
 echo "Setting permissions ..."
-chown apache:apache /srv/www
-chgrp apache /srv/www/*
-chown -R apache:apache /srv/repo
-chmod -R 775 /srv/repo
+chown apache /srv/www
 chgrp -R apache /home/sandbox
 chmod -R 775 /home/sandbox
-chgrp -R apache /home/onlinemarket.work
-chmod -R 775 /home/onlinemarket.work
+chown -R apache /home/guestbook/data
+chown -R apache /home/guestbook/public/captcha
+chown -R apache /home/onlinemarket.work/data
+chown -R apache /home/onlinemarket.work/public/captcha
+chown -R apache /home/onlinemarket.complete/data
+chown -R apache /home/onlinemarket.complete/public/captcha
+ln -s /srv/laminas-api-tools/module /home/laminas-api-tools/module
 
 echo "Initializing MySQL, PHP-FPM and Apache ... "
 /etc/init.d/mysql start

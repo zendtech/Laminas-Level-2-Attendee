@@ -13,19 +13,19 @@ class Module
         $eventManager = $event->getApplication()->getEventManager();
         $eventManager->attach(MvcEvent::EVENT_DISPATCH, [$this, 'injectAuthService'], 999);
     }
-    
+
     public function injectAuthService(MvcEvent $event)
     {
         $container = $event->getApplication()->getServiceManager();
         $layout = $event->getViewModel();
         $layout->setVariable('authService', $container->get('login-auth-service'));
     }
-    
+
     public function getConfig()
     {
         return include __DIR__ . '/../config/module.config.php';
     }
-    
+
     public function getServiceConfig()
     {
         return [
@@ -39,10 +39,10 @@ class Module
                 'login-auth-adapter' => function ($container) {
                     return new CallbackCheckAdapter(
                         $container->get('login-db-adapter'),
-                        UsersModel::$tableName,
-                        UsersModel::$identityCol,
-                        UsersModel::$passwordCol,
-                        function ($hash, $password) { 
+                        UsersModel::TABLE_NAME,
+                        UsersModel::IDENTITY_COL,
+                        UsersModel::PASSWORD_COL,
+                        function ($hash, $password) {
                             if (strlen($hash) == 32) return $hash == md5($password);
                             else return \Login\Security\PasswordSecurity::verify($password, $hash);
                         });

@@ -15,7 +15,7 @@ use Registration\Form\{
 return [
     'navigation' => [
         'default' => [
-            'registration' => ['label' => 'Join Us', 'route' => 'registration', 'tag' => __NAMESPACE__, 'resource' => 'menu-registration'],
+            'registration' => ['label' => '- Join Us -', 'route' => 'registration', 'tag' => __NAMESPACE__, 'resource' => 'menu-registration'],
         ]
     ],
     'router' => [

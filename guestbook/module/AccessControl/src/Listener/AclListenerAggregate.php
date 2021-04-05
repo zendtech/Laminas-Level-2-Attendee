@@ -48,8 +48,8 @@ class AclListenerAggregate implements ListenerAggregateInterface
         }
         if ($denied && $resource != self::DEFAULT_CONTROLLER) {
             $response = $e->getResponse();
-            $response->getHeaders()->addHeaderLine('Location', '/');
-            $response->setStatusCode(302);
+            $response->getHeaders()->addHeaderLine('Location', '/guestbook');
+            $response->setStatusCode(307);
             return $response;
         }
         // otherwise: do nothing

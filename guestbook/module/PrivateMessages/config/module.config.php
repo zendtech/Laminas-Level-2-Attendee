@@ -18,7 +18,7 @@ use PrivateMessages\Model\{
 return [
     'navigation' => [
         'default' => [
-            'messages' => ['label' => 'Messages', 'route' => 'messages', 'resource' => 'menu-messages']
+            'messages' => ['label' => '- Messages -', 'route' => 'messages', 'resource' => 'menu-messages']
         ]
     ],
     'router' => [
