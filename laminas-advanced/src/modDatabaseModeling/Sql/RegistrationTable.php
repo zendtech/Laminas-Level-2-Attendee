@@ -17,8 +17,7 @@ class RegistrationTable {
         $select = $sql->select();
         $select->from(['r' => static::REGISTRATION_TABLE])->join(['a' => static::ATTENDEE_TABLE],
                 'a.id = r.id')->where(['r.event_id' => $id]);
-        $stmt = $sql->prepareStatementForSqlObject($select);
-        $result = $stmt->execute();
-        return $result->current();
+        $selectString = $sql->buildSqlString($select);
+        return $this->adapter->query($selectString, Adapter::QUERY_MODE_EXECUTE);
     }
 }
