@@ -1,0 +1,81 @@
+{
+    "name": "laminas/skeleton-application",
+    "description": "Online Market App for ZF3",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "mvc",
+        "zf"
+    ],
+    "homepage": "http://framework.zend.com/",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "7.4.*",
+        "laminas/laminas-component-installer": "^1.0 || ^0.3 || ^1.0.0-dev@dev",
+        "laminas/laminas-mvc": "^3.0.1",
+        "laminas/laminas-development-mode": "^3.0",
+        "laminas/laminas-developer-tools": "*",
+        "zendframework/zend-debug": "*",
+        "laminas/laminas-db": "*",
+        "laminas/laminas-form": "*",
+        "laminas/laminas-i18n": "*",
+        "laminas/laminas-session": "*",
+        "laminas/laminas-captcha": "*",
+        "phpunit/phpunit": "*",
+        "laminas/laminas-test": "*",
+        "laminas/laminas-mail": "*",
+        "laminas/laminas-view": "*",
+        "laminas/laminas-crypt": "*",
+        "laminas/laminas-mvc-plugin-flashmessenger": "*",
+        "laminas/laminas-json": "*",
+        "laminas/laminas-cache": "*",
+        "laminas/laminas-permissions-acl": "*",
+        "laminas/laminas-navigation": "*",
+        "laminas/laminas-log": "*",
+        "firephp/firephp-core": "^0.4.0",
+        "laminas/laminas-code": "^4.1",
+        "laminas/laminas-authentication": "*",
+        "doctrine/common": "^2.9",
+        "laminas/laminas-dependency-plugin": "^2.1",
+        "phpcl/laminas-tools": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/",
+            "Market\\": "module/Market/src/",
+            "Model\\": "module/Model/src/",
+            "Events\\": "module/Events/src/",
+            "PrivateMessages\\": "module/PrivateMessages/src/",
+            "Registration\\": "module/Registration/src/",
+            "SecurePost\\": "module/SecurePost/src/",
+            "PhpSession\\": "module/PhpSession/src/",
+            "Cache\\": "module/Cache/src/",
+            "Logging\\": "module/Logging/src/",
+            "Notification\\": "module/Notification/src",
+            "Login\\": "module/Login/src/",
+            "AccessControl\\": "module/AccessControl/src/",
+            "RestApi\\": "module/RestApi/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\": "module/Application/test/",
+            "MarketTest\\": "module/Market/test/"
+        }
+    },
+    "extra": [],
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "development-disable": "laminas-development-mode disable",
+        "development-enable": "laminas-development-mode enable",
+        "development-status": "laminas-development-mode status",
+        "post-create-project-cmd": [
+            "@development-enable"
+        ],
+        "serve": "php -S 0.0.0.0:8080 -t public/ public/index.php",
+        "test": "phpunit"
+    }
+}

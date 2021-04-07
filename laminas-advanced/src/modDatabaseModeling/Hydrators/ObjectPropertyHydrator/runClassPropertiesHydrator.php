@@ -15,4 +15,4 @@ $userEntity = $hydrator->hydrate([
     new UserEntity()
 );
 
-printf('First name: %s / password: %s', $userEntity->firstName, $userEntity->password);
+printf("First Name: %s / Last Name: %s\n", $userEntity->firstName, $userEntity->lastName);

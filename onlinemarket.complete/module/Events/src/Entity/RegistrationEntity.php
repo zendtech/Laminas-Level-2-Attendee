@@ -1,40 +1,61 @@
 <?php
 namespace Events\Entity;
 use Laminas\Form\Annotation as ABC;
+use Laminas\Form\Factory as FormFactory;
+use Laminas\Hydrator\ClassMethodsHydrator;
 /**
  * @ABC\Name("registration")
  * @ABC\Hydrator("Laminas\Hydrator\ClassMethodsHydrator")
  */
 class RegistrationEntity extends BaseEntity
 {
-	/**
-	 * @ABC\Exclude()
+    /**
+     * @ABC\Exclude()
      */
     protected $id;
 
-	/**
-	 * @ABC\Attributes({"type":"text", "placeholder":"First Name", "class":"input-xlarge"})
+    /**
+     * @ABC\Exclude()
+     */
+    protected $event_id;
+
+    /**
+     * @ABC\Attributes({"type":"text", "placeholder":"First Name", "class":"input-xlarge"})
      * @ABC\Options({"label":"First Name: "})
      * @ABC\Filter({"name":"StringTrim", "name":"StripTags"})
      */
     protected $first_name;
 
-	/**
-	 * @ABC\Attributes({"type":"text", "placeholder":"Last Name", "class":"input-xlarge"})
+    /**
+     * @ABC\Attributes({"type":"text", "placeholder":"Last Name", "class":"input-xlarge"})
      * @ABC\Options({"label":"Last Name:"})
      * @ABC\Filter({"name":"StringTrim", "name":"StripTags"}))
      */
     protected $last_name;
 
-	/**
-	 * @ABC\Exclude()
+    /**
+     * @ABC\Exclude()
      */
     protected $registration_time;
 
-	/**
-	 * @ABC\Exclude()
+    /**
+     * @ABC\Exclude()
      */
     protected $attendees = [];
+
+    /**
+     * @return int
+     */
+    public function getEventId() {
+        return $this->event_id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setEventId($id) {
+        $this->event_id = $id;
+    }
 
     /**
      * @return mixed
@@ -94,5 +115,59 @@ class RegistrationEntity extends BaseEntity
      */
     public function setAttendees(array $attendees): void {
         $this->attendees = $attendees;
+    }
+
+    /**
+     * Builds form for this entity
+     *
+     * @return Laminas\Form\Form $form
+     */
+    public static function buildForm()
+    {
+        $factory = new FormFactory();
+        return $factory->createForm([
+            'attributes' => ['name' => 'registration'],
+            'hydrator' => ClassMethodsHydrator::class,
+            'elements' => [
+                [
+                    'spec' => [
+                        'name' => 'first_name',
+                        'attributes' => [
+                            'class' => 'input-xlarge',
+                            'placeholder' => 'First Name',
+                        ],
+                        'options' => ['label' => 'First Name'],
+                        'type'  => 'Text',
+                    ],
+                ],
+                [
+                    'spec' => [
+                        'name' => 'last_name',
+                        'attributes' => [
+                            'class' => 'input-xlarge',
+                            'placeholder' => 'Last Name',
+                        ],
+                        'options' => ['label' => 'Last Name'],
+                        'type'  => 'Text',
+                    ],
+                ],
+            ],
+            'input_filter' => [
+                [
+                    'name' => 'first_name',
+                    'filters' => [
+                        ['name' => 'StringTrim'],
+                        ['name' => 'StripTags'],
+                    ],
+                ],
+                [
+                    'name' => 'last_name',
+                    'filters' => [
+                        ['name' => 'StringTrim'],
+                        ['name' => 'StripTags'],
+                    ],
+                ],
+            ],
+        ]);
     }
 }

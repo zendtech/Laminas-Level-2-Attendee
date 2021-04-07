@@ -40,7 +40,7 @@ class RegistrationTableModel extends BaseTableModel
             // the iteration $registrations is "forward-only" which means we need to store it into an array
             $final[$reg->getId()] = $reg;
         }
-        // use Laminas\Db\Sql\Sql to pull attendees for list of registrations in registration_id order 
+        // use Laminas\Db\Sql\Sql to pull attendees for list of registrations in registration_id order
         $attendeeTable = $this->container->get(AttendeeTableModel::class);
         $adapter = $this->tableGateway->getAdapter();
         $sql = new Sql($adapter);
@@ -52,14 +52,14 @@ class RegistrationTableModel extends BaseTableModel
         $attendees = $attendeeTable->tableGateway->selectWith($select);
         // match registrations against attendees
         foreach ($attendees as $attendee) {
-			$final[$attendee->registration_id]->attendees[] = $attendee;
-		}
+            $final[$attendee->registration_id]->attendees[] = $attendee;
+        }
         return $final;
     }
 
     public function save(RegistrationEntity $registrationEntity)
     {
-		$registrationEntity->setRegistrationTime(date('Y-m-d H:i:s'));
+        $registrationEntity->setRegistrationTime(date('Y-m-d H:i:s'));
         $hydrator = $this->tableGateway->getResultSetPrototype()->getHydrator();
         $data = $hydrator->extract($registrationEntity);
         // need to get rid of this property as it's not a column in the "registration" usersModelTableGateway

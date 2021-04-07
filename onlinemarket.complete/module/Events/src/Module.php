@@ -39,7 +39,7 @@ use Laminas\Navigation\Service\ConstructedNavigationFactory;
 
 class Module
 {
-	const MAX_NAMES_PER_TICKET = 6;
+    const MAX_NAMES_PER_TICKET = 6;
     public function getConfig()
     {
         return include __DIR__ . '/../config/module.config.php';
@@ -112,23 +112,24 @@ class Module
                     return $filter;
                 },
                 'events-registration-form' => function (ContainerInterface $container) {
-					$registrationForm = (new AnnotationBuilder())->createForm($container->get(RegistrationEntity::class));
-					$attendeeForm = $container->get('events-attendee-form');
+                    $registrationForm = RegistrationEntity::buildForm();
+                    //$registrationForm = (new AnnotationBuilder())->createForm(RegistrationEntity::class);
+                    $attendeeForm = $container->get('events-attendee-form');
                     $attendeeFieldset = $container->get('events-attendee-fieldset');
                     $registrationFieldset = $container->get('events-registration-fieldset');
 
-					for ($x = 0; $x < self::MAX_NAMES_PER_TICKET; $x++) {
+                    for ($x = 0; $x < self::MAX_NAMES_PER_TICKET; $x++) {
                         $registrationForm->add(clone $attendeeForm, ['name' => 'attendee_' . $x]);
                         // The below is used if fieldsets are desired.
                         // $registrationForm->add(clone $attendeeFieldset);
                         // $registrationForm->add(clone $registrationFieldset);
                     }
 
-					return $registrationForm;
-				},
+                    return $registrationForm;
+                },
                 'events-attendee-form' => function (ContainerInterface $container) {
-					return (new AnnotationBuilder())->createForm($container->get(AttendeeEntity::class));
-				},
+                    return AttendeeEntity::buildForm();
+                },
                 // This service assumes a fieldset class definition.
                 'events-registration-fieldset' => function (ContainerInterface $container){
                     return new RegistrationFieldset(
@@ -185,10 +186,10 @@ class Module
                     //*** DELEGATING HYDRATOR LAB: assign a "ObjectProperty" hydrator to the "RegistrationEntity" entity and "ClassMethods" to the others
                 },
 
-				'events-navigation' => function (ContainerInterface $container) {
-	                $factory = new ConstructedNavigationFactory($container->get('events-nav-Config'));
+                'events-navigation' => function (ContainerInterface $container) {
+                    $factory = new ConstructedNavigationFactory($container->get('events-nav-Config'));
                     return $factory->createService($container);
-				},
+                },
             ],
         ];
     }

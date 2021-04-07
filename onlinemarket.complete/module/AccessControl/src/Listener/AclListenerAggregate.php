@@ -10,7 +10,7 @@ use Laminas\EventManager\ {AbstractListenerAggregate,EventManagerInterface};
 
 class AclListenerAggregate extends AbstractListenerAggregate
 {
-	protected $acl, $authService;
+    protected $acl, $authService;
     const DEFAULT_ACTION     = 'index';
     const DEFAULT_CONTROLLER = IndexController::class;
 
@@ -53,7 +53,7 @@ class AclListenerAggregate extends AbstractListenerAggregate
         //*** if denied and we're not already going home ...
         if ($denied && $resource != self::DEFAULT_CONTROLLER) {
             $response = $e->getResponse();
-            $response->getHeaders()->addHeaderLine('Location', '/');
+            $response->getHeaders()->addHeaderLine('Location', '/onlinemarket.complete');
             $response->setStatusCode(302);
             return $response;
         }

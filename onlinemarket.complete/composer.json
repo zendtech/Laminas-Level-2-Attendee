@@ -38,7 +38,8 @@
         "laminas/laminas-code": "*",
         "laminas/laminas-authentication": "*",
         "doctrine/common": "^2.9",
-        "laminas/laminas-dependency-plugin": "^2.1"
+        "laminas/laminas-dependency-plugin": "^2.1",
+        "phpcl/laminas-tools": "^1.0"
     },
     "autoload": {
         "psr-4": {

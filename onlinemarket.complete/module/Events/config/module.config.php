@@ -171,6 +171,7 @@ return [
     'navigation' => [
         'default' => [
             ['label' => '- Events -', 'route' => 'events', 'resource' => 'menu-events'],
+            ['label' => '- Admin -', 'route' => 'events/admin', 'resource' => 'menu-events-admin'],
         ],
     ],
     //*** ACL LAB

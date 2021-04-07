@@ -21,4 +21,4 @@ $tableGateway     = new TableGateway(
     )
 );
 $result    = $tableGateway->select();
-foreach ($result as $user) Laminas\Debug\Debug::dump($user);
+foreach ($result as $user) var_dump($user);
