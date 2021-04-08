@@ -4,7 +4,7 @@
  * @copyright Copyright (c) 2005-2016 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
-
+ini_set('display_errors', 1);
 return [
     // Additional modules to include when in development mode
     'modules' => [

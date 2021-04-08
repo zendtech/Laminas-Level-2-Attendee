@@ -13,6 +13,7 @@ return [
     'Laminas\Router',
     'Laminas\Validator',
     'Laminas\Mvc\Plugin\FlashMessenger',
+    'Laminas\DeveloperTools',
     'Application',
     'Market',
     'Model',
