@@ -21,14 +21,14 @@ CREATE TABLE `users` (
 class UserEntity
 {
     protected $id = 0,
-        $email = '',
+        $email = NULL,
         $username = '',
         $password = '',
         $securityQuestion = '',
         $securityAnswer = '',
         $provider = '',
         $locale = '',
-        $role = '';
+        $role = NULL;
 
     public function __construct(array $data = [])
     {
@@ -37,6 +37,11 @@ class UserEntity
                 $this->$name = $value;
             }
         }
+    }
+    public function __sleep()
+    {
+        // excludes sensitive data
+        return ['id','email','username','provider','locale','role'];
     }
     public function getId()
     {

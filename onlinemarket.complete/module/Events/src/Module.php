@@ -51,9 +51,8 @@ class Module
                 IndexController::class => function ($container, $requestedName) {
                     return new $requestedName(
                         // ACL added by future lab, then will be the first param
-                      $container->get(MarketAcl::class),
-                        null,
-                        $container->get('login-auth-service')
+                        $container->get('login-auth-service'),
+                        $container->get(MarketAcl::class),
                     );
                 },
                 AdminController::class  => function ($container, $requestedName) {
@@ -187,8 +186,20 @@ class Module
                 },
 
                 'events-navigation' => function (ContainerInterface $container) {
-                    $factory = new ConstructedNavigationFactory($container->get('events-nav-Config'));
+                    $factory = new ConstructedNavigationFactory($container->get('events-nav-config'));
                     return $factory->createService($container);
+                },
+                'reg-table-resultSet' => function (ContainerInterface $container){
+                    return new HydratingResultSet(
+                        new ClassMethodsHydrator(),
+                        $container->get(RegistrationEntity::class)
+                    );
+                },
+                'attendee-table-resultSet' => function (ContainerInterface $container){
+                    return new HydratingResultSet(
+                        new ClassMethodsHydrator(),
+                        $container->get(AttendeeEntity::class)
+                    );
                 },
             ],
         ];

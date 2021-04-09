@@ -14,30 +14,30 @@ return [
     'Laminas\Validator',
     'Laminas\Mvc\Plugin\FlashMessenger',
     'Laminas\DeveloperTools',
+    //*** NAVIGATION LAB
+    'Laminas\Navigation',
     'Application',
     'Market',
     'Model',
+    //*** LOGGER LAB
+    'Logging',
+    //*** CACHE LAB
+    'Cache',
     //*** DATABASE LABS
     'Events',
     //*** DELEGATORS LAB
     'Registration',
     'SecurePost',   // disable this and CSRF element disappears from the form
-    //*** CACHE LAB
-    'Cache',
-    //*** SESSION LAB
-    'PhpSession',
-    //*** LOGGER LAB
-    'Logging',
-    //*** EMAIL LAB
-    'Laminas\Mail',
-    'Notification',
     //*** AUTHENTICATION LAB
     'Login',
     //*** ACL Lab
     'AccessControl',
     'PrivateMessages',
-    //*** NAVIGATION LAB
-    'Laminas\Navigation',
+    //*** SESSION LAB
+    'PhpSession',
+    //*** EMAIL LAB
+    'Laminas\Mail',
+    'Notification',
     //*** REST LAB
     'RestApi',
 ];

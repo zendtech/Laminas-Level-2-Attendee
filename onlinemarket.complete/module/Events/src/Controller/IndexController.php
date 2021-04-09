@@ -9,15 +9,15 @@ class IndexController extends AbstractActionController
 {
     protected $acl;
     protected $authService;
-	public function __construct(
-	    $acl = null,
-        $authService
-    ){
-	    $this->acl = $acl;
-	    $this->authService = $authService;
+    public function __construct(
+        AuthenticationServiceInterface $authService,
+        AclInterface $acl = null)
+    {
+            $this->acl = $acl;
+            $this->authService = $authService;
     }
     public function indexAction()
     {
-        return new ViewModel(['acl' => $this->acl, 'authenticationService' => $this->authService]);
+        return new ViewModel(['acl' => $this->acl, 'authService' => $this->authService]);
     }
 }

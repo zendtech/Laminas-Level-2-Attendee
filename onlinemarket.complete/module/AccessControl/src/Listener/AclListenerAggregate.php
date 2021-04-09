@@ -13,7 +13,7 @@ class AclListenerAggregate extends AbstractListenerAggregate
     protected $acl, $authService;
     const DEFAULT_ACTION     = 'index';
     const DEFAULT_CONTROLLER = IndexController::class;
-
+    const ERROR_NO_AUTH_SVC  = 'ERROR: auth service is missing';
     public function __construct(ACL $acl, AuthenticationService $authService){
         $this->acl = $acl;
         $this->authService = $authService;
@@ -23,8 +23,8 @@ class AclListenerAggregate extends AbstractListenerAggregate
     {
         //*** attach the "checkAcl" and "injectAcl" listeners to the MVC "dispatch" event using the shared manager
         $shared = $e->getSharedManager();
-        $this->listeners[] = $shared->attach('*', MvcEvent::EVENT_DISPATCH,  [$this, 'injectAcl'], 2);
-        $this->listeners[] = $shared->attach('*', MvcEvent::EVENT_DISPATCH,  [$this, 'checkAcl'], 999);
+        $this->listeners[] = $shared->attach('*', MvcEvent::EVENT_DISPATCH,  [$this, 'injectAcl'], 99);
+        $this->listeners[] = $shared->attach('*', MvcEvent::EVENT_DISPATCH,  [$this, 'checkAcl']);
     }
     public function injectAcl(MvcEvent $e)
     {
@@ -37,9 +37,15 @@ class AclListenerAggregate extends AbstractListenerAggregate
         $match = $e->getRouteMatch();
         $rights = $match->getParam('action');
         $resource = $match->getParam('controller');
+        // safety checks
+        if (empty($this->authService)) {
+            throw new Exception(__METHOD__ . ':' . __LINE__ . ':' . self::ERROR_NO_AUTH_SVC);
+        }
+        // get identity
+        $identity = $this->authService->getIdentity() ?? NULL;
         // get role
-        $role = ($this->authService->hasIdentity())
-              ? $this->authService->getIdentity()->getRole()
+        $role = (!empty($identity))
+              ? $identity->getRole()
               : MarketAcl::DEFAULT_ROLE;
         $denied = TRUE;
         //*** make sure controller which is matched is in the list of resources

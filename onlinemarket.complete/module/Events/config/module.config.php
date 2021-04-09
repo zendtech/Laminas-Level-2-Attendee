@@ -38,14 +38,14 @@ return [
             'model-primary-adapter',
             AttendeeEntity::class,
             'events-service-container',
-            'events-table-resultSet',
+            'attendee-table-resultSet',
             'events-attendee-tableGateway'
         ],
         RegistrationTableModel::class => [
             'model-primary-adapter',
             RegistrationEntity::class,
             'events-service-container',
-            'events-table-resultSet',
+            'reg-table-resultSet',
             'events-registration-tableGateway'
         ],
     ],
@@ -138,7 +138,8 @@ return [
     ],
     'service_manager' => [
         'services' => [
-            'events-nav-Config' => [
+            //*** NAVIGATION LAB: define navigation for events as a service container service
+            'events-nav-config' => [
                 ['label' => 'Signup Form', 'class' => 'events-label', 'route' => 'events/signup', 'resource' => 'menu-events-signup-label' ],
                 ['label' => 'Signup', 'class' => 'btn btn-block btn-success btn-large', 'route' => 'events/signup', 'resource' => 'menu-events-signup' ],
                 ['label' => 'Admin Area', 'class' => 'events-label', 'route' => 'events/admin', 'resource' => 'menu-events-admin-label' ],
@@ -157,7 +158,6 @@ return [
         'abstract_factories' => [
             ConfigAbstractFactory::class
         ],
-        //*** NAVIGATION LAB: define navigation for events as a service container service
     ],
     'view_helpers' => [
         'factories' => [
@@ -171,7 +171,6 @@ return [
     'navigation' => [
         'default' => [
             ['label' => '- Events -', 'route' => 'events', 'resource' => 'menu-events'],
-            ['label' => '- Admin -', 'route' => 'events/admin', 'resource' => 'menu-events-admin'],
         ],
     ],
     //*** ACL LAB

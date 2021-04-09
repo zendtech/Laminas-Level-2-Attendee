@@ -1,12 +1,16 @@
 <?php
 namespace Events\Traits;
 
-use Events\Model\EventsTableGatewayInterface;
+use Events\Model\{
+    AttendeeTableModel,
+    EventTableModel,
+    RegistrationTableModel
+};
 
 trait EventModelTrait
 {
     protected $eventTable;
-    public function setEventTable($table)
+    public function setEventTable(EventTableModel $table)
     {
         $this->eventTable = $table;
     }

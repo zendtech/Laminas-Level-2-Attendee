@@ -12,7 +12,7 @@ use Laminas\ServiceManager\Factory\InvokableFactory;
 return [
     'navigation' => [
         'default' => [
-            'messages' => ['label' => '- Messages -', 'route' => 'messages', 'resource' => 'menu-private-messages']
+            'messages' => ['label' => '- Message -', 'route' => 'messages', 'resource' => 'menu-private-messages']
         ]
     ],
     'router' => [

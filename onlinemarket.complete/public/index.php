@@ -31,10 +31,20 @@ if (! class_exists(Application::class)) {
 }
 
 // Retrieve configuration
+$devMode = FALSE;
 $appConfig = require __DIR__ . '/../config/application.config.php';
 if (file_exists(__DIR__ . '/../config/development.config.php')) {
+    $devMode = TRUE;
     $appConfig = ArrayUtils::merge($appConfig, require __DIR__ . '/../config/development.config.php');
 }
 
-// Run the application!
-Application::init($appConfig)->run();
+try {
+    // Run the application!
+    Application::init($appConfig)->run();
+} catch (Throwable $t) {
+    if ($devMode) {
+        echo $t;
+    }
+    error_log($t->getMessage());
+    exit('General Failure in index.php');
+}

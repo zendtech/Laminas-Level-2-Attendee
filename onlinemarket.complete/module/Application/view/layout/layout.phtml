@@ -46,9 +46,9 @@
                     <?php */ ?>
                     <!-- //*** NAVIGATION LAB: use the "navigation()" view helper instead of hard-coding menu items -->
                     <?php
-                        if (isset($this->acl)) {
+                        if (!empty($this->acl)) {
                             //*** NAVIGATION LAB: get the role from the stored user identity
-                            $role = ($user) ? $user->getRole() : 'guest';
+                            $role = $user->getRole() ?? 'guest';
                             //*** NAVIGATION LAB: set role and acl to navigation
                             $this->navigation('default')->setAcl($this->acl);
                             $this->navigation('default')->setRole($role);
@@ -58,7 +58,7 @@
                     <?= $this->navigation('default')->menu()->setUlClass('nav navbar-nav'); ?>
                     <span style="float:right;color:white;margin-left:200px;">
                         <!-- //*** AUTHENTICATION LAB: if auth service has an identity, display it, otherwise "guest" -->
-                        <?= 'Logged in as'; ?>: <?= ($user) ? $user->getEmail() : 'Guest' ?>
+                        <?= 'Logged in as'; ?>: <?= $user->getEmail() ?? 'Guest' ?>
                     </span>
                 </div>
             </div>

@@ -1,8 +1,6 @@
 <?php
 namespace Events\Traits;
 
-use Events\Model\EventsTableGatewayInterface;
-
 trait AttendeeModelTrait
 {
     protected $attendeeTable;

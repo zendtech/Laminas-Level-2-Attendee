@@ -41,9 +41,9 @@ class Module
                         $container->get('login-auth-callback')
                     );
                 },
-				'login-auth-storage' => function ($container) {
-					return new CustomStorageAuthentication($container->get('login-storage-file'));
-				},
+                'login-auth-storage' => function ($container) {
+                    return new CustomStorageAuthentication($container->get('login-storage-file'));
+                },
                 'login-auth-service' => function ($container) {
                     return new AuthenticationService(
                         // need storage and auth adapter as arguments
