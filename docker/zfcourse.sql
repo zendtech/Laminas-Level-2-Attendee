@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.16, for Linux (x86_64)
+-- MySQL dump 10.16  Distrib 10.2.13-MariaDB, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: course
+-- Host: localhost    Database: zfcourse
 -- ------------------------------------------------------
--- Server version	8.0.16
+-- Server version	10.2.13-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,12 +21,12 @@
 
 DROP TABLE IF EXISTS `access_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `access_log` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `ip_v4_address` char(16) NOT NULL,
   `ip_v6_address` varchar(128) DEFAULT NULL,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `uri` varchar(254) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
@@ -48,13 +48,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `attendee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `attendee` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `registration_id` int(11) NOT NULL,
   `name_on_ticket` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,7 +63,7 @@ CREATE TABLE `attendee` (
 
 LOCK TABLES `attendee` WRITE;
 /*!40000 ALTER TABLE `attendee` DISABLE KEYS */;
-INSERT INTO `attendee` VALUES (50,32,'Daryl'),(51,32,'Josie'),(52,33,'Lada'),(53,33,'Saleen'),(54,33,'Tami'),(55,34,'JR'),(56,34,'Nong Ai'),(57,35,'Fred'),(58,35,'Barney'),(59,35,'Wilma'),(60,35,'Betty');
+INSERT INTO `attendee` VALUES (50,32,'Daryl'),(51,32,'Josie'),(52,33,'Lada'),(53,33,'Saleen'),(54,33,'Tami'),(55,34,'JR'),(56,34,'Nong Ai'),(57,35,'Fred'),(58,35,'Barney'),(59,35,'Wilma'),(60,35,'Betty'),(61,36,'Chelsea');
 /*!40000 ALTER TABLE `attendee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,14 +73,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `attendee_d`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `attendee_d` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `registration_id` int(11) DEFAULT NULL,
-  `name_on_ticket` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name_on_ticket` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_EA203C4E833D8F43` (`registration_id`),
-  CONSTRAINT `FK_EA203C4E833D8F43` FOREIGN KEY (`registration_id`) REFERENCES `registration_d` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `FK_EA203C4E833D8F43` FOREIGN KEY (`registration_id`) REFERENCES `registration_d` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -100,7 +100,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `event`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `event` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -126,10 +126,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `event_d`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `event_d` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `max_attendees` int(11) NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -152,12 +152,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `guest_messages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `guest_messages` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `message` varchar(1024) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `to_email` varchar(254) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `from_email` varchar(254) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `message` varchar(1024) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `to_email` varchar(254) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `from_email` varchar(254) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -179,7 +179,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `guestbook`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `guestbook` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -189,7 +189,7 @@ CREATE TABLE `guestbook` (
   `avatar` varchar(254) DEFAULT NULL,
   `dateSigned` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +198,7 @@ CREATE TABLE `guestbook` (
 
 LOCK TABLES `guestbook` WRITE;
 /*!40000 ALTER TABLE `guestbook` DISABLE KEYS */;
-INSERT INTO `guestbook` VALUES (52,'Doug','doug@unlikelysource.com','http://unlikelysource.com/','Doug dogged duck.  Duck dug dog.  Dog ducked Doug.','phpZULGwh_5b9f4374e2dc52_07862997','2018-09-17 13:02:28'),(53,'Fon','fon@unlikelysource.com','http://unlikelysource.com/','Fon phoned for fun.  Phone fun had Fon.  Fun phoning Fon.','phpxPnKgB_5b9f4472167a01_55848081','2018-09-17 13:06:42'),(54,'Fon','fon@unlikelysource.com','http://unlikelysource.com/','Fon phone home.','phpVVNLfV_5b9f66b1750402_27477978','2018-09-17 15:32:49');
+INSERT INTO `guestbook` VALUES (52,'Doug','doug@unlikelysource.com','http://unlikelysource.com/','Doug dogged duck.  Duck dug dog.  Dog ducked Doug.','phpZULGwh_5b9f4374e2dc52_07862997','2018-09-17 13:02:28'),(53,'Fon','fon@unlikelysource.com','http://unlikelysource.com/','Fon phoned for fun.  Phone fun had Fon.  Fun phoning Fon.','phpxPnKgB_5b9f4472167a01_55848081','2018-09-17 13:06:42'),(54,'Fon','fon@unlikelysource.com','http://unlikelysource.com/','Fon phone home.','phpVVNLfV_5b9f66b1750402_27477978','2018-09-17 15:32:49'),(55,'Kitten','cat@kitten.org','https://unlikelysource.com','Am kitten.  Look cute.  Eat mouse.  Bite finger you.  Climb curtain.','phpgTFXHg_60753ed86b77f6_63487620','2021-04-13 06:48:56');
 /*!40000 ALTER TABLE `guestbook` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -208,12 +208,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `listings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `listings` (
   `listings_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `category` char(16) NOT NULL,
   `title` varchar(128) NOT NULL,
-  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_expires` timestamp NULL DEFAULT NULL,
   `description` varchar(4096) DEFAULT NULL,
   `photo_filename` varchar(1024) DEFAULT NULL,
@@ -247,7 +247,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `priority` int(11) DEFAULT NULL,
@@ -274,7 +274,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `messages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `messages` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `message` varchar(254) NOT NULL,
@@ -301,7 +301,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `registration`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `registration` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `event_id` int(11) NOT NULL,
@@ -309,7 +309,7 @@ CREATE TABLE `registration` (
   `last_name` varchar(255) NOT NULL,
   `registration_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -318,7 +318,7 @@ CREATE TABLE `registration` (
 
 LOCK TABLES `registration` WRITE;
 /*!40000 ALTER TABLE `registration` DISABLE KEYS */;
-INSERT INTO `registration` VALUES (32,1,'Daryl','Wood','2018-09-17 14:57:43'),(33,1,'Doug','Bierer','2018-09-17 14:58:08'),(34,2,'Fon','Fun','2018-09-17 14:58:33'),(35,1,'Fred','Flintstone','2018-09-18 16:31:41');
+INSERT INTO `registration` VALUES (32,1,'Daryl','Wood','2018-09-17 14:57:43'),(33,1,'Doug','Bierer','2018-09-17 14:58:08'),(34,2,'Fon','Fun','2018-09-17 14:58:33'),(35,1,'Fred','Flintstone','2018-09-18 16:31:41'),(36,2,'Chelsea','Jamikorn','2021-04-13 06:04:03');
 /*!40000 ALTER TABLE `registration` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -328,16 +328,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `registration_d`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `registration_d` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `event_id` int(11) DEFAULT NULL,
-  `first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `last_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `registration_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_9FD188E871F7E88B` (`event_id`),
-  CONSTRAINT `FK_9FD188E871F7E88B` FOREIGN KEY (`event_id`) REFERENCES `event_d` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `FK_9FD188E871F7E88B` FOREIGN KEY (`event_id`) REFERENCES `event_d` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -357,10 +357,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `session_storage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `session_storage` (
   `key` varchar(254) NOT NULL,
-  `value` text,
+  `value` text DEFAULT NULL,
   PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -371,7 +371,7 @@ CREATE TABLE `session_storage` (
 
 LOCK TABLES `session_storage` WRITE;
 /*!40000 ALTER TABLE `session_storage` DISABLE KEYS */;
-INSERT INTO `session_storage` VALUES ('Application','C:23:\"Zend\\Stdlib\\ArrayObject\":275:{a:4:{s:7:\"storage\";a:1:{s:7:\"message\";s:48:\"<b style=\"color:green;\">Login was successful</b>\";}s:4:\"flag\";i:2;s:13:\"iteratorClass\";s:13:\"ArrayIterator\";s:19:\"protectedProperties\";a:4:{i:0;s:7:\"storage\";i:1;s:4:\"flag\";i:2;s:13:\"iteratorClass\";i:3;s:19:\"protectedProperties\";}}}'),('Zend_Auth','C:23:\"Zend\\Stdlib\\ArrayObject\":851:{a:4:{s:7:\"storage\";a:1:{s:7:\"storage\";O:16:\"Login\\Model\\User\":2:{s:10:\"\0*\0mapping\";a:7:{s:2:\"id\";s:2:\"id\";s:5:\"email\";s:5:\"email\";s:8:\"username\";s:8:\"username\";s:8:\"password\";s:8:\"password\";s:16:\"securityquestion\";s:17:\"security_question\";s:14:\"securityanswer\";s:15:\"security_answer\";s:6:\"locale\";s:6:\"locale\";}s:13:\"\0*\0properties\";a:9:{s:2:\"id\";s:1:\"4\";s:5:\"email\";s:14:\"daryl@zend.com\";s:8:\"username\";s:5:\"daryl\";s:8:\"password\";s:60:\"$2y$10$Gy8fTpy1K.0Hy1iCf4S6ee5z0Hi6GUARoDHwnAf8EKIRA.XrRLIma\";s:16:\"securityquestion\";s:28:\"What is your favorite sport?\";s:14:\"securityanswer\";s:8:\"Kayaking\";s:4:\"role\";s:4:\"user\";s:8:\"provider\";s:7:\"default\";s:6:\"locale\";s:2:\"en\";}}}s:4:\"flag\";i:2;s:13:\"iteratorClass\";s:13:\"ArrayIterator\";s:19:\"protectedProperties\";a:4:{i:0;s:7:\"storage\";i:1;s:4:\"flag\";i:2;s:13:\"iteratorClass\";i:3;s:19:\"protectedProperties\";}}}'),('__ZF','C:23:\"Zend\\Stdlib\\ArrayObject\":339:{a:4:{s:7:\"storage\";a:2:{s:20:\"_REQUEST_ACCESS_TIME\";d:1537164405.119185;s:6:\"_VALID\";a:1:{s:25:\"Zend\\Session\\Validator\\Id\";s:26:\"6sj8pfqbotutbegr83v3lf3596\";}}s:4:\"flag\";i:1;s:13:\"iteratorClass\";s:13:\"ArrayIterator\";s:19:\"protectedProperties\";a:4:{i:0;s:7:\"storage\";i:1;s:4:\"flag\";i:2;s:13:\"iteratorClass\";i:3;s:19:\"protectedProperties\";}}}');
+INSERT INTO `session_storage` VALUES ('Application','C:26:\"Laminas\\Stdlib\\ArrayObject\":279:{a:4:{s:7:\"storage\";a:1:{s:7:\"message\";s:52:\"<b style=\"color:green;\">LoginForm was successful</b>\";}s:4:\"flag\";i:2;s:13:\"iteratorClass\";s:13:\"ArrayIterator\";s:19:\"protectedProperties\";a:4:{i:0;s:7:\"storage\";i:1;s:4:\"flag\";i:2;s:13:\"iteratorClass\";i:3;s:19:\"protectedProperties\";}}}'),('Laminas_Auth','C:26:\"Laminas\\Stdlib\\ArrayObject\":891:{a:4:{s:7:\"storage\";a:1:{s:7:\"storage\";O:23:\"Login\\Entity\\UserEntity\":2:{s:10:\"\0*\0mapping\";a:8:{s:2:\"id\";s:2:\"id\";s:5:\"email\";s:5:\"email\";s:8:\"username\";s:8:\"username\";s:8:\"password\";s:8:\"password\";s:16:\"securityquestion\";s:17:\"security_question\";s:14:\"securityanswer\";s:15:\"security_answer\";s:6:\"locale\";s:6:\"locale\";s:4:\"role\";s:4:\"role\";}s:13:\"\0*\0properties\";a:9:{s:2:\"id\";s:1:\"6\";s:5:\"email\";s:14:\"admin@zend.com\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:60:\"$2y$10$SZx5lX6/hJFb//lvocLkeessDzlL7hmr63BBmcVFC22iT/1SCZz6C\";s:16:\"securityquestion\";s:43:\"What language is Zend Framework written in?\";s:14:\"securityanswer\";s:3:\"PHP\";s:4:\"role\";s:5:\"admin\";s:8:\"provider\";s:7:\"default\";s:6:\"locale\";s:2:\"en\";}}}s:4:\"flag\";i:2;s:13:\"iteratorClass\";s:13:\"ArrayIterator\";s:19:\"protectedProperties\";a:4:{i:0;s:7:\"storage\";i:1;s:4:\"flag\";i:2;s:13:\"iteratorClass\";i:3;s:19:\"protectedProperties\";}}}'),('Zend_Auth','C:26:\"Laminas\\Stdlib\\ArrayObject\":851:{a:4:{s:7:\"storage\";a:1:{s:7:\"storage\";O:16:\"Login\\Model\\User\":2:{s:10:\"\0*\0mapping\";a:7:{s:2:\"id\";s:2:\"id\";s:5:\"email\";s:5:\"email\";s:8:\"username\";s:8:\"username\";s:8:\"password\";s:8:\"password\";s:16:\"securityquestion\";s:17:\"security_question\";s:14:\"securityanswer\";s:15:\"security_answer\";s:6:\"locale\";s:6:\"locale\";}s:13:\"\0*\0properties\";a:9:{s:2:\"id\";s:1:\"4\";s:5:\"email\";s:14:\"daryl@zend.com\";s:8:\"username\";s:5:\"daryl\";s:8:\"password\";s:60:\"$2y$10$Gy8fTpy1K.0Hy1iCf4S6ee5z0Hi6GUARoDHwnAf8EKIRA.XrRLIma\";s:16:\"securityquestion\";s:28:\"What is your favorite sport?\";s:14:\"securityanswer\";s:8:\"Kayaking\";s:4:\"role\";s:4:\"user\";s:8:\"provider\";s:7:\"default\";s:6:\"locale\";s:2:\"en\";}}}s:4:\"flag\";i:2;s:13:\"iteratorClass\";s:13:\"ArrayIterator\";s:19:\"protectedProperties\";a:4:{i:0;s:7:\"storage\";i:1;s:4:\"flag\";i:2;s:13:\"iteratorClass\";i:3;s:19:\"protectedProperties\";}}}'),('__Laminas','C:26:\"Laminas\\Stdlib\\ArrayObject\":326:{a:4:{s:7:\"storage\";a:2:{s:20:\"_REQUEST_ACCESS_TIME\";b:0;s:6:\"_VALID\";a:1:{s:28:\"Laminas\\Session\\Validator\\Id\";s:26:\"l1njhq4e1f6ipijrado3sq7enp\";}}s:4:\"flag\";i:1;s:13:\"iteratorClass\";s:13:\"ArrayIterator\";s:19:\"protectedProperties\";a:4:{i:0;s:7:\"storage\";i:1;s:4:\"flag\";i:2;s:13:\"iteratorClass\";i:3;s:19:\"protectedProperties\";}}}'),('__ZF','C:26:\"Laminas\\Stdlib\\ArrayObject\":339:{a:4:{s:7:\"storage\";a:2:{s:20:\"_REQUEST_ACCESS_TIME\";d:1537164405.119185;s:6:\"_VALID\";a:1:{s:25:\"Zend\\Session\\Validator\\Id\";s:26:\"6sj8pfqbotutbegr83v3lf3596\";}}s:4:\"flag\";i:1;s:13:\"iteratorClass\";s:13:\"ArrayIterator\";s:19:\"protectedProperties\";a:4:{i:0;s:7:\"storage\";i:1;s:4:\"flag\";i:2;s:13:\"iteratorClass\";i:3;s:19:\"protectedProperties\";}}}');
 /*!40000 ALTER TABLE `session_storage` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -381,7 +381,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `email` varchar(254) NOT NULL,
@@ -412,7 +412,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `world_city_area_codes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `world_city_area_codes` (
   `world_city_area_code_id` int(11) NOT NULL AUTO_INCREMENT,
   `ISO2` char(2) DEFAULT 'XX',
@@ -445,4 +445,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-16  8:10:56
+-- Dump completed on 2021-04-13  2:49:50

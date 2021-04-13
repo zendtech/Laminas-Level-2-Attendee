@@ -22,8 +22,8 @@ use Guestbook\Listener\{
 return [
     'navigation' => [
         'default' => [
-            'home' => ['label' => '- Home -', 'route' => 'home', 'resource' => 'menu-guestbook-home'],
-            'sign' => ['label' => '- Sign -', 'uri' => '/guestbook/sign', 'resource' => 'menu-guestbook-sign']
+            'home' => ['label' => '- Home -', 'route' => 'guestbook', 'resource' => 'menu-guestbook-home'],
+            'sign' => ['label' => '- Sign -', 'route' => 'guestbook', 'params' => ['action' => 'sign'], 'resource' => 'menu-guestbook-sign']
         ]
     ],
     'router' => [

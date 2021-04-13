@@ -6,7 +6,7 @@
         </div>
         <div class="panel-body">
             <?php foreach ($events as $event) : ?>
-                <a href="/events/table-module/signup/<?= $event['id'] ?>"><?= $event['name'] ?></a><br />
+                <a href="<?= $this->url('events/table-module/signup', ['event' => $event['id']]) ?>"><?= $event['name'] ?></a><br />
             <?php endforeach; ?>
         </div>
     </div>

@@ -2,6 +2,7 @@
 /**
  * @var Laminas\View\Renderer\PhpRenderer $this
  */
+use Login\Entity\UserEntity;
 ?>
 <?= $this->doctype() ?>
 <html lang="en">
@@ -21,6 +22,7 @@
         ?>
 
         <!-- Scripts -->
+        <!-- echos any "headScript()" commands issued in child views -->
         <?= $this->headScript() ?>
     </head>
     <body>
@@ -37,23 +39,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- set role and acl to navigation -->
                     <?php
-                        $user = NULL;
+                        $user = new UserEntity();
                         if ($this->authService) {
-                            $user = $this->authService->getIdentity();
+                            $user = $this->authService->getIdentity() ?? $user;
                         }
-                        if (isset($this->acl)) {
+                        if (!empty($this->acl)) {
                             $this->navigation('default')->setAcl($this->acl);
-                            $role = ($user) ? $user->getRole() : 'guest';
+                            $role = $user->getRole() ?? UserEntity::DEFAULT_USER;
                             $this->navigation('default')->setRole($role);
                         }
                     ?>
                     <?= $this->navigation('default')->menu()->setUlClass('nav navbar-nav'); ?>
                     <div style="color:white;vertical-align:top;margin-left:300px;">
-                        <?php if ($user) : ?>
-                            <?= $user->getEmail() . ' [' . $user->getLocale() . ']'; ?>
-                        <?php else : ?>
-                            <?= 'guest [' . Locale::getDefault() . ']'; ?>
-                        <?php endif; ?>
+                        <?= $user->getEmail() ?? UserEntity::DEFAULT_USER ?>
+                        <?= ' [' . ($user->getLocale() ?? Locale::getDefault()) . ']'; ?>
                     </div>
                 </div>
             </div>
@@ -65,8 +64,5 @@
                 <p>&copy; 2005 - <?= date('Y') ?> <a href="https://www.zend.com/training">Zend by Perforce Training</a></p>
             </footer>
         </div>
-        <?= $this->inlineScript()
-            ->prependFile($this->basePath('js/bootstrap.min.js'))
-            ->prependFile($this->basePath('js/jquery-3.5.1.min.js')) ?>
     </body>
 </html>

@@ -28,7 +28,7 @@ class LoginForm extends Form
         $this->add($email);
 
         $password = (new Password('password'))
-            ->setLabel('PasswordSecurity')
+            ->setLabel('Password')
             ->setAttributes(['size' => 40]);
         $this->add($password);
 

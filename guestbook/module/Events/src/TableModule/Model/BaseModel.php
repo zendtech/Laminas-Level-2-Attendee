@@ -4,15 +4,15 @@ use Laminas\Db\{
     Adapter\AdapterInterface,
     TableGateway\TableGateway,
 };
-abstract class BaseModel
+abstract class BaseModel implements BaseModelInterface
 {
-    public static $tablename = '';
+    public static $tableName = '';
     protected $tableGateway;
     public function __construct(AdapterInterface $adapter)
     {
-        $this->tableGateway = new TableGateway(static::$tablename, $adapter);
+        $this->tableGateway = new TableGateway(static::$tableName, $adapter);
     }
-    public function getTableGateway()
+    public function getTableGateway() : TableGateway
     {
         return $this->tableGateway;
     }

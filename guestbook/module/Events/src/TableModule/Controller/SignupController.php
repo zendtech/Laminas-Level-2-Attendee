@@ -1,18 +1,19 @@
 <?php
 namespace Events\TableModule\Controller;
+
+use Events\TableModule\Model\BaseModelInterface;
 use Laminas\Filter\FilterInterface;
-use Events\TableModule\Model\BaseModel;
 use Laminas\Db\TableGateway\TableGatewayInterface;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
 
 class SignupController extends AbstractActionController
 {
-    use TableTrait;
+    use ModelTrait;
     protected $regDataFilter;
-    public function __construct(BaseModel $eventModel,
-                                BaseModel $registrationModel,
-                                BaseModel $attendeeModel,
+    public function __construct(BaseModelInterface $eventModel,
+                                BaseModelInterface $registrationModel,
+                                BaseModelInterface $attendeeModel,
                                 FilterInterface $filter)
     {
         $this->setEventModel($eventModel);

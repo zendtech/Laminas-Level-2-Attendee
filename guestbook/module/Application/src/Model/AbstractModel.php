@@ -52,7 +52,9 @@ abstract class AbstractModel
         $data = [];
         foreach ($this->mapping as $key => $value) {
             $propKey = $this->normalizeKey($key);
-            if (!empty($this->properties[$propKey])) {
+            if (empty($this->properties[$propKey])) {
+                $data[$value] = NULL;
+            } else {
                 $data[$value] = $this->properties[$propKey];
             }
         }

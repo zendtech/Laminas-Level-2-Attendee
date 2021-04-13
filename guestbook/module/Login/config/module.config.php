@@ -39,6 +39,19 @@ return [
                         'action'     => 'index',
                     ],
                 ],
+                'may_terminate' => TRUE,
+                'child_routes' => [
+                    'login' => [
+                        'type'    => Literal::class,
+                        'options' => [
+                            'route'    => '/login',
+                            'defaults' => [
+                                'controller' => IndexController::class,
+                                'action'     => 'login',
+                            ],
+                        ],
+                    ],
+                ],
             ],
             'logout' => [
                 'type'    => Literal::class,

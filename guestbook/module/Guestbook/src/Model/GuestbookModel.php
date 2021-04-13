@@ -3,7 +3,7 @@ namespace Guestbook\Model;
 
 class GuestbookModel
 {
-    protected $id, $name, $email, $message;
+    public $id, $name, $email, $message;
 
     public function unset($key)
     {
