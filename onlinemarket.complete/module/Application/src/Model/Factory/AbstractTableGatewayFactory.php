@@ -14,9 +14,9 @@ class AbstractTableGatewayFactory  implements FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        return new AbstractTableGateway(
+        return new $requestedName(
             new TableGateway(
-                static::$tableName,
+                $requestedName::TABLE_NAME,
                 $container->get('model-primary-adapter'),
                 null,
                 new HydratingResultSet(

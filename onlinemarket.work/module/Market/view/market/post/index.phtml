@@ -106,7 +106,7 @@ label {
 <dt><?= $this->formLabel($post->get('captcha')); ?></dt>
 <dd><?= $this->formCaptcha($post->get('captcha')); ?><?= $this->formElementErrors($post->get('captcha')); ?></dd>
 <p style="color:white;"><?= $this->formSubmit($post->get('submit')); ?></p>
-<!-- //*** LAB: Form Security: echo the CSRF element as a hidden field -->>
+<!-- //*** LAB: Form Security: echo the CSRF element as a hidden field -->
 <?php /* code goes here */ ?>
 <?php echo $this->form()->closeTag(); ?>
 <?php \Zend\Debug\Debug::dump($data); ?>

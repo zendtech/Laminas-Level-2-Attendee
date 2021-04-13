@@ -1,11 +1,11 @@
 <?php
 namespace Model;
+use Application\Model\Factory\AbstractTableGatewayFactory;
 use Model\Entity\ListingEntity;
 use Model\Entity\UserEntity;
 use Model\Model\Factory\ListingsModelFactory;
 use Model\Model\{CityCodesModel,
     Factory\CityCodesModelFactory,
-    Factory\UsersModelFactory,
     ListingsModel,
     UsersModel};
 use Model\Adapter\{
@@ -29,7 +29,7 @@ return [
             'model-primary-adapter' => PrimaryAdapterFactory::class,
             ListingsModel::class => ListingsModelFactory::class,
             CityCodesModel::class => CityCodesModelFactory::class,
-            UsersModel::class => UsersModelFactory::class,
+            UsersModel::class => AbstractTableGatewayFactory::class,
             //*** DATABASE HYDRATOR LAB: add an entry for factory to produce listings hydrator instance
             ListingsHydrator::class => InvokableFactory::class,
             ListingEntity::class => InvokableFactory::class,

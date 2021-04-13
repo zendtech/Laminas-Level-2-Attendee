@@ -42,12 +42,12 @@ return [
 //    'Laminas\Mail',
 //    'Notification',
     //*** AUTHENTICATION LAB
-    'Login',
+//    'Login',
     //*** ACL Lab
-    'AccessControl',
+//    'AccessControl',
 //    'PrivateMessages',
     //*** NAVIGATION LAB
-    'Laminas\Navigation',
+//    'Laminas\Navigation',
     //*** REST LAB
 //    'RestApi',
 ];

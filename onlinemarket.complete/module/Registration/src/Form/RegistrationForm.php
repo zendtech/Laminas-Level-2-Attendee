@@ -30,7 +30,7 @@ class RegistrationForm extends Form
         $this->add($email);
 
         $password = new Password('password');
-        $password->setLabel('PasswordSecurity');
+        $password->setLabel('Password');
         $password->setAttributes(['size' => 40]);
         $this->add($password);
 

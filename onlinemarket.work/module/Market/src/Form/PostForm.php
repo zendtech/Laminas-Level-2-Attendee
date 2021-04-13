@@ -9,7 +9,7 @@ class PostForm extends Form
 {
     use CategoryTrait;
     use ExpireDaysTrait;
-	use CaptchaTrait;
+    use CaptchaTrait;
 
     public function buildForm()
     {
@@ -100,13 +100,14 @@ class PostForm extends Form
             ->setAttribute('title', 'Help to prevent SPAM');
 
         //*** LAB: Form Security: add CSRF element
-		$hash = '???';
+        $hash = '???';
 
         $submit = new Element\Submit('submit');
         $submit->setAttribute('value', 'Post')
                ->setAttribute('style', 'font-size: 16pt; font-weight:bold;')
                ->setAttribute('class', 'btn btn-success white');
 
+        //*** LAB: Form Security: add CSRF element
         $this->add($category)
             ->add($title)
             ->add($photo)
@@ -119,7 +120,6 @@ class PostForm extends Form
             ->add($description)
             ->add($delCode)
             ->add($captcha)
-            ->add($hash)
             ->add($submit);
     }
 

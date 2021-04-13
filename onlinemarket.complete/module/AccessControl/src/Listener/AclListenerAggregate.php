@@ -2,7 +2,8 @@
 namespace AccessControl\Listener;
 
 use AccessControl\Acl\MarketAcl;
-use Login\Controller\IndexController;
+use Market\Controller\IndexController;
+use Login\Controller\IndexController as LoginController;
 use Laminas\Authentication\AuthenticationService;
 use Laminas\Permissions\Acl\Acl;
 use Laminas\Mvc\MvcEvent;
@@ -13,6 +14,7 @@ class AclListenerAggregate extends AbstractListenerAggregate
     protected $acl, $authService;
     const DEFAULT_ACTION     = 'index';
     const DEFAULT_CONTROLLER = IndexController::class;
+    const LOGIN_CONTROLLER   = LoginController::class;
     const ERROR_NO_AUTH_SVC  = 'ERROR: auth service is missing';
     public function __construct(ACL $acl, AuthenticationService $authService){
         $this->acl = $acl;
@@ -57,7 +59,7 @@ class AclListenerAggregate extends AbstractListenerAggregate
             }
         }
         //*** if denied and we're not already going home ...
-        if ($denied && $resource != self::DEFAULT_CONTROLLER) {
+        if ($denied && $resource != self::DEFAULT_CONTROLLER && $resource != self::LOGIN_CONTROLLER) {
             $response = $e->getResponse();
             $response->getHeaders()->addHeaderLine('Location', '/onlinemarket.complete');
             $response->setStatusCode(302);

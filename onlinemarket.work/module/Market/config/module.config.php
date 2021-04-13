@@ -47,7 +47,7 @@ return [
                         'options' => [
                             'route' => '/post[/]',
                             'defaults' => [
-                                'controller' => TestController::class,
+                                'controller' => PostController::class,
                                 'action'     => 'index',
                             ],
                         ],

@@ -88,10 +88,10 @@ class IndexController extends AbstractActionController
     }
     protected function logMessage($level, $message)
     {
-		$this->getEventManager()
-		     ->trigger( self::EVENT_SOMETHING, 
-						$this, 
-						['level' => Logger::INFO, 'message' => $message]
-		);
-	}
+        $this->getEventManager()
+             ->trigger( self::EVENT_SOMETHING,
+                        $this,
+                        ['level' => Logger::INFO, 'message' => $message]
+        );
+    }
 }
