@@ -2,6 +2,11 @@
 /**
  * @var Laminas\View\Renderer\PhpRenderer $this
  */
+$email = (!empty($user)) ? $user->getEmail() : 'guest';
+$email = $email ?? 'guest';
+//*** NAVIGATION LAB: get the role from the stored user identity
+$role  = (!empty($user)) ? $user->getRole()  : 'guest';
+$role  = $role  ?? 'guest';
 ?>
 <?= $this->doctype() ?>
 <html lang="en">
@@ -47,8 +52,6 @@
                     <!-- //*** NAVIGATION LAB: use the "navigation()" view helper instead of hard-coding menu items -->
                     <?php
                         if (!empty($this->acl)) {
-                            //*** NAVIGATION LAB: get the role from the stored user identity
-                            $role = $user->getRole() ?? 'guest';
                             //*** NAVIGATION LAB: set role and acl to navigation
                             $this->navigation('default')->setAcl($this->acl);
                             $this->navigation('default')->setRole($role);
@@ -58,7 +61,7 @@
                     <?= $this->navigation('default')->menu()->setUlClass('nav navbar-nav'); ?>
                     <span style="float:right;color:white;margin-left:200px;">
                         <!-- //*** AUTHENTICATION LAB: if auth service has an identity, display it, otherwise "guest" -->
-                        <?= 'Logged in as'; ?>: <?= $user->getEmail() ?? 'Guest' ?>
+                        <?= 'Logged in as'; ?>: <?= $email; ?>
                     </span>
                 </div>
             </div>

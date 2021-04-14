@@ -29,7 +29,7 @@
         <hr />
         <div class="listingImage">
             <?php $photoFilename = $this->escapeHtml($this->item->photo_filename); ?>
-            <?php if (stripos($photoFilename, 'http:') === FALSE) $photoFilename = $this->basePath() . $photoFilename; ?>
+            <?php if (stripos($photoFilename, 'http') !== 0) $photoFilename = $this->basePath() . $photoFilename; ?>
             <img src="<?php echo  $photoFilename; ?>" width="200px"/>
             </div>
             <div class="listingNotes">
@@ -45,8 +45,8 @@
         <hr>
         <p><?php echo $this->escapeHtml($this->item->description); ?></p>
         <hr />
-	<?php else : ?>
-		<?= 'Unable to find item!'; ?>
-	<?php endif; ?>
+    <?php else : ?>
+        <?= 'Unable to find item!'; ?>
+    <?php endif; ?>
     </p>
 </div>

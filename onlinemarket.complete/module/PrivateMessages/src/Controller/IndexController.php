@@ -2,7 +2,8 @@
 namespace PrivateMessages\Controller;
 use Model\Entity\UserEntity;
 use PrivateMessages\Form\SendForm;
-use PrivateMessages\Model\ {MessageEntity, MessagesModel};
+use PrivateMessages\Model\MessagesModel;
+use PrivateMessages\Entity\MessageEntity;
 use Laminas\Form\FormInterface;
 use Laminas\View\Model\ViewModel;
 use Laminas\Mvc\Controller\AbstractActionController;

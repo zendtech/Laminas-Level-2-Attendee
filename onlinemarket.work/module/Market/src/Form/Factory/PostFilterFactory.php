@@ -11,8 +11,8 @@ class PostFilterFactory implements FactoryInterface
     {
         $filter = new PostFilter();
         $filter->setExpireDays($container->get('market-expire-days'));
-        $filter->setCategories($container->get('categories'));
-		//*** FILE UPLOAD LAB: inject file upload Config
+        $filter->setCategories($container->get('market-categories'));
+        //*** FILE UPLOAD LAB: inject file upload Config
         $filter->setUploadConfig($container->get('market-upload-Config'));
         $filter->buildFilter();
         return $filter;

@@ -5,14 +5,15 @@ use Psr\Container\ContainerInterface;
 use Laminas\Db\ {
     Adapter\AdapterInterface,
     ResultSet\ResultSetInterface,
+    TableGateway\TableGatewayInterface,
 };
 
 interface EventsTableGatewayInterface
 {
     public function __construct(AdapterInterface $adapter,
                                 EntityInterface $entity,
-                                $container,
+                                ContainerInterface $container,
                                 ResultSetInterface $resultSet,
-                                $tableGateway
+                                TableGatewayInterface $tableGateway
     );
 }

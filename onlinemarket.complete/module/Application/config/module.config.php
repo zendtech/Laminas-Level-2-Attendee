@@ -43,36 +43,17 @@ return [
         ],
     ],
     'service_manager' => [
-        'services' => [
-            'expire-days' => [
-                0  => 'Never',
-                1  => 'Tomorrow',
-                7  => 'Week',
-                30 => 'Month',
-            ],
-            'captcha-options' => [
-                'expiration' => 300,
-                'fontSize'	=> 24,
-                'height'	=> 50,
-                'width'		=> 200,
-                // These two paths are relative to the configuration directory
-                'font'		=> __DIR__ . '/../../../public/fonts/FreeSansBold.ttf',
-                'imgDir'	=> __DIR__ . '/../../../public/captcha',
-                // This URL is relative to the host.
-                'imgUrl'	=> '../../public/captcha',
-            ],
-        ],
         //*** NAVIGATION LAB: activate the default navigation factory
         'abstract_factories' => [
             NavigationAbstractServiceFactory::class
         ],
         'factories' => [
-			AppEventAggregate::class => InvokableFactory::class,
+            AppEventAggregate::class => InvokableFactory::class,
             AbstractTableGateway::class => AbstractTableGatewayFactory::class
         ],
     ],
     'listeners' => [
-		AppEventAggregate::class
+        AppEventAggregate::class
     ],
     'view_manager' => [
         'display_not_found_reason' => true,
@@ -93,45 +74,9 @@ return [
     'view_helpers' => [
         'factories' => [
             LeftLinks::class => InvokableFactory::class,
-            FormHelper\Form::class => InvokableFactory::class,
-            FormHelper\FormRow::class => InvokableFactory::class,
-            FormHelper\FormLabel::class => InvokableFactory::class,
-            FormHelper\FormHidden::class => InvokableFactory::class,
-            FormHelper\FormCaptcha::class => InvokableFactory::class,
-            FormHelper\FormFile::class => InvokableFactory::class,
-            FormHelper\FormEmail::class => InvokableFactory::class,
-            FormHelper\FormRadio::class => InvokableFactory::class,
-            FormHelper\FormSelect::class => InvokableFactory::class,
-            FormHelper\FormSubmit::class => InvokableFactory::class,
-            FormHelper\FormText::class => InvokableFactory::class,
-            FormHelper\FormTextarea::class => InvokableFactory::class,
-            FormHelper\FormPassword::class => InvokableFactory::class,
-            FormHelper\FormCollection::class => InvokableFactory::class,
-            FormHelper\FormElement::class => InvokableFactory::class,
-            FormHelper\FormElementErrors::class => InvokableFactory::class,
-            FormHelper\Captcha\Image::class => InvokableFactory::class,
-            ViewHelper\FlashMessenger::class => InvokableFactory::class,
         ],
         'aliases' => [
             'leftLinks' => LeftLinks::class,
-            'form' => FormHelper\Form::class,
-            'formrow' => FormHelper\FormRow::class,
-            'formHidden' => FormHelper\FormHidden::class,
-            'formCaptcha' => FormHelper\FormCaptcha::class,
-            'formFile' => FormHelper\FormFile::class,
-            'formEmail' => FormHelper\FormEmail::class,
-            'formRadio' => FormHelper\FormRadio::class,
-            'formSelect' => FormHelper\FormSelect::class,
-            'formSubmit' => FormHelper\FormSubmit::class,
-            'formText' => FormHelper\FormText::class,
-            'formTextarea' => FormHelper\FormTextarea::class,
-            'formPassword' => FormHelper\FormPassword::class,
-            'formcollection' => FormHelper\FormCollection::class,
-            'formLabel' => FormHelper\FormLabel::class,
-            'form_label' => FormHelper\FormLabel::class,
-            'form_element' => FormHelper\FormElement::class,
-            'formElementErrors' => FormHelper\FormElementErrors::class,
-            'captcha/image' => FormHelper\Captcha\Image::class,
         ],
     ],
     //*** ACL LAB

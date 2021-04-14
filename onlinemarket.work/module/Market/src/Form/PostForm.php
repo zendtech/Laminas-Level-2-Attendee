@@ -33,7 +33,7 @@ class PostForm extends Form
         //*** FILE UPLOAD LAB: convert this to a file upload form element
         $photo = new Element\Text('photo_filename');
         $photo->setLabel('Photo')
-            ->setAttribute('placeholder', 'Upload image')
+            ->setAttribute('placeholder', 'Image filename')
             ->setLabelAttributes(['style'=>'display:block']);
 
 

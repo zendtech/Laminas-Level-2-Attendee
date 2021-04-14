@@ -35,7 +35,7 @@ class RegistrationTableModel extends BaseTableModel
         $registrations = $this->findRegistrationByEventId($eventId);
         $attendeeTable = $this->container->get(AttendeeTableModel::class);
         foreach ($registrations as $reg) {
-            $reg->attendees = $attendeeTable->findByRegistrationId($reg->getId());
+            $reg->attendees = iterator_to_array($attendeeTable->findByRegistrationId($reg->getId()));
             $final[$reg->getId()] = $reg;
         }
         return $final;

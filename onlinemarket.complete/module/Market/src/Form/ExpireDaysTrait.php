@@ -2,20 +2,18 @@
 namespace Market\Form;
 trait ExpireDaysTrait
 {
-    
-	protected $expireDays;
+    protected $expireDays;
 
     /**
      * @return  $expireDays
      */
-	public function getExpireDays() {
-		return $this->expireDays;
-	}
-	
-	/**
-	 * @param array $expireDays;
-	 */
-	public function setExpireDays($expireDays) {
-		$this->expireDays = $expireDays;
-	}
+    public function getExpireDays() {
+            return $this->expireDays;
+    }
+    /**
+     * @param array $expireDays;
+     */
+    public function setExpireDays($expireDays) {
+            $this->expireDays = $expireDays;
+    }
 }

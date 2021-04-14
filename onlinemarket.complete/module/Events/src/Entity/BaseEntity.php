@@ -4,7 +4,7 @@ namespace Events\Entity;
 abstract class BaseEntity implements EntityInterface
 {
     const DATE_FORMAT = 'Y-m-d H:i:s';
-    protected $id;
+    public $id;
 
     /**
      * @return mixed

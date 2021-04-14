@@ -4,7 +4,7 @@ namespace Events\Entity;
 
 class EventEntity extends BaseEntity
 {
-    protected $name, $max_attendees, $date;
+    public $name, $max_attendees, $date;
     public function getName()
     {
         return $this->name;

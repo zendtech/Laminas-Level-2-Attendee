@@ -13,7 +13,7 @@ class PostFormFactory implements FactoryInterface
     {
         $form = new PostForm();
         $form->setExpireDays($container->get('market-expire-days'));
-        $form->setCategories($container->get('categories'));
+        $form->setCategories($container->get('market-categories'));
         $form->setCaptchaOptions($container->get('market-captcha-options'));
         $form->buildForm();
         $form->setInputFilter($container->get(PostFilter::class));

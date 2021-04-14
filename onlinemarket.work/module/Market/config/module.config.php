@@ -131,7 +131,23 @@ return [
                 'transportation',
                 'wanted',
             ],
-
+            'market-expire-days' => [
+                0  => 'Never',
+                1  => 'Tomorrow',
+                7  => 'Week',
+                30 => 'Month',
+            ],
+            'market-captcha-options' => [
+                'expiration' => 300,
+                'fontSize'  => 24,
+                'height'    => 50,
+                'width'     => 200,
+                // These two paths are relative to the configuration directory
+                'font'      => __DIR__ . '/../../../public/fonts/FreeSansBold.ttf',
+                'imgDir'    => __DIR__ . '/../../../public/captcha',
+                // This URL is relative to the host.
+                'imgUrl'    => '/onlinemarket.work/captcha',
+            ],
             //*** FILE UPLOAD LAB: define Config for file upload validators and filter
             'market-upload-Config' => [
                 'img_size'   => [],

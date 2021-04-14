@@ -36,36 +36,17 @@ return [
         ],
     ],
     'service_manager' => [
-        'services' => [
-            'expire-days' => [
-                0  => 'Never',
-                1  => 'Tomorrow',
-                7  => 'Week',
-                30 => 'Month',
-            ],
-            'captcha-options' => [
-                'expiration' => 300,
-                'fontSize'	=> 24,
-                'height'	=> 50,
-                'width'		=> 200,
-                // These two paths are relative to the configuration directory
-                'font'		=> __DIR__ . '/../../../public/fonts/FreeSansBold.ttf',
-                'imgDir'	=> __DIR__ . '/../../../public/captcha',
-                // This URL is relative to the host.
-                'imgUrl'	=> '../../public/captcha',
-            ],
-        ],
 
         //*** NAVIGATION LAB: activate the default navigation factory
         'abstract_factories' => [
             NavigationAbstractServiceFactory::class
         ],
         'factories' => [
-			Event\AppEventAggregate::class => InvokableFactory::class
+            Event\AppEventAggregate::class => InvokableFactory::class
         ],
     ],
     'listeners' => [
-		Event\AppEventAggregate::class
+        Event\AppEventAggregate::class
     ],
     'view_manager' => [
         'display_not_found_reason' => true,

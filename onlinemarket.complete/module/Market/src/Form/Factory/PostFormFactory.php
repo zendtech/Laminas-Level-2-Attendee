@@ -14,9 +14,9 @@ class PostFormFactory implements FactoryInterface
         return new PostForm(
             'PostForm',
             $options,
-            $container->get('expire-days'),
+            $container->get('market-expire-days'),
             $container->get('market-categories'),
-            $container->get('captcha-options'),
+            $container->get('market-captcha-options'),
             $container->get(PostFilter::class),
             new ObjectPropertyHydrator(),
             new ListingEntity()

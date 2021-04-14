@@ -1,8 +1,10 @@
 <?php
 namespace Events\Model;
+use Psr\Container\ContainerInterface;
 use Laminas\Db\{
     Adapter\AdapterInterface,
-    ResultSet\ResultSetInterface
+    ResultSet\ResultSetInterface,
+    TableGateway\TableGatewayInterface,
 };
 use Events\Entity\EntityInterface;
 
@@ -15,9 +17,9 @@ abstract class BaseTableModel implements EventsTableGatewayInterface
     public function __construct(
         AdapterInterface $adapter,
         EntityInterface $entity,
-        $container,
+        ContainerInterface $container,
         ResultSetInterface $resultSet,
-        $tableGateway
+        TableGatewayInterface $tableGateway
     )
     {
         $this->adapter = $adapter;

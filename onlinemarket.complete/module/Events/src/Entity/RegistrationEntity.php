@@ -12,36 +12,36 @@ class RegistrationEntity extends BaseEntity
     /**
      * @ABC\Exclude()
      */
-    protected $id;
+    public $id;
 
     /**
      * @ABC\Exclude()
      */
-    protected $event_id;
+    public $event_id;
 
     /**
      * @ABC\Attributes({"type":"text", "placeholder":"First Name", "class":"input-xlarge"})
      * @ABC\Options({"label":"First Name: "})
      * @ABC\Filter({"name":"StringTrim", "name":"StripTags"})
      */
-    protected $first_name;
+    public $first_name;
 
     /**
      * @ABC\Attributes({"type":"text", "placeholder":"Last Name", "class":"input-xlarge"})
      * @ABC\Options({"label":"Last Name:"})
      * @ABC\Filter({"name":"StringTrim", "name":"StripTags"}))
      */
-    protected $last_name;
+    public $last_name;
 
     /**
      * @ABC\Exclude()
      */
-    protected $registration_time;
+    public $registration_time;
 
     /**
      * @ABC\Exclude()
      */
-    protected $attendees = [];
+    public $attendees = [];
 
     /**
      * @return int

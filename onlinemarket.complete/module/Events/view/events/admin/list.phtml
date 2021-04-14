@@ -1,6 +1,4 @@
-<?php
-var_dump($this->registrations);
-?>
+<?php /* var_dump($this->registrations); */ ?>
 <div class="col-lg-8">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -18,7 +16,7 @@ var_dump($this->registrations);
                 <td>
                     <ul>
                     <?php foreach ($reg->attendees as $attendee) : ?>
-                    <li><?php /* echo $attendee->getNameOnTicket() */ ?></li>
+                    <li><?= $attendee->getNameOnTicket(); ?></li>
                     <?php endforeach; ?>
                     </ul>
                 </td>
@@ -27,6 +25,7 @@ var_dump($this->registrations);
             <tr><td colspan=2>&nbsp;</td><th>Total Registrations</th><td><?= count($registrations) ?></td></tr>
         </table>
         <hr />
+        <a href="<?= $this->url('events/admin'); ?>">BACK</a>
         </div>
     </div>
 </div>

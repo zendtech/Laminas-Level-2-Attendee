@@ -169,7 +169,7 @@ class Module
                         RegistrationTableModel::TABLE_NAME,
                         $container->get('model-primary-adapter'),
                         NULL,
-                        $container->get('events-table-resultSet')
+                        $container->get('reg-table-resultSet')
                     );
                 },
                 'events-attendee-tableGateway' => function (ContainerInterface $container){
@@ -177,7 +177,7 @@ class Module
                         AttendeeTableModel::TABLE_NAME,
                         $container->get('model-primary-adapter'),
                         NULL,
-                        $container->get('events-table-resultSet')
+                        $container->get('attendee-table-resultSet')
                     );
                 },
                 //*** DELEGATING HYDRATOR LAB: define a service which returns an instance of Laminas\Hydrator\DelegatingHydrator

@@ -18,7 +18,7 @@ class AttendeeEntity extends BaseEntity
      * @ABC\Filter({"name":"StringTrim"})
      * @ABC\Filter({"name":"StripTags"})
      */
-    protected $name_on_ticket;
+    public $name_on_ticket;
 
     /**
      * @return mixed
