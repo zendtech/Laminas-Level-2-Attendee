@@ -4,11 +4,7 @@ echo "Usage: admin.sh up|down|build|ls|shell"
 export CONTAINER="laminas_2"
 if [[ "$1" = "up" ]]; then
     docker-compose up -d
-    docker exec $CONTAINER /bin/bash -c "chgrp -R apache /home/*"
-    docker exec $CONTAINER /bin/bash -c "chmod -R 775 /home/*"
-    docker exec $CONTAINER /bin/bash -c "/etc/init.d/mysql start"
-    docker exec $CONTAINER /bin/bash -c "/etc/init.d/php-fpm start"
-    docker exec $CONTAINER /bin/bash -c "/etc/init.d/httpd start"
+    docker exec $CONTAINER /bin/bash -c "/tmp/init.sh*"
 elif [[ "$1" = "down" ]]; then
     docker-compose down
     sudo chown -R $USER:$USER *

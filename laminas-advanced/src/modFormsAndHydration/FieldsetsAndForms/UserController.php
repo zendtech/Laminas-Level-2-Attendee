@@ -7,17 +7,11 @@ use src\core\AbstractController;
 class UserController extends AbstractController
 {
     public function indexAction(){
-        $container = $this->getEvent()->getApplication()->getServiceManager();
-        $form = $container->get(UserForm::class);
-        $user = $container->get(UserEntity::class);
-        $form->bind($user);
+        $form = new UserForm('user_form');
+        $form->bind(new UserEntity());
         $request = $this->getRequest();
-
         if ($request->isPost()) {
             $form->setData($request->getPost());
-            if ($form->isValid()) {
-                    var_dump($user);
-                }
         }
         require 'UserForm.phtml';
     }

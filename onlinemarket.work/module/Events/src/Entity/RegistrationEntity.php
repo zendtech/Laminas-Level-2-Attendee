@@ -3,38 +3,38 @@ namespace Events\Entity;
 
 /**
  * @ABC\Name("registration")
- * @ABC\Hydrator("Laminas\Hydrator\ArraySerializableHydrator")
+ * @ABC\Hydrator("Laminas\Hydrator\ClassMethodsHydrator")
  */
 class RegistrationEntity extends BaseEntity
 {
-	/**
-	 * @ABC\Exclude()
+    /**
+     * @ABC\Exclude()
      */
     public $event_id;
 
-	/**
-	 * @ABC\Attributes({"type":"text","placeholder":"First Name","class":"input-xlarge"})
+    /**
+     * @ABC\Attributes({"type":"text","placeholder":"First Name","class":"input-xlarge"})
      * @ABC\Options({"label":"First Name:"})
      * @ABC\Filter({"name":"StringTrim"})
      * @ABC\Filter({"name":"StripTags"})
      */
     public $first_name;
 
-	/**
-	 * @ABC\Attributes({"type":"text","placeholder":"Last Name","class":"input-xlarge"})
+    /**
+     * @ABC\Attributes({"type":"text","placeholder":"Last Name","class":"input-xlarge"})
      * @ABC\Options({"label":"Last Name:"})
      * @ABC\Filter({"name":"StringTrim"})
      * @ABC\Filter({"name":"StripTags"})
      */
     public $last_name;
 
-	/**
-	 * @ABC\Exclude()
+    /**
+     * @ABC\Exclude()
      */
     public $registration_time;
 
-	/**
-	 * @ABC\Exclude()
+    /**
+     * @ABC\Exclude()
      */
     public $attendees = [];
 

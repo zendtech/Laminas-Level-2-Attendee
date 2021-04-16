@@ -2,10 +2,10 @@
 /**
  * Multi-Fieldset Form Script
  */
-$form = $this->form;
 $form->prepare();
 $user = $form->get('user');
 $profile = $user->get('profile');
 echo $this->renderer->form()->openTag($form);
 echo $this->renderer->formCollection($form);
 echo $this->renderer->form()->closeTag($form);
+echo '<pre>'. var_export($form->getData(), TRUE) . '</pre>';

@@ -4,7 +4,7 @@
  */
 namespace src\modFormsAndHydration\FieldsetsAndForms;
 use Laminas\Form\Fieldset;
-use Laminas\Hydrator\HydratorInterface;
+use Laminas\Hydrator\ {HydratorInterface, ObjectPropertyHydrator};
 
 class UserFieldset extends Fieldset
 {
@@ -27,8 +27,11 @@ class UserFieldset extends Fieldset
             ]
         ]);
 
-        $this->add([
-            'type' => ProfileFieldset::class
-        ]);
+        $this->add(new ProfileFieldset(
+            ProfileFieldset::TABLE_NAME,
+            $options,
+            new ObjectPropertyHydrator(),
+            new ProfileEntity(),
+        ));
     }
 }

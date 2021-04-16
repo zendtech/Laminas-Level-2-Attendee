@@ -24,6 +24,7 @@ use Laminas\Filter\{
     StringTrim,
     StripTags
 };
+use Laminas\Form\{Form, Element};
 use Interop\Container\ContainerInterface;
 use Laminas\Hydrator\ObjectPropertyHydrator;
 use Laminas\Form\Annotation\AnnotationBuilder;
@@ -33,7 +34,7 @@ use Laminas\Navigation\Service\ConstructedNavigationFactory;
 
 class Module
 {
-	const MAX_NAMES_PER_TICKET = 6;
+    const MAX_NAMES_PER_TICKET = 6;
     public function getConfig()
     {
         return include __DIR__ . '/../config/module.config.php';
@@ -79,6 +80,10 @@ class Module
             'aliases' => [
                 'events-db-adapter' => 'model-primary-adapter',
             ],
+            'shared' => [
+                //*** FORMS AND FIELDSETS LAB: uncomment line below
+                // 'events-attendee-fieldset' => FALSE,
+            ],
             'factories' => [
                 'events-registration-data-filter' => function () {
                     $filter = new FilterChain();
@@ -87,41 +92,51 @@ class Module
                     return $filter;
                 },
                 'events-registration-form' => function (ContainerInterface $container) {
-					$registrationForm = (new AnnotationBuilder())->createForm($container->get(RegistrationEntity::class));
-					$attendeeForm = $container->get('events-attendee-form');
-                    // $attendeeFieldset = $container->get('events-attendee-fieldset');
-                    // $registrationFieldset = $container->get('events-registration-fieldset');
 
-					for ($x = 0; $x < self::MAX_NAMES_PER_TICKET; $x++) {
-                        $registrationForm->add(clone $attendeeForm, ['name' => 'attendee_' . $x]);
-                        // The below is used if fieldsets are desired.
-                        // $registrationForm->add(clone $attendeeFieldset);
-                        // $registrationForm->add(clone $registrationFieldset);
+                    //*** IMPORTANT: cannot have *both* Annotations and Fieldsets!
+                    //***            if you uncomment one, you must comment out the other
 
-                    }
+                    //*** FORMS ANNOTATIONS LAB: uncomment lines below
+                    /*
+                    $regForm = (new AnnotationBuilder())->createForm($container->get(RegistrationEntity::class));
+                    $attendeeForm = $container->get('events-attendee-form');
+                    for ($x = 0; $x < self::MAX_NAMES_PER_TICKET; $x++) {
+                        $regForm->add(clone $attendeeForm, ['name' => 'attendee_' . $x]);
+                    */
 
-					return $registrationForm;
-				},
+                    //*** FORMS AND FIELDSETS LAB: uncomment lines below
+                    /*
+                    $regForm = new Form('main_form');
+                    $regForm->add($container->get('events-registration-fieldset');
+                    $regForm->add(new Element(['type'=>'submit','attributes'=>['value'=>'Send']]);
+                    */
+
+                    return $regForm;
+                },
                 'events-attendee-form' => function (ContainerInterface $container) {
-					return (new AnnotationBuilder())->createForm($container->get(AttendeeEntity::class));
-				},
-                // This service assumes a fieldset class definition.
-//                'events-registration-fieldset' => function (ContainerInterface $container){
-//                    return new RegistrationFieldset(
-//                        'registration',
-//                        new ObjectPropertyHydrator(),
-//                        $container->get(RegistrationEntity::class)
-//                    );
-//                },
+                    return (new AnnotationBuilder())->createForm($container->get(AttendeeEntity::class));
+                },
 
-                // This service assumes a fieldset class definition
-//                'events-attendee-fieldset' => function (ContainerInterface $container){
-//                    return new AttendeeFieldset(
-//                        'registration',
-//                        new ObjectPropertyHydrator(),
-//                        $container->get(AttendeeEntity::class)
-//                    );
-//                },
+                //*** FORMS AND FIELDSETS LAB: uncomment 2 services below
+                /*
+                'events-registration-fieldset' => function (ContainerInterface $container){
+                    $fieldSet = new RegistrationFieldset(
+                        'registration',
+                        new ClassMethodsHydrator(),
+                        $container->get(RegistrationEntity::class)
+                    );
+                    for ($x = 0; $x < self::MAX_NAMES_PER_TICKET; $x++)
+                        $fieldSet->add($container->get('events-attendee-fieldset');
+                    return $fieldSet;
+                },
+                'events-attendee-fieldset' => function (ContainerInterface $container){
+                    return new AttendeeFieldset(
+                        'attendee',
+                        new ObjectPropertyHydrator(),
+                        $container->get(AttendeeEntity::class)
+                    );
+                },
+                */
 
                 'events-service-container' => function (ContainerInterface $container) {
                     return $container;
@@ -131,10 +146,10 @@ class Module
                     //*** DELEGATING HYDRATOR LAB: assign a "ObjectProperty" hydrator to the "RegistrationEntity" entity and "ClassMethods" to the others
                 },
 
-				'events-navigation' => function (ContainerInterface $container) {
-	                $factory = new ConstructedNavigationFactory($container->get('events-nav-Config'));
+                'events-navigation' => function (ContainerInterface $container) {
+                    $factory = new ConstructedNavigationFactory($container->get('events-nav-Config'));
                     return $factory->createService($container);
-				},
+                },
             ],
         ];
     }
