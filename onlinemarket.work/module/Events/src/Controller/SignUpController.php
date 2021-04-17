@@ -32,7 +32,7 @@ class SignUpController extends AbstractActionController
     {
         $eventId = (int) $this->params('eventId', FALSE);
         if ($eventId) {
-                        $this->setBindings($eventId);
+            //*** FORMS AND FIELDSETS LAB: bind entity to form
             return $this->eventSignup($eventId);
         }
         $events = $this->eventTable->findAll();
@@ -69,36 +69,17 @@ class SignUpController extends AbstractActionController
         return $vm;
     }
 
-    //*** DATABASE TABLE MODULE RELATIONSHIPS LAB: define this method such that for any given event, registrations and associated attendees are saved
+    //*** DATABASE TABLE MODULE RELATIONSHIPS LAB
     protected function processForm(array $formData, $eventId)
     {
         $result = FALSE;
         $this->setBindings($eventId);
         $this->regForm->setData($formData);
         if ($this->regForm->isValid()) {
-            $registration = $this->regForm->getData();
-            $result = $regId = $this->regTable->save($registration);
-            foreach ($formData['name_on_ticket'] as $name) {
-                if ($name)
-                    $this->attendeeTable->save(
-                        new AttendeeEntity(['registration_id' => $regId, 'name_on_ticket' => $name]));
-            }
+            //*** Define code such that for any given event, registrations and associated attendees are saved
         }
         return $result;
     }
-
-        protected function setBindings($eventId)
-        {
-            $container = $this->getEvent()->getApplication()->getServiceManager();
-            $registrationEntity = $container->get(RegistrationEntity::class)->setEventID($eventId);
-            $this->registrationForm->bind($registrationEntity);
-
-            for ($x = 0; $x < Module::MAX_NAMES_PER_TICKET; $x++) {
-                    $sub = $this->registrationForm->get('attendee_' . $x);
-                    $attendeeEntity = $container->get(AttendeeEntity::class);
-                    $sub->bind($attendeeEntity);
-            }
-        }
 
     protected function sanitizeData(array $data)
     {

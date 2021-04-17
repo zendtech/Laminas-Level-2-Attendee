@@ -1,6 +1,7 @@
 <?php
 namespace Events;
-use AccessControl\Acl\MarketAcl;
+//*** ACL LAB: uncomment this
+//use AccessControl\Acl\MarketAcl;
 use Events\Model\{AttendeeTableModel,
     EventTableModel,
     Factory\TableAbstractFactory,
@@ -45,10 +46,9 @@ class Module
         return [
             'factories' => [
                 IndexController::class => function ($container, $requestedName) {
-                    return new $requestedName(
-                        $container->get(MarketAcl::class),
-                        $container->get('login-auth-service')
-                    );
+                    //*** ACL LAB: need to inject the ACL into the controller
+                    //*** AUTH LAB: need to inject the auth service into the controller
+                    return new $requestedName();
                 },
                 AdminController::class  => function ($container, $requestedName) {
                     return new $requestedName(
@@ -94,7 +94,9 @@ class Module
                 'events-registration-form' => function (ContainerInterface $container) {
 
                     //*** IMPORTANT: cannot have *both* Annotations and Fieldsets!
-                    //***            if you uncomment one, you must comment out the other
+                    //***            If you uncomment one, you must comment out the other.
+                    //***            Be sure to comment out the line immediately below!
+                    $regForm = new Form('main');
 
                     //*** FORMS ANNOTATIONS LAB: uncomment lines below
                     /*
@@ -117,12 +119,12 @@ class Module
                     return (new AnnotationBuilder())->createForm($container->get(AttendeeEntity::class));
                 },
 
-                //*** FORMS AND FIELDSETS LAB: uncomment 2 services below
+                //*** FORMS AND FIELDSETS LAB: uncomment 2 services below and add the appropriate hydrator
                 /*
                 'events-registration-fieldset' => function (ContainerInterface $container){
                     $fieldSet = new RegistrationFieldset(
                         'registration',
-                        new ClassMethodsHydrator(),
+                        ???,    //*** specify hydrator
                         $container->get(RegistrationEntity::class)
                     );
                     for ($x = 0; $x < self::MAX_NAMES_PER_TICKET; $x++)
@@ -132,7 +134,7 @@ class Module
                 'events-attendee-fieldset' => function (ContainerInterface $container){
                     return new AttendeeFieldset(
                         'attendee',
-                        new ObjectPropertyHydrator(),
+                        ???,    //*** specify hydrator
                         $container->get(AttendeeEntity::class)
                     );
                 },

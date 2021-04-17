@@ -1,19 +1,21 @@
 <?php
 namespace Market\Form;
 
+//*** FILE UPLOAD LAB: add "FileInput"
 use Laminas\InputFilter\ {InputFilter,Input};
 use Laminas\Filter\ {Digits, StripTags, StringTrim, StringToLower, StringToUpper, Callback};
 use Laminas\Validator\ {InArray, StringLength, Regex, Callback as CallValid};
 use Laminas\I18n\Validator\ {Alnum, ToFloat};
 
 //*** FILE UPLOAD LAB: add appropriate "use" statements
+//***                  Hint: see Market\Form\UploadTrait
 
 class PostFilter extends InputFilter
 {
 
     use CategoryTrait;
     use ExpireDaysTrait;
-    use UploadTrait;
+    //*** FILE UPLOAD LAB: add appropriate "use" statement
 
     public function buildFilter()
     {

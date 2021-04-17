@@ -7,16 +7,19 @@ use Laminas\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
+    //*** ACL LAB: need to inject the ACL into the controller
+    //*** AUTH LAB: need to inject the auth service into the controller
+    /*
     protected $acl, $authService;
-	public function __construct(
-	    AclInterface $acl,
-        AuthenticationService $authService
-    ){
-	    $this->acl = $acl;
-	    $this->authService = $authService;
+    public function __construct(AclInterface $acl, AuthenticationService $authService)
+    {
+        //*** code goes here
     }
+    */
     public function indexAction()
     {
-        return new ViewModel(['acl' => $this->acl, 'authenticationService' => $this->authService]);
+        //*** ACL LAB: send the ACL to the view
+        //*** AUTH LAB: send the auth service to the view
+        return new ViewModel();
     }
 }

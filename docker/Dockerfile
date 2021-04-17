@@ -20,7 +20,7 @@ RUN \
 RUN \
     echo "Creating sample database and assigning permissions ..." && \
     /etc/init.d/mysql start && \
-    sleep 5 && \
+    sleep 3 && \
     mysql -uroot -v -e "CREATE DATABASE zfcourse;" && \
     mysql -uroot -v -e "CREATE USER 'laminas'@'localhost' IDENTIFIED BY 'password';" && \
     mysql -uroot -v -e "GRANT ALL PRIVILEGES ON *.* TO 'laminas'@'localhost';" && \
@@ -30,4 +30,4 @@ RUN \
 RUN \
     echo "Installing phpMyAdmin ..." && \
     /tmp/phpmyadmin_install.sh
-CMD /tmp/init.sh
+CMD lfphp --mysql --phpfpm --apache

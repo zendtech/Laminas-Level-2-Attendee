@@ -10,7 +10,7 @@ services:
      - "8888:80"
     build: docker
     restart: always
-    command: /tmp/init.sh
+    command: lfphp --mysql --phpfpm --apache
     networks:
       app_net:
         ipv4_address: 10.20.20.20

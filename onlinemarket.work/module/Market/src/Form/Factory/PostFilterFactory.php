@@ -13,7 +13,7 @@ class PostFilterFactory implements FactoryInterface
         $filter->setExpireDays($container->get('market-expire-days'));
         $filter->setCategories($container->get('market-categories'));
         //*** FILE UPLOAD LAB: inject file upload Config
-        $filter->setUploadConfig($container->get('market-upload-Config'));
+        //***                  Hint: see Market\Form\UploadTrait
         $filter->buildFilter();
         return $filter;
     }
