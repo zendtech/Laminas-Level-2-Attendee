@@ -1,5 +1,6 @@
 <?php
 namespace Events\Controller;
+use Events\Model\EventsTableGatewayInterface;
 use Events\Traits\ {EventModelTrait, RegistrationModelTrait};
 use Laminas\Db\TableGateway\TableGatewayInterface;
 use Laminas\Mvc\Controller\AbstractActionController;
@@ -12,8 +13,8 @@ class AdminController extends AbstractActionController
     use RegistrationModelTrait;
 
     public function __construct(
-        TableGatewayInterface $eventTable,
-        TableGatewayInterface $registrationTable
+        EventsTableGatewayInterface $eventTable,
+        EventsTableGatewayInterface $registrationTable
     ) {
         $this->setEventTable($eventTable);
         $this->setRegistrationTable($registrationTable);
@@ -23,8 +24,9 @@ class AdminController extends AbstractActionController
     {
         $eventId = $this->params()->fromRoute('eventId', FALSE);
         if ($eventId) {
-			//*** DATABASE TABLE MODULE RELATIONSHIPS LAB: use any of the approaches covered in the slides to provide a list of registrations and associated attendees for a given event
-			$registrations = $this->regTable->findAllForEvent($eventId);
+            //*** DATABASE TABLE MODULE RELATIONSHIPS LAB: use any of the approaches covered in the slides to
+            //***                                          provide a list of registrations and associated attendees for a given event
+            $registrations = $this->regTable->findAllForEvent($eventId);
             $viewModel = new ViewModel(['registrations' => $registrations]);
             $viewModel->setTemplate('events/admin/list');
         } else {

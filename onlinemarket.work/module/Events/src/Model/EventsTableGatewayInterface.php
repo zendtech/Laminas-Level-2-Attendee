@@ -4,7 +4,7 @@ use Laminas\Db\Adapter\Adapter;
 use Events\Entity\EntityInterface;
 use Psr\Container\ContainerInterface;
 
-interface TableGatewayInterface
+interface EventsTableGatewayInterface
 {
     public function __construct(Adapter $adapter,
                                 EntityInterface $entity,

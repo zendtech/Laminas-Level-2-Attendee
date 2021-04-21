@@ -2,7 +2,7 @@
 # Usage: init.sh [--init][--perms][--start]
 
 export ARGS="$1$2$3"
-if [[ "$ARGS" = *"--init"* ]]; then
+if [[ "$ARGS" =~ "--init" ]]; then
     echo "Running composer update ..."
     cd /home/guestbook
     if [[ -f ./vendor ]]; then
@@ -29,13 +29,13 @@ if [[ "$ARGS" = *"--init"* ]]; then
         php composer.phar install
     fi
 fi
-if [[ "$ARGS" = *"--perms"* ]]; then
+if [[ "$ARGS" =~ "--perms" ]]; then
     echo "Setting permissions ..."
     chown apache /srv/www
     chgrp -R apache /home/*
     chmod -R 775 /home/*
 fi
-if [[ "$ARGS" = *"--start"* ]]; then
+if [[ "$ARGS" =~ "--start" ]]; then
     echo "Initializing MySQL, PHP-FPM and Apache ... "
     /etc/init.d/mysql start
     /etc/init.d/php-fpm start
