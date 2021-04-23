@@ -2,7 +2,7 @@
 /**
  * IndexController
  */
-namespace src\modOtherComponents\ListenerAggragates;
+namespace src\modOtherComponents\ListenerAggregates;
 class IndexController
 {
     public function testAction()

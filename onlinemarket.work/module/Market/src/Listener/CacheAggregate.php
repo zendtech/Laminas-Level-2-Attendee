@@ -15,10 +15,10 @@ class CacheAggregate extends AbstractListenerAggregate
 
     use ServiceContainerTrait;
 
-	protected $cacheKey = '';
-	protected $routeMatch = NULL;
-	protected $cacheAdapter;
-	
+    protected $cacheKey = '';
+    protected $routeMatch = NULL;
+    protected $cacheAdapter;
+
     public function attach(EventManagerInterface $eventManager, $priority = 100)
     {
         //*** attach a series of listeners using the shared manager
@@ -29,8 +29,8 @@ class CacheAggregate extends AbstractListenerAggregate
     }
     public function clearCache($e)
     {
-		$this->cacheAdapter->flush();
-		error_log(date('Y-m-d H:i:s') . ': Cleared Cache');
+        $this->cacheAdapter->flush();
+        error_log(date('Y-m-d H:i:s') . ': Cleared Cache');
     }
     //*** configure this to check to see if the "ViewController" has been chosen
     //*** if so, check to see if the response object has been cached and return it
@@ -44,17 +44,16 @@ class CacheAggregate extends AbstractListenerAggregate
     }
     protected function generateCacheKey()
     {
-		$cacheKey   = str_replace('/', '_', $this->routeMatch->getMatchedRouteName()) . '_';
-		if ($itemId = $this->routeMatch->getParam('itemId')) {
-			$cacheKey .= $itemId;
-		} elseif ($category = $this->routeMatch->getParam('category')) {
-			$cacheKey .= $category;
-		}
-		return $cacheKey;
-	}
-	public function setCacheAdapter($cacheAdapter)
-	{
-		$this->cacheAdapter = $cacheAdapter;
-	}
-
+        $cacheKey   = str_replace('/', '_', $this->routeMatch->getMatchedRouteName()) . '_';
+        if ($itemId = $this->routeMatch->getParam('itemId')) {
+            $cacheKey .= $itemId;
+        } elseif ($category = $this->routeMatch->getParam('category')) {
+            $cacheKey .= $category;
+        }
+        return $cacheKey;
+    }
+    public function setCacheAdapter($cacheAdapter)
+    {
+        $this->cacheAdapter = $cacheAdapter;
+    }
 }

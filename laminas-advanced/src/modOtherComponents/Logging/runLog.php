@@ -12,6 +12,8 @@ $writer = new Stream($fp);
 $logger->addWriter($writer);
 
 // log a message
-$logger->log(Logger::INFO, 'Informational message');
+$logger->log(Logger::EMERG, 'EMERGENCY message');
 
+echo '<pre>';
 echo file_get_contents($logFile);
+echo '</pre>';

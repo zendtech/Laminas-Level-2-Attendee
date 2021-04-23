@@ -17,4 +17,6 @@ $logger->addProcessor($processor);
 // Logs to both destinations
 $logger->log(Logger::INFO, 'Additional information message');
 
+echo '<pre>';
 echo file_get_contents($logFile);
+echo '</pre>';

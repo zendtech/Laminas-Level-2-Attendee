@@ -16,12 +16,13 @@ class PostController extends AbstractActionController implements ListingsTableAw
     const ERROR_SAVE = 'ERROR: unable to save item to the database';
     const SUCCESS_POST = 'SUCCESS: item posted OK';
     const ERROR_MAX    = 'ERROR: invalid form postings';
-	const MAX_INVALID = 3;
-	
+    const MAX_INVALID = 3;
+
     use PostFormTrait;
     use ListingsTableTrait;
     use CityCodesTableTrait;
-	
+    //*** SESSIONS LAB: use the trait for sessions
+
     public function indexAction()
     {
 
@@ -38,7 +39,7 @@ class PostController extends AbstractActionController implements ListingsTableAw
 
                 // retrieve data: due to form binding will get a Model\Entity\Listing instance
                 $listing = $this->postForm->getData();
-				
+
                 // save data and process
                 if ($this->listingsTable->save($listing)) {
 
@@ -55,7 +56,7 @@ class PostController extends AbstractActionController implements ListingsTableAw
 
             } else {
 
-				//*** SESSIONS LAB: keep track of how many times an invalid form posting is made
+                //*** SESSIONS LAB: keep track of how many times an invalid form posting is made
 
             }
         }
@@ -65,20 +66,20 @@ class PostController extends AbstractActionController implements ListingsTableAw
         return $viewModel;
 
     }
-    
+
     protected function processFileUpload($listing)
     {
-		//*** FILE UPLOAD LAB: move uploaded file from /images folder into /images/<category>
-		//*** FILE UPLOAD LAB: reset $listing->photo_filename'] to final filename /images/<category>/filename
-		return $listing;
-	}
+        //*** FILE UPLOAD LAB: move uploaded file from /images folder into /images/<category>
+        //*** FILE UPLOAD LAB: reset $listing->photo_filename'] to final filename /images/<category>/filename
+        return $listing;
+    }
 
-	//*** SESSIONS LAB: keep track of how many times an invalid form posting is made
-	//***               if the # times exceeds a limit you set, log a message and redirect home
-	protected function redirectIfInvalidPost()
-	{
-		$redirect = FALSE;
-		return $redirect;
-	}
-	
+    //*** SESSIONS LAB: keep track of how many times an invalid form posting is made
+    //***               if the # times exceeds a limit you set, log a message and redirect home
+    protected function redirectIfInvalidPost()
+    {
+        $redirect = FALSE;
+        return $redirect;
+    }
+
 }

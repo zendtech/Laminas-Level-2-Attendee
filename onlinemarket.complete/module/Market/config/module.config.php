@@ -169,6 +169,7 @@ return [
             PostFilter::class => PostFilterFactory::class,
             CacheAggregate::class => CacheAggregateFactory::class,
         ],
+        //*** DELEGATORS LAB: add delegator to intercept form creation
         'delegators' => [
             PostForm::class => [
                 FormDelegatorFactory::class

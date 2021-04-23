@@ -14,5 +14,7 @@ $logger->addWriter($writer);
 
 // log a debug message of the contents of variable $data
 $data = ['name' => 'Mark'];
-$logger->debug(Debug::dump($data, 'This Becomes the Label', false));
+$logger->debug(var_export($data, TRUE));
+echo '<pre>';
 echo file_get_contents($logFile);
+echo '</pre>';

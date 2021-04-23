@@ -2,7 +2,7 @@
 /**
  * Module
  */
-namespace src\modOtherComponents\ListenerAggragates;
+namespace src\modOtherComponents\ListenerAggregates;
 use Laminas\Mvc\MvcEvent;
 class Module
 {

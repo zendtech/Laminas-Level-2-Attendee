@@ -9,8 +9,8 @@ class CacheAggregateFactory implements FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, ?array $options = NULL)
     {
+        //*** CACHE LAB: create a CacheAggregate instance and inject the cache adapter
         $aggregate = new CacheAggregate();
-		$aggregate->setCacheAdapter($container->get('cache-adapter'));
         return $aggregate;
     }
 }

@@ -2,7 +2,7 @@
 /**
  * AppEventAggregate
  */
-namespace src\modOtherComponents\ListenerAggragates;
+namespace src\modOtherComponents\ListenerAggregates;
 use Laminas\EventManager\{EventManagerInterface, ListenerAggregateInterface};
 use Laminas\Mvc\MvcEvent;
 class AppEventAggregate implements ListenerAggregateInterface

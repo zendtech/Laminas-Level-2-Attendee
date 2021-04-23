@@ -22,4 +22,6 @@ $logger->log(Logger::INFO, 'Informational message');
 // Logs to the Syslog
 $logger->log(Logger::ALERT, 'Emergency message');
 
+echo '<pre>';
 echo file_get_contents($logFile);
+echo '</pre>';

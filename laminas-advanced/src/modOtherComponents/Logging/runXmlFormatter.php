@@ -15,4 +15,8 @@ $logger->addWriter($writer);
 
 // Log an informational message
 $logger->log(Logger::INFO, 'Informational Message');
-echo file_get_contents($logFile);
+header('Content-Type: text/xml, application/xml');
+echo '<?xml version="1.0" encoding="UTF-8" ?>'
+    . '<root>'
+    . file_get_contents($logFile)
+    . '</root>';

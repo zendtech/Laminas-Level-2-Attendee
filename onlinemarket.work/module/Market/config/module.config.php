@@ -155,6 +155,7 @@ return [
                 'rename'     => [],
                 'img_url'    => '/images',
             ],
+            //*** DELEGATORS LAB: add delegator to intercept form creation
         ],
         'factories' => [
             PostForm::class => PostFormFactory::class,
