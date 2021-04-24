@@ -11,14 +11,14 @@ class Module
     public function getConfig()
     {
         return [
-            'listeners' => [ Listener\Aggregate::class ]
+            'listeners' => [ /* add listener here */ ]
         ];
     }
     public function getServiceConfig()
     {
         return [
             'services' => [
-                // will be overridden in /Config/autoload/global.php
+                // will be overridden in /config/autoload/global.php
                 'notification-Config' => [
                     'from' => 'admin@company.com',
                     // optional:

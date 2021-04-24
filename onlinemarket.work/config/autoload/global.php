@@ -11,18 +11,4 @@
  * file.
  */
 
-return [
-    'service_manager' => [
-        'services' => [
-            'notification-Config' => [
-                'from'      => 'doug@zend.com',
-                'subject'   => 'Item Posted Successfully',
-                'transport' => [
-                    'type'    => 'file',
-                    //*** EMAIL LAB: make sure this directory exists and is writeable
-                    'options' => ['path' => realpath(__DIR__ . '/../../data/mail')],
-                ],
-            ],
-        ],
-    ],
-];
+return [ ];

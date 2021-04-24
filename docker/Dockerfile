@@ -6,6 +6,7 @@ COPY phpmyadmin_install.sh /tmp
 COPY httpd-laminas-2.conf /etc/httpd/extra
 COPY zfcourse.sql /tmp
 COPY init.sh /tmp
+COPY startup.sh /tmp
 RUN \
     echo "Configuring Apache ..." && \
     echo "ServerName laminas" >> /etc/httpd/httpd.conf && \
@@ -30,4 +31,9 @@ RUN \
 RUN \
     echo "Installing phpMyAdmin ..." && \
     /tmp/phpmyadmin_install.sh
-CMD lfphp --mysql --phpfpm --apache
+RUN \
+    echo "Setting PHP for development ..." && \
+    echo "error_reporting=E_ALL ^ E_DEPRECATED" >>/etc/php.ini && \
+    echo "display_errors=on" >>/etc/php.ini && \
+    /etc/init.d/php-fpm restart
+CMD /tmp/startup.sh

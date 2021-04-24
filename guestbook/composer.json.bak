@@ -48,8 +48,7 @@
             "Events\\": "module/Events/src/",
             "PrivateMessages\\": "module/PrivateMessages/src/",
             "RestApi\\": "module/RestApi/src/",
-            "AccessControl\\": "module/AccessControl/src/",
-            "Notification\\": "module/Notification/src/"
+            "AccessControl\\": "module/AccessControl/src/"
         }
     },
     "autoload-dev": {

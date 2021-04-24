@@ -35,4 +35,6 @@ return [
     'PrivateMessages',
     'RestApi',
     'AccessControl',
+    'Notification',
 ];
+

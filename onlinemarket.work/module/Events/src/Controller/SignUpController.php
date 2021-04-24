@@ -8,6 +8,7 @@ use Laminas\Filter\FilterInterface;
 use Laminas\Form\FormInterface;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
+//*** EMAIL LAB: use the NotificationEvent class
 
 class SignUpController extends AbstractActionController
 {
@@ -61,6 +62,7 @@ class SignUpController extends AbstractActionController
             $vm->setTemplate('events/signup/thanks.phtml');
             if ($this->processForm($this->params()->fromPost(), $eventId)) {
                 $message = 'Successfully added registration';
+                //*** EMAIL LAB: trigger an email notification event
             } else {
                 $message = 'Sorry! Unable to add registration';
             }

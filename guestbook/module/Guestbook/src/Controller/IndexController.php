@@ -1,5 +1,6 @@
 <?php
 namespace Guestbook\Controller;
+use Notification\Event\NotificationEvent;
 use Guestbook\Listener\CacheListenerAggregate;
 use Guestbook\Model\GuestbookModel;
 use Guestbook\Mapper\GuestbookMapper;
@@ -51,7 +52,10 @@ class IndexController extends AbstractActionController
                 if ($this->mapper->add($guest)) {
                     $message = self::SUCCESS_ADD;
                     // trigger event to clear cache
-                    $this->getEventManager()->trigger(CacheListenerAggregate::EVENT_CLEAR_CACHE, $this, ['entity' => $guest]);
+                    $em = $this->getEventManager();
+                    $em->trigger(CacheListenerAggregate::EVENT_CLEAR_CACHE, $this, ['entity' => $guest]);
+                    // trigger event to send email notification
+                    $em->trigger(NotificationEvent::EVENT_EMAIL_NOTIFICATION, $this, ['entity' => $guest]);
                 } else {
                     $message = self::ERROR_ADD;
                 }

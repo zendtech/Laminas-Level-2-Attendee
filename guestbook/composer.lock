@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f23e1639cde7585c43e43835af18959e",
+    "content-hash": "bb0a7ea23fbf048468a7b3b025e1f66f",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -3217,6 +3217,56 @@
                 "php"
             ],
             "time": "2020-12-20T10:01:03+00:00"
+        },
+        {
+            "name": "phpcl/laminas-tools",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dbierer/laminas_tools.git",
+                "reference": "4e269765c792d8029b4a96e165ac4562deefbf58"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dbierer/laminas_tools/zipball/4e269765c792d8029b4a96e165ac4562deefbf58",
+                "reference": "4e269765c792d8029b4a96e165ac4562deefbf58",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "bin": [
+                "bin/phpcl-laminas-tools",
+                "bin/phpcl-laminas-tools.phar"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phpcl\\LaminasTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Doug Bierer",
+                    "email": "doug.bierer@etista.com",
+                    "homepage": "https://php-cl.com/",
+                    "role": "CTO"
+                }
+            ],
+            "description": "Create modules, controllers, controller-plugins, view helpers and factories for Laminas/ZF3 projects",
+            "homepage": "https://github.com/phpcl/laminas_tools",
+            "keywords": [
+                "Zend Framework",
+                "laminas",
+                "phpcl",
+                "zf",
+                "zf3"
+            ],
+            "time": "2020-12-30T06:52:50+00:00"
         },
         {
             "name": "psr/cache",
