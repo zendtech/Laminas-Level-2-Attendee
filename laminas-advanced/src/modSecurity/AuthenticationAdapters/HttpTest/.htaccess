@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Restricted Files"
+AuthBasicProvider file
+AuthUserFile "/home/laminas-advanced/src/modSecurity/AuthenticationAdapters/HttpTest/.htpasswd"
+Require user mark

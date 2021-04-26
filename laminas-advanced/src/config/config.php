@@ -3,6 +3,7 @@ use src\modCrossCuttingConcerns\ListenerAggragates\AppEventAggregate;
 use src\modSecurity\Acl\UseCase\Module;
 use src\modServices\Delegators\{Foo, FooDelegatorFactory};
 use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\Ldap\Ldap;
 return [
     'db' => [
         'driver' => 'PDO',
@@ -17,15 +18,18 @@ return [
             'digest_domains' => '/members_only/my_account',
             'nonce_timeout'  => 3600,
         ],
+        // using https://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/
         'ldap' => [
-            'host'                   => 's0.foo.net',
-            'accountDomainName'      => 'foo.net',
-            'accountDomainNameShort' => 'FOO',
-            'accountCanonicalForm'   => 3,
-            'username'               => 'CN=user1,DC=foo,DC=net',
-            'password'               => 'pass1',
-            'baseDn'                 => 'OU=Sales,DC=foo,DC=net',
-            'bindRequiresDn'         => true,
+            'ldap.forumsys.com ' => [
+                'host'                   => 'ldap.forumsys.com',
+                'accountDomainName'      => 'forumsys.com',
+                'accountDomainNameShort' => 'forumsys',
+                'accountCanonicalForm'   => Ldap::ACCTNAME_FORM_DN,
+                'username'               => 'cn=read-only-admin,dc=example,dc=com',
+                'password'               => 'password',
+                'baseDn'                 => 'dc=example,dc=com',
+                'bindRequiresDn'         => true,
+            ],
         ]
     ],
     'services' => [
