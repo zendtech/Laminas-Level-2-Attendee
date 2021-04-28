@@ -1,10 +1,11 @@
 <?php
 namespace Login\Listener;
 
+use Model\Entity\UserEntity;
 use Laminas\Mvc\MvcEvent;
 use Laminas\EventManager\ {AbstractListenerAggregate,EventManagerInterface};
 
-class Aggregate extends AbstractListenerAggregate
+class AggregateListener extends AbstractListenerAggregate
 {
 
     //*** AUTHENTICATION LAB: attach "injectAuthService" as a listener to the MVC dispatch event using a wildcard identifier

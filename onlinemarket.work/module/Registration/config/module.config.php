@@ -2,6 +2,12 @@
 namespace Registration;
 
 use Laminas\Router\Http\Segment;
+use Registration\Form\{
+    Factory\RegistrationFilterFactory,
+    Factory\RegistrationFormFactory,
+    RegistrationFilter,
+    RegistrationForm
+};
 
 return [
     'navigation' => [
@@ -26,8 +32,10 @@ return [
     'service_manager' => [
         //*** FORMS LAB: define factories for form and filter classes
         'factories' => [
+            RegistrationForm::class => RegistrationFormFactory::class,
+            RegistrationFilter::class => RegistrationFilterFactory::class,
         ],
-        //*** FORMS LAB: define configuration services for roles
+        //*** ACL LAB: define configuration services for roles
         'services' => [
             'registration-form-roles' => ['guest','user','admin'],
         ],

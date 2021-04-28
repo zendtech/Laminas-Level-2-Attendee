@@ -1,68 +1,71 @@
 <?php
 namespace Login\Controller;
 
+use Application\Model\AbstractTableGateway;
 use Login\Event\LoginEvent;
-use Login\Model\UsersModel;
-use Login\Form\ {Login as LoginForm, Register as RegForm};
-use Login\Traits\AuthServiceTrait;
-
-use Model\Entity\User;
-use Model\Traits\UsersTableTrait;
+use Model\Entity\UserEntity;
 use Translation\Listener\Event;
-
+use Laminas\Form\FormInterface;
 use Laminas\Log\Logger;
 use Laminas\View\Model\ViewModel;
 use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\Authentication\AuthenticationService;
 
 class IndexController extends AbstractActionController
 {
-
-    const LOGIN_INIT      = '<b style="color:gray;">Please requested login information</b>';
     const LOGIN_SUCCESS   = '<b style="color:green;">Login was successful</b>';
     const LOGIN_FAIL      = '<b style="color:red;">Login failed</b>';
     const FORM_INVALID    = '<b style="color:orange;">There were invalid form entries: please review error messages</b>';
     const EVENT_SOMETHING = 'logging-log-something';
+    protected $loginForm, $usersModelTableGateway, $authenticationService, $userEntity;
 
-    use UsersTableTrait;
-    use AuthServiceTrait;
-
-    protected $loginForm;
+    public function __construct(
+        AbstractTableGateway $usersModelTableGateway,
+        FormInterface $loginForm,
+        AuthenticationService $service,
+        UserEntity $userEntity
+    ){
+        $this->usersModelTableGateway = $usersModelTableGateway;
+        $this->loginForm = $loginForm;
+        $this->authenticationService = $service;
+        $this->userEntity = $userEntity;
+    }
 
     public function indexAction()
     {
-        return new ViewModel(['loginForm' => $this->loginForm,
-                              'message' => '']);
+        return new ViewModel(['loginForm' => $this->loginForm, 'message' => '']);
     }
-    /**
-     * Performs basic login / authentication
-     *
-     * Additional security suggestions:
-     * #1: create a log file of successful and failed login attempts
-     * #2: maintain a counter and redirect at random if XXX number of failed login attempts
-     *
-     */
+
     public function loginAction()
     {
         $message = '';
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $this->loginForm->bind(new User());
+            $this->loginForm->bind($this->userEntity);
             $this->loginForm->setData($request->getPost());
             if (!$this->loginForm->isValid()) {
                 $message = self::FORM_INVALID;
             } else {
-                $user = $this->loginForm->getData();
+                $userEntity = $this->loginForm->getData();
                 //*** AUTHENTICATION LAB: get the login adapter from the authentication service, set identity and credential and authenticate into $result
-                $adapter = '???';
-                $result = '???';
+                /* auth adapter */
+                /* set identity */
+                /* set credentials */
+                $result = '???'; // authenticate
                 if ($result->isValid()) {
-                    //*** AUTHENTICATION LAB: get storage and the result row object; omit "password" column: don't want that to appear in storage
-                    $obj = '???';
-                    $user = new User((array) $obj);
-                    //*** AUTHENTICATION LAB: write Login\Model\User instance to storage
+                    /**
+                     * AUTHENTICATION LAB: This retrieves the row object omitting the "password" column (don't want that to appear in storage).
+                     * The getResultRowObject() method returns a stdClass instance, then the entities constructor sets properties into the entity object by iteration.
+                     */
+                    $userEntity = new UserEntity(/* args go here */);
+
+                    //*** AUTHENTICATION LAB: Retrieves the storage service, and writes the entity to authentication storage
+                    /* get storage */
+                    /* write UserEntity to storage */
+
                     // success message
                     $message = self::LOGIN_SUCCESS;
-                    $this->logMessage(Logger::INFO, self::LOGIN_SUCCESS . ':' . $user->getEmail());
+                    $this->logMessage(Logger::INFO, self::LOGIN_SUCCESS . ':' . $userEntity->getEmail());
                     return $this->redirect()->toRoute('home');
                 } else {
                     $message = self::LOGIN_FAIL . '<br>' . implode('<br>', $result->getMessages());
@@ -81,19 +84,15 @@ class IndexController extends AbstractActionController
     }
     public function logoutAction()
     {
-        $this->authService->clearIdentity();
+        $this->authenticationService->clearIdentity();
         return $this->redirect()->toRoute('market');
-    }
-    public function setLoginForm(LoginForm $form)
-    {
-        $this->loginForm = $form;
     }
     protected function logMessage($level, $message)
     {
-		$this->getEventManager()
-		     ->trigger( self::EVENT_SOMETHING,
-						$this,
-						['level' => Logger::INFO, 'message' => $message]
-		);
-	}
+        $this->getEventManager()
+             ->trigger( self::EVENT_SOMETHING,
+                        $this,
+                        ['level' => Logger::INFO, 'message' => $message]
+        );
+    }
 }

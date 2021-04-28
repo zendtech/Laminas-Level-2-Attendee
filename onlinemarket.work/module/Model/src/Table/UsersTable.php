@@ -1,7 +1,7 @@
 <?php
 namespace Model\Table;
 
-use Login\Security\Password;
+//*** PASSWORD LAB: "use" the Login\Security\Password class
 use Model\Entity\User;
 use Application\Model\AbstractTable;
 
@@ -9,6 +9,8 @@ class UsersTable extends AbstractTable
 {
 
     public static $tableName = 'users';
+    public static $identityCol = 'email';
+    public static $passwordCol = 'password';
     public function findAll()
     {
         return $this->tableGateway->select();
@@ -21,7 +23,6 @@ class UsersTable extends AbstractTable
     {
         $data = $this->tableGateway->getResultSetPrototype()->getHydrator()->extract($user);
         //*** PASSWORD LAB: modify this to use the Login\Security\Password class to hash the password
-        $data['password'] = Password::createHash($data['password']);
         return $this->tableGateway->insert($data);
     }
 }

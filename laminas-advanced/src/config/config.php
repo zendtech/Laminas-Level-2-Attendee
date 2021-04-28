@@ -115,24 +115,31 @@ return [
         [
             'label' => 'Home',
             'id' => 'home',
-            'uri' => '/',
+            'uri' => 'http://10.20.20.20/',
             'order' => 1,
         ],
         [
-            'label' => 'About',
-            'uri' => '/about',
+            'label' => 'Login',
             'order' => 2,
-            'controller' => 'AboutController',
+            'controller' => 'LoginController',
+            'action' => 'index',
             'pages' => [
                 [
-                    'label' => 'Us',
-                    'action' => 'us',
-                    'controller' => 'history',
-                    'class' => 'history',
-                    'title' => 'Our history',
+                    'label' => 'Login',
+                    'controller' => 'LoginController',
+                    'action' => 'index',
+                    'title' => 'Login',
                     'active' => true,
+                    'resource' => 'login-acl-resource',
                 ],
-            ]
+                [
+                    'label' => 'Logout',
+                    'controller' => 'LoginController',
+                    'action' => 'logout',
+                    'title' => 'Logout',
+                    'resource' => 'logout-acl-resource',
+                ],
+            ],
         ],
     ],
     'view_manager' => [
