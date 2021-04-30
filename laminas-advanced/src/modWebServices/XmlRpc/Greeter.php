@@ -2,10 +2,9 @@
 /**
  * Greeter
  */
-namespace src\modWebServices\XmlRpc;
 class Greeter
 {
-    public function sayHello($name = 'Stranger')
+    public function hello(string $name = 'Stranger')
     {
         return sprintf("Hello %s!\n", $name);
     }
