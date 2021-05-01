@@ -2,6 +2,14 @@
 namespace RestApi;
 
 use Laminas\Router\Http\Segment;
+use RestApi\Controller\{
+    Factory\ApiControllerFactory,
+    ApiController
+};
+use RestApi\Service\{
+    Factory\ApiServiceFactory,
+    ApiService,
+};
 
 return [
     'router' => [

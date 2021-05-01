@@ -36,7 +36,7 @@ class ApiService
 
     protected function getSelect()
     {
-        $select = $this->sql->getSelect();
+        $select = $this->sql->select();
         $select->from(['e' => EventModel::$tableName])
                ->join(['r' => RegistrationModel::$tableName], 'e.id = r.event_id')
                ->join(['a' => AttendeeModel::$tableName], 'r.id = a.registration_id');
