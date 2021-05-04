@@ -37,6 +37,7 @@
         "laminas/laminas-authentication": "*",
         "laminas/laminas-crypt": "*",
         "laminas/laminas-dependency-plugin": "^2.1",
+        "laminas-api-tools/api-tools" : "*",
         "phpcl/laminas-tools": "^1.0"
     },
     "autoload": {
@@ -49,7 +50,8 @@
             "PrivateMessages\\": "module/PrivateMessages/src/",
             "RestApi\\": "module/RestApi/src/",
             "AccessControl\\": "module/AccessControl/src/",
-            "Notification\\": "module/Notification/src/"
+            "Notification\\": "module/Notification/src/",
+            "Api\\": "module/Api/src/"
         }
     },
     "autoload-dev": {

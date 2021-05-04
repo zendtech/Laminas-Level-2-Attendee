@@ -11,6 +11,7 @@
  * This should be an array of module namespaces used in the application.
  */
 return [
+    'Laminas\Paginator',
     'Laminas\ZendFrameworkBridge',
     'Laminas\I18n',
     'Laminas\Db',
@@ -27,6 +28,15 @@ return [
     'Laminas\Navigation',
     'Laminas\Mvc\Plugin\FlashMessenger',
     'Laminas\DeveloperTools',
+    'Laminas\ApiTools\Versioning',
+    'Laminas\ApiTools\ApiProblem',
+    'Laminas\ApiTools\ContentNegotiation',
+    'Laminas\ApiTools\Rpc',
+    'Laminas\ApiTools\MvcAuth',
+    'Laminas\ApiTools\Hal',
+    'Laminas\ApiTools\Rest',
+    'Laminas\ApiTools\ContentValidation',
+    'Laminas\ApiTools',
     'Cache',
     'Application',
     'Guestbook',
@@ -36,5 +46,6 @@ return [
     'RestApi',
     'AccessControl',
     'Notification',
+    'Api',
 ];
 

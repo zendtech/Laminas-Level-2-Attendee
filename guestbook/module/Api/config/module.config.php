@@ -2,17 +2,17 @@
 return [
     'service_manager' => [
         'factories' => [
-            \guestbook\V1\Rest\GuestbookApi\GuestbookApiResource::class => \guestbook\V1\Rest\GuestbookApi\GuestbookApiResourceFactory::class,
+            \Api\V1\Rest\ApiService\ApiServiceResource::class => \Api\V1\Rest\ApiService\ApiServiceResourceFactory::class,
         ],
     ],
     'router' => [
         'routes' => [
-            'guestbook.rest.guestbook-api' => [
+            'api.rest.api-service' => [
                 'type' => 'Segment',
                 'options' => [
-                    'route' => '/guestbook-api[/:guestbook_api_id]',
+                    'route' => '/api[/:api_service_id]',
                     'defaults' => [
-                        'controller' => 'guestbook\\V1\\Rest\\GuestbookApi\\Controller',
+                        'controller' => 'Api\\V1\\Rest\\ApiService\\Controller',
                     ],
                 ],
             ],
@@ -20,15 +20,15 @@ return [
     ],
     'api-tools-versioning' => [
         'uri' => [
-            0 => 'guestbook.rest.guestbook-api',
+            0 => 'api.rest.api-service',
         ],
     ],
     'api-tools-rest' => [
-        'guestbook\\V1\\Rest\\GuestbookApi\\Controller' => [
-            'listener' => \guestbook\V1\Rest\GuestbookApi\GuestbookApiResource::class,
-            'route_name' => 'guestbook.rest.guestbook-api',
-            'route_identifier_name' => 'guestbook_api_id',
-            'collection_name' => 'guestbook_api',
+        'Api\\V1\\Rest\\ApiService\\Controller' => [
+            'listener' => \Api\V1\Rest\ApiService\ApiServiceResource::class,
+            'route_name' => 'api.rest.api-service',
+            'route_identifier_name' => 'api_service_id',
+            'collection_name' => 'api_service',
             'entity_http_methods' => [
                 0 => 'GET',
                 1 => 'PATCH',
@@ -43,59 +43,59 @@ return [
             'collection_query_whitelist' => [],
             'page_size' => 25,
             'page_size_param' => null,
-            'entity_class' => \guestbook\V1\Rest\GuestbookApi\GuestbookApiEntity::class,
-            'collection_class' => \guestbook\V1\Rest\GuestbookApi\GuestbookApiCollection::class,
-            'service_name' => 'GuestbookApi',
+            'entity_class' => \Api\V1\Rest\ApiService\ApiServiceEntity::class,
+            'collection_class' => \Api\V1\Rest\ApiService\ApiServiceCollection::class,
+            'service_name' => 'ApiService',
         ],
     ],
     'api-tools-content-negotiation' => [
         'controllers' => [
-            'guestbook\\V1\\Rest\\GuestbookApi\\Controller' => 'HalJson',
+            'Api\\V1\\Rest\\ApiService\\Controller' => 'HalJson',
         ],
         'accept_whitelist' => [
-            'guestbook\\V1\\Rest\\GuestbookApi\\Controller' => [
-                0 => 'application/vnd.guestbook.v1+json',
+            'Api\\V1\\Rest\\ApiService\\Controller' => [
+                0 => 'application/vnd.api.v1+json',
                 1 => 'application/hal+json',
                 2 => 'application/json',
             ],
         ],
         'content_type_whitelist' => [
-            'guestbook\\V1\\Rest\\GuestbookApi\\Controller' => [
-                0 => 'application/vnd.guestbook.v1+json',
+            'Api\\V1\\Rest\\ApiService\\Controller' => [
+                0 => 'application/vnd.api.v1+json',
                 1 => 'application/json',
             ],
         ],
     ],
     'api-tools-hal' => [
         'metadata_map' => [
-            \guestbook\V1\Rest\GuestbookApi\GuestbookApiEntity::class => [
+            \Api\V1\Rest\ApiService\ApiServiceEntity::class => [
                 'entity_identifier_name' => 'id',
-                'route_name' => 'guestbook.rest.guestbook-api',
-                'route_identifier_name' => 'guestbook_api_id',
+                'route_name' => 'api.rest.api-service',
+                'route_identifier_name' => 'api_service_id',
                 'hydrator' => \Laminas\Hydrator\ObjectPropertyHydrator::class,
             ],
-            \guestbook\V1\Rest\GuestbookApi\GuestbookApiCollection::class => [
+            \Api\V1\Rest\ApiService\ApiServiceCollection::class => [
                 'entity_identifier_name' => 'id',
-                'route_name' => 'guestbook.rest.guestbook-api',
-                'route_identifier_name' => 'guestbook_api_id',
+                'route_name' => 'api.rest.api-service',
+                'route_identifier_name' => 'api_service_id',
                 'is_collection' => true,
             ],
         ],
     ],
     'api-tools-content-validation' => [
-        'guestbook\\V1\\Rest\\GuestbookApi\\Controller' => [
-            'input_filter' => 'guestbook\\V1\\Rest\\GuestbookApi\\Validator',
+        'Api\\V1\\Rest\\ApiService\\Controller' => [
+            'input_filter' => 'Api\\V1\\Rest\\ApiService\\Validator',
         ],
     ],
     'input_filter_specs' => [
-        'guestbook\\V1\\Rest\\GuestbookApi\\Validator' => [
+        'Api\\V1\\Rest\\ApiService\\Validator' => [
             0 => [
                 'required' => true,
                 'validators' => [
                     0 => [
-                        'name' => \Laminas\Validator\StringLength::class,
+                        'name' => \Laminas\I18n\Validator\Alpha::class,
                         'options' => [
-                            'max' => '255',
+                            'allowwhitespace' => true,
                         ],
                     ],
                 ],
@@ -104,17 +104,32 @@ return [
                         'name' => \Laminas\Filter\StripTags::class,
                         'options' => [],
                     ],
-                    1 => [
-                        'name' => \Laminas\Filter\StringTrim::class,
+                ],
+                'name' => 'name',
+                'description' => 'Name of person signing the Guestbook',
+                'error_message' => 'Please enter your name',
+                'field_type' => 'string',
+            ],
+            1 => [
+                'required' => true,
+                'validators' => [
+                    0 => [
+                        'name' => \Laminas\Validator\EmailAddress::class,
                         'options' => [],
                     ],
                 ],
-                'name' => 'name',
-                'description' => 'Name of signee',
+                'filters' => [
+                    0 => [
+                        'name' => \Laminas\Filter\StripTags::class,
+                        'options' => [],
+                    ],
+                ],
+                'name' => 'email',
+                'description' => 'Guest email',
                 'field_type' => 'string',
-                'error_message' => 'Please enter your name',
+                'error_message' => 'Please enter your email address',
             ],
-            1 => [
+            2 => [
                 'required' => false,
                 'validators' => [
                     0 => [
@@ -126,23 +141,21 @@ return [
                 ],
                 'filters' => [
                     0 => [
-                        'name' => \Laminas\Filter\StringTrim::class,
+                        'name' => \Laminas\Filter\StripTags::class,
                         'options' => [],
                     ],
                 ],
-                'name' => 'avatar',
-                'description' => 'URL to signee avatar',
+                'name' => 'website',
+                'description' => 'Guest website (if any)',
                 'field_type' => 'string',
-                'allow_empty' => true,
-                'continue_if_empty' => true,
             ],
-            2 => [
-                'required' => true,
+            3 => [
+                'required' => false,
                 'validators' => [
                     0 => [
-                        'name' => \Laminas\Validator\EmailAddress::class,
+                        'name' => \Laminas\Validator\Uri::class,
                         'options' => [
-                            'useDomainCheck' => true,
+                            'allowRelative' => true,
                         ],
                     ],
                 ],
@@ -151,27 +164,32 @@ return [
                         'name' => \Laminas\Filter\StripTags::class,
                         'options' => [],
                     ],
-                    1 => [
-                        'name' => \Laminas\Filter\StringTrim::class,
-                        'options' => [],
-                    ],
                 ],
-                'name' => 'email',
-                'description' => 'Email address of signee',
+                'name' => 'avatar',
+                'description' => 'URL to avatar (if any)',
                 'field_type' => 'string',
-                'error_message' => 'Please enter your email address',
             ],
-            3 => [
+            4 => [
+                'required' => false,
+                'validators' => [],
+                'filters' => [],
+                'name' => 'dateSigned',
+                'description' => 'Defaults to today',
+                'field_type' => 'string',
+            ],
+            5 => [
                 'required' => true,
                 'validators' => [],
                 'filters' => [
                     0 => [
                         'name' => \Laminas\Filter\StripTags::class,
-                        'options' => [],
+                        'options' => [
+                            'allowTags' => '<p><b><i><ul><li>',
+                        ],
                     ],
                 ],
                 'name' => 'message',
-                'description' => 'Guestbook message',
+                'description' => 'Signing message',
                 'field_type' => 'string',
                 'error_message' => 'Please enter a message',
             ],
@@ -179,7 +197,7 @@ return [
     ],
     'api-tools-mvc-auth' => [
         'authorization' => [
-            'guestbook\\V1\\Rest\\GuestbookApi\\Controller' => [
+            'Api\\V1\\Rest\\ApiService\\Controller' => [
                 'collection' => [
                     'GET' => true,
                     'POST' => true,
@@ -190,9 +208,9 @@ return [
                 'entity' => [
                     'GET' => true,
                     'POST' => true,
-                    'PUT' => true,
-                    'PATCH' => true,
-                    'DELETE' => true,
+                    'PUT' => false,
+                    'PATCH' => false,
+                    'DELETE' => false,
                 ],
             ],
         ],

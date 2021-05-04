@@ -26,6 +26,10 @@ class GuestbookMapper
     {
         return $this->tableGateway->select();
     }
+    public function findById(int $id)
+    {
+        return $this->tableGateway->select(['id' => $id])->current();
+    }
     public function getCount()
     {
         $sql = new Sql($this->tableGateway->getAdapter());
@@ -39,7 +43,7 @@ class GuestbookMapper
     public function add(GuestbookModel $model)
     {
         $hydrator = $this->tableGateway->getResultSetPrototype()->getHydrator();
-		$data = $hydrator->extract($model);
+        $data = $hydrator->extract($model);
         unset($data['submit']);
         $data['dateSigned'] = date('Y-m-d H:i:s');
         $this->eventManager->trigger(self::ADD_EVENT_PRE, $this, ['model' => $model]);

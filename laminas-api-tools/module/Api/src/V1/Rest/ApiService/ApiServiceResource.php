@@ -1,11 +1,10 @@
 <?php
-namespace guestbook\V1\Rest\GuestbookApi;
+namespace Api\V1\Rest\ApiService;
 
-use Laminas\ApiTools\DbConnectedResource;
 use Laminas\ApiTools\ApiProblem\ApiProblem;
 use Laminas\ApiTools\Rest\AbstractResourceListener;
 
-class GuestbookApiResource extends DbConnectedResource
+class ApiServiceResource extends AbstractResourceListener
 {
     /**
      * Create a resource

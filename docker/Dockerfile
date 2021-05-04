@@ -16,6 +16,10 @@ RUN \
     cd /srv && \
     wget https://getcomposer.org/composer.phar && \
     php composer.phar create-project laminas-api-tools/api-tools-skeleton laminas-api-tools && \
+    cd laminas-api-tools && \
+    mv ../composer.phar . && \
+    php composer.phar require laminas/laminas-i18n && \
+    php composer.phar require laminas-api-tools/api-tools-documentation-swagger && \
     chown -R apache /srv/laminas-api-tools && \
     chmod -R 775 /srv/laminas-api-tools
 RUN \
