@@ -12,17 +12,6 @@ RUN \
     echo "ServerName laminas" >> /etc/httpd/httpd.conf && \
     echo "Include /etc/httpd/extra/httpd-laminas-2.conf" >> /etc/httpd/httpd.conf
 RUN \
-    echo "Installing Laminas API Tools ..." && \
-    cd /srv && \
-    wget https://getcomposer.org/composer.phar && \
-    php composer.phar create-project laminas-api-tools/api-tools-skeleton laminas-api-tools && \
-    cd laminas-api-tools && \
-    mv ../composer.phar . && \
-    php composer.phar require laminas/laminas-i18n && \
-    php composer.phar require laminas-api-tools/api-tools-documentation-swagger && \
-    chown -R apache /srv/laminas-api-tools && \
-    chmod -R 775 /srv/laminas-api-tools
-RUN \
     echo "Creating sample database and assigning permissions ..." && \
     /etc/init.d/mysql start && \
     sleep 3 && \

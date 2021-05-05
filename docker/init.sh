@@ -28,6 +28,12 @@ if [[ "$ARGS" =~ "--init" ]]; then
     else
         php composer.phar install
     fi
+    cd /home/laminas-api-tools
+    if [[ -f ./vendor ]]; then
+        php composer.phar update
+    else
+        php composer.phar install
+    fi
 fi
 if [[ "$ARGS" =~ "--perms" ]]; then
     echo "Setting permissions ..."

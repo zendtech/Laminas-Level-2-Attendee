@@ -1,4 +1,5 @@
 <?php
+use Laminas\ApiTools\Hal\HalJsonStrategy;
 return [
     'service_manager' => [
         'factories' => [
@@ -16,6 +17,11 @@ return [
                     ],
                 ],
             ],
+        ],
+    ],
+    'view_manager' => [
+        'strategies' => [
+            \Laminas\ApiTools\Hal\HalJsonStrategy::class,
         ],
     ],
     'api-tools-versioning' => [

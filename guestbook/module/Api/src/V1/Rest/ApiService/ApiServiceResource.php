@@ -5,7 +5,7 @@ use Guestbook\Model\GuestbookModel;
 use Guestbook\Mapper\GuestbookMapper;
 use Laminas\ApiTools\ApiProblem\ApiProblem;
 use Laminas\ApiTools\Rest\AbstractResourceListener;
-use Laminas\ApiTools\Hal\View\HalJsonRenderer;
+use Laminas\ApiTools\Hal\View\HalJsonModel;
 
 class ApiServiceResource extends AbstractResourceListener
 {
@@ -20,14 +20,28 @@ class ApiServiceResource extends AbstractResourceListener
         $this->mapper = $mapper;
     }
     /**
-     * Injects HalJsonRendererFactory
+     * Fetch a resource
      *
-     * @param HalJsonRendererFactory $render
+     * @param  mixed $id
+     * @return ApiProblem|mixed
      */
-    public $render = NULL;
-    public function setRenderer(HalJsonRenderer $render)
+    public function fetch($id)
     {
-        $this->render = $render;
+        // convert $data into GuestbookModel instance
+        $id    = (int) $id;
+        $model = $this->mapper->fetchById($id) ?? new GuestbookModel();
+        return new HalJsonModel(['status' => 'Success', 'data' => $model]);
+    }
+    /**
+     * Fetch all or a subset of resources
+     *
+     * @param  array $params
+     * @return ApiProblem|mixed
+     */
+    public function fetchAll($params = [])
+    {
+        $result = $this->mapper->fetchAll() ?? [new GuestbookModel()];
+        return new HalJsonModel(['status' => 'Success', 'data' => $result]);
     }
     /**
      * Create a resource
@@ -44,55 +58,11 @@ class ApiServiceResource extends AbstractResourceListener
         }
         $model->submit = '';  // needed because mapper unsets this property!
         if (!$this->mapper->save($model))
-            return new ApiProblem(405, 'The POST method has not been defined');
+            return new ApiProblem(500, 'Unable to save data');
         } else {
-            $entity = new Entity
+            return new HalJsonModel(['status' => 'Success', 'data' => $model]);
+        }
     }
-
-    /**
-     * Delete a resource
-     *
-     * @param  mixed $id
-     * @return ApiProblem|mixed
-     */
-    public function delete($id)
-    {
-        return new ApiProblem(405, 'The DELETE method has not been defined for individual resources');
-    }
-
-    /**
-     * Delete a collection, or members of a collection
-     *
-     * @param  mixed $data
-     * @return ApiProblem|mixed
-     */
-    public function deleteList($data)
-    {
-        return new ApiProblem(405, 'The DELETE method has not been defined for collections');
-    }
-
-    /**
-     * Fetch a resource
-     *
-     * @param  mixed $id
-     * @return ApiProblem|mixed
-     */
-    public function fetch($id)
-    {
-        return new ApiProblem(405, 'The GET method has not been defined for individual resources');
-    }
-
-    /**
-     * Fetch all or a subset of resources
-     *
-     * @param  array $params
-     * @return ApiProblem|mixed
-     */
-    public function fetchAll($params = [])
-    {
-        return new ApiProblem(405, 'The GET method has not been defined for collections');
-    }
-
     /**
      * Patch (partial in-place update) a resource
      *
@@ -138,4 +108,26 @@ class ApiServiceResource extends AbstractResourceListener
     {
         return new ApiProblem(405, 'The PUT method has not been defined for individual resources');
     }
+    /**
+     * Delete a resource
+     *
+     * @param  mixed $id
+     * @return ApiProblem|mixed
+     */
+    public function delete($id)
+    {
+        return new ApiProblem(405, 'The DELETE method has not been defined for individual resources');
+    }
+
+    /**
+     * Delete a collection, or members of a collection
+     *
+     * @param  mixed $data
+     * @return ApiProblem|mixed
+     */
+    public function deleteList($data)
+    {
+        return new ApiProblem(405, 'The DELETE method has not been defined for collections');
+    }
+
 }
