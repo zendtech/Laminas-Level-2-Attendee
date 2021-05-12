@@ -3,31 +3,35 @@
 
 export ARGS="$1$2$3"
 if [[ "$ARGS" =~ "--init" ]]; then
-    echo "Running composer update ..."
+    echo "Updating guestbook ..."
     cd /home/guestbook
     if [[ -f ./vendor ]]; then
         php composer.phar update
     else
         php composer.phar install
     fi
+    echo "Updating onlinemarket.work ..."
     cd /home/onlinemarket.work
     if [[ -f ./vendor ]]; then
         php composer.phar update
     else
         php composer.phar install
     fi
+    echo "Updating onlinemarket.complete ..."
     cd /home/onlinemarket.complete
     if [[ -f ./vendor ]]; then
         php composer.phar update
     else
         php composer.phar install
     fi
+    echo "Updating laminas-advanced ..."
     cd /home/laminas-advanced
     if [[ -f ./vendor ]]; then
         php composer.phar update
     else
         php composer.phar install
     fi
+    echo "Updating laminas-api-tools ..."
     cd /home/laminas-api-tools
     if [[ -f ./vendor ]]; then
         php composer.phar update
