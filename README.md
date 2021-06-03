@@ -1,4 +1,4 @@
-# Laminas Fundamentals
+# Laminas Advanced
 Zend by Perforce Training
 
 ## Course Container Setup Instructions
@@ -64,6 +64,7 @@ $ docker exec laminas_2 /bin/bash -c "/tmp/init.sh --init"
 ## Access the Container's Web Server
 * Open a browser from your local computer
 * Open this URL: `http://localhost:8888/`
+* Or: `http://10.20.20.20/`
 
 ## Open a Command Shell into the Container
 * Open a terminal window / command prompt on your local computer
@@ -131,3 +132,4 @@ admin.bat up|down|build|ls|init|shell
 * doug@unlikelysource.com: initial check-in
   * Updated all ZF apps to Laminas
   * Added Docker infrastructure
+### 0.0.2 : Done (for now)

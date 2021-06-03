@@ -33,6 +33,14 @@ RUN \
     php composer.phar require -n laminas/laminas-i18n && \
     php composer.phar require -n laminas-api-tools/api-tools-documentation-swagger
 RUN \
+    echo "Installing Composer globally ..." && \
+    cd /tmp && \
+    rm -f composer.* && \
+    rm -f /usr/bin/composer && \
+    wget https://getcomposer.org/download/latest-stable/composer.phar && \
+    mv composer.phar /usr/bin/composer && \
+    chmod +x /usr/bin/composer
+RUN \
     echo "Setting PHP for development ..." && \
     echo "error_reporting=E_ALL ^ E_DEPRECATED" >>/etc/php.ini && \
     echo "display_errors=on" >>/etc/php.ini && \
