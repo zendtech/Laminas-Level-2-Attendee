@@ -125,6 +125,13 @@ For your convenience, at the root of the project directory structure, we've prov
 admin.bat up|down|build|ls|init|shell
 ```
 
+## Database Access
+Username: `laminas`
+Password: `password`
+To access phpMyAdmin (from your host computer browser):
+* `http://localhost:8888/phpmyadmin`, or
+* `http://10.20.20.20/phpmyadmin`
+
 
 ## Version History
 

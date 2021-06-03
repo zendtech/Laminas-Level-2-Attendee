@@ -8,6 +8,14 @@ COPY zfcourse.sql /tmp
 COPY init.sh /tmp
 COPY startup.sh /tmp
 RUN \
+    echo "Installing Composer globally ..." && \
+    cd /tmp && \
+    rm -f composer.* && \
+    rm -f /usr/bin/composer && \
+    wget https://getcomposer.org/download/latest-stable/composer.phar && \
+    mv composer.phar /usr/bin/composer && \
+    chmod +x /usr/bin/composer
+RUN \
     echo "Configuring Apache ..." && \
     echo "ServerName laminas" >> /etc/httpd/httpd.conf && \
     echo "Include /etc/httpd/extra/httpd-laminas-2.conf" >> /etc/httpd/httpd.conf
@@ -23,26 +31,13 @@ RUN \
     mysql -uroot -e "SOURCE /tmp/zfcourse.sql;" zfcourse
 RUN \
     echo "Installing phpMyAdmin ..." && \
+    chmod +x /tmp/*.sh && \
     /tmp/phpmyadmin_install.sh
 RUN \
-    echo "Installing Laminas API Tools ..." && \
-    cd /srv && \
-    php composer.phar create-project laminas-api-tools/api-tools-skeleton laminas-api-tools && \
-    cp composer.phar laminas-api-tools && \
-    cd laminas-api-tools && \
-    php composer.phar require -n laminas/laminas-i18n && \
-    php composer.phar require -n laminas-api-tools/api-tools-documentation-swagger
-RUN \
-    echo "Installing Composer globally ..." && \
-    cd /tmp && \
-    rm -f composer.* && \
-    rm -f /usr/bin/composer && \
-    wget https://getcomposer.org/download/latest-stable/composer.phar && \
-    mv composer.phar /usr/bin/composer && \
-    chmod +x /usr/bin/composer
-RUN \
-    echo "Setting PHP for development ..." && \
+    echo "Setting up development environment ..." && \
     echo "error_reporting=E_ALL ^ E_DEPRECATED" >>/etc/php.ini && \
     echo "display_errors=on" >>/etc/php.ini && \
-    /etc/init.d/php-fpm restart
-CMD /tmp/startup.sh
+    /etc/init.d/php-fpm restart && \
+    ln -s /bin/lfphp-get /usr/bin/apt && \
+    ln -s /bin/lfphp-get /usr/bin/apt-get
+ENTRYPOINT /tmp/startup.sh
